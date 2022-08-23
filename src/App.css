@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+#logo {
+	left:51px;
+	top:35px;
+	/* width:237px; */
+	height:80px;
+}
+
+#video {
+  position: absolute;
+  left:0px;
+	top:0px;
+  z-index: -1;
+  height: 100%;
+}
+
+/* small screen sizes */
+@media only screen and (max-width: 576px) {
+  #logo {
+    height:60px;
+  }
+}
+
+/* super large screens */
+@media only screen and (min-width: 992px) {
+  #logo {
+    height:100px;
+  }
+}
