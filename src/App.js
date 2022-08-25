@@ -1,11 +1,7 @@
 import './App.css';
-// import Header from './components/Header'
-// import Home from './components/Home';
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Logo from './img/logo.png'
 import TheWorkLink from './img/header_the_work.png'
 import TheTeamLink from './img/header_the_team.png'
@@ -14,12 +10,10 @@ import TheCollectiveLink from './img/header_the_collective.png'
 import React from "react";
 import {
   BrowserRouter as Router,
-  Routes,
-  Route,
   Link
 } from "react-router-dom";
-import Home from './components/Home';
-import Work from './components/Work';
+import Routing from './components/Routing';
+
 
 
 function App() {
@@ -48,22 +42,7 @@ function App() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div>
-        <Routes>
-          <Route path="/the-work" element={<Work/>} />
-          {/* <Route path="/the-team">
-            <Team />
-          </Route>
-          <Route path="/the-collective">
-            <Collective />
-          </Route>
-          <Route path="/talk-to-us">
-            <Talk />
-          </Route> */}
-          <Route path='/home' element={<Home/>} />
-          <Route path='/' element={<Home/>} />
-        </Routes>
-      </div>
+      <Routing/>
     </Router>
     </div>
   );
