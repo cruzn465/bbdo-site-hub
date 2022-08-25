@@ -38,10 +38,17 @@
 }
 
 #logo {
-	left:51px;
-	top:35px;
 	/* width:237px; */
 	height:60px;
+}
+
+.header-links {
+  height: 30px;
+
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
 }
 
 #video {
@@ -51,7 +58,6 @@
   z-index: -1;
   /* height: 100%; */
   width: 100%;
-
 }
 
 /* small screen sizes */
