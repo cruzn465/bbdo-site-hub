@@ -3,7 +3,7 @@
 // import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import homeVideo from '../img/Bbdostudiosreel081022bbdostudiosoptimized.mp4'
-
+import React from "react";
 
 function Home() {
     // homeVideo.play

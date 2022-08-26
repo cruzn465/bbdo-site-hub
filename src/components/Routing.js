@@ -4,6 +4,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import React from "react";
 import Home from './Home';
 import Work from './Work';
 import Team from './Team';
