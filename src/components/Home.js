@@ -8,7 +8,7 @@ import homeVideo from '../img/Bbdostudiosreel081022bbdostudiosoptimized.mp4'
 function Home() {
     // homeVideo.play
     return (
-            <video loop muted  controls id='video'>
+            <video loop muted autoPlay controls id='video'>
                 <source src={homeVideo} type="video/mp4" />
             </video>
     );

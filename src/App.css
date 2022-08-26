@@ -44,11 +44,18 @@
 
 .header-links {
   height: 30px;
+}
 
+#talk-to-us-button {
+  height: 55px;
 }
 
 .navbar-collapse {
   flex-grow: 0 !important;
+}
+
+.navbar-nav {
+  align-items: center !important;
 }
 
 #video {
