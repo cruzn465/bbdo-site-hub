@@ -137,7 +137,7 @@
 }
 
 hr {
-  border: #c6d42c 3px solid;
+  border: #c6d42c 3px solid !important;
 }
 
 .copy {
