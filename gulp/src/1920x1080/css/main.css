@@ -67,3 +67,19 @@ body { margin:0px 0px; padding:0px; }
 	height:1080px;
 	background-image:url(../img/bg.jpg);
 }
+
+#team_super {
+	left:467px;
+	top:199px;
+	width:988px;
+	height:158px;
+	background-image:url(../img/team_super.png);
+}
+
+#team_copy {
+	left:145px;
+	top:491px;
+	width:1634px;
+	height:199px;
+	background-image:url(../img/team_copy.png);
+}

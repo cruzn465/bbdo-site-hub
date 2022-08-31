@@ -5,7 +5,7 @@ function Collective() {
     return (
       <Container fluid className="bg">
         <div id='spacer'></div>
-        <h1>The Coll</h1>
+        <h1>The Collective</h1>
       </Container>
     );
   }
