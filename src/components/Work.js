@@ -1,10 +1,12 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 function Work() {
   return (
-    <div>
-      The Work!
-    </div>
+    <Container fluid className="bg">
+      <div id='spacer'></div>
+      <h1>The Work</h1>
+    </Container>
   );
 }
 

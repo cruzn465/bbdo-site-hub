@@ -59,3 +59,11 @@ body { margin:0px 0px; padding:0px; }
 	height:47px;
 	background-image:url(../img/header_the_work.png);
 }
+
+#bg {
+	left:0px;
+	top:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url(../img/bg.jpg);
+}

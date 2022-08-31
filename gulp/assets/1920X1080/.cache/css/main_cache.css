@@ -1,33 +1,9 @@
 
 
-#header_talk_btn {
-	left:1615px;
-	top:45px;
-	width:262px;
-	height:106px;
-	background-image:url(../img/header_talk_btn.png);
-}
-
-#header_the_collective {
-	left:1266px;
-	top:79px;
-	width:318px;
-	height:47px;
-	background-image:url(../img/header_the_collective.png);
-}
-
-#header_the_team {
-	left:1026px;
-	top:78px;
-	width:197px;
-	height:47px;
-	background-image:url(../img/header_the_team.png);
-}
-
-#header_the_work {
-	left:771px;
-	top:78px;
-	width:207px;
-	height:47px;
-	background-image:url(../img/header_the_work.png);
+#bg {
+	left:0px;
+	top:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url(../img/bg.jpg);
 }

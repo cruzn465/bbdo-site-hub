@@ -88,3 +88,20 @@
     height:70px;
   }
 }
+
+.bg {
+  position: absolute;
+  top: 0;
+  background-image: url("./img/bg.jpg");
+  height: 100vh;
+  z-index: -1;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+#spacer {
+  height: 80px;
+  z-index: -1;
+}

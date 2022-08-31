@@ -24,13 +24,16 @@ function App() {
       <Router>
         <Navbar expand="lg">
           <Container>
-            <Navbar.Brand as={Link} to={"/home"}>
+            <Navbar.Brand as={Link} to={"/"}>
               <img id="logo" src={Logo} alt="BBDO logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="justify-content-end me-auto" >
                 {/* <Nav.Link as={Link} to={"/home"}>Home</Nav.Link> */}
+                {/* <Nav.Link as={Link} to={"/"}>
+                  <img className='header-links' id="home-link" src={TheWorkLink} alt="The Home Test link" />
+                </Nav.Link> */}
                 <Nav.Link as={Link} to={"/the-work"}>
                   <img className='header-links' id="the-work-link" src={TheWorkLink} alt="The Work link" />
                 </Nav.Link>
@@ -47,7 +50,9 @@ function App() {
             </Navbar.Collapse>
           </Container>
         </Navbar>
+        
         <Routing />
+        
       </Router>
     </div>
   );

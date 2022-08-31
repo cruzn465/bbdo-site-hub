@@ -1,10 +1,12 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 function Collective() {
     return (
-      <div>
-        The Collective!
-      </div>
+      <Container fluid className="bg">
+        <div id='spacer'></div>
+        <h1>The Coll</h1>
+      </Container>
     );
   }
   
