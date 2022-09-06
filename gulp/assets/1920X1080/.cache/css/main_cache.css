@@ -1,9 +1,25 @@
 
 
-#team_copy {
-	left:145px;
-	top:491px;
-	width:1634px;
-	height:199px;
-	background-image:url(../img/team_copy.png);
+#team_digital {
+	left:1438px;
+	top:612px;
+	width:270px;
+	height:50px;
+	background-image:url(../img/team_digital.png);
+}
+
+#team_post {
+	left:871px;
+	top:612px;
+	width:183px;
+	height:50px;
+	background-image:url(../img/team_post.png);
+}
+
+#team_prod {
+	left:130px;
+	top:612px;
+	width:457px;
+	height:50px;
+	background-image:url(../img/team_prod.png);
 }

@@ -132,12 +132,16 @@
 }
 
 #who_we_are {
-  max-width: 40%;
+  max-width: 50%;
   margin: 20px;
 }
 
 hr {
   border: #c6d42c 3px solid !important;
+  opacity: 1 !important;
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+
 }
 
 .copy {

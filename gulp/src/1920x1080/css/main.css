@@ -83,3 +83,35 @@ body { margin:0px 0px; padding:0px; }
 	height:199px;
 	background-image:url(../img/team_copy.png);
 }
+
+#team_bg_img {
+	left:0px;
+	top:0px;
+	width:1804px;
+	height:785px;
+	background-image:url(../img/team_bg_img.jpg);
+}
+
+#team_digital {
+	left:1438px;
+	top:612px;
+	width:270px;
+	height:50px;
+	background-image:url(../img/team_digital.png);
+}
+
+#team_post {
+	left:871px;
+	top:612px;
+	width:183px;
+	height:50px;
+	background-image:url(../img/team_post.png);
+}
+
+#team_prod {
+	left:130px;
+	top:612px;
+	width:457px;
+	height:50px;
+	background-image:url(../img/team_prod.png);
+}
