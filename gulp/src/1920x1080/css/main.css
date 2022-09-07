@@ -115,3 +115,43 @@ body { margin:0px 0px; padding:0px; }
 	height:50px;
 	background-image:url(../img/team_prod.png);
 }
+
+#collective_copy {
+	left:86px;
+	top:628px;
+	width:1732px;
+	height:101px;
+	background-image:url(../img/collective_copy.png);
+}
+
+#collective_super {
+	left:106px;
+	top:337px;
+	width:1710px;
+	height:125px;
+	background-image:url(../img/collective_super.png);
+}
+
+#background_grey {
+	left:56px;
+	top:238px;
+	width:632px;
+	height:790px;
+	background-image:url(../img/background_grey.png);
+}
+
+#team_prod_subCopies {
+	left:201px;
+	top:523px;
+	width:317px;
+	height:390px;
+	background-image:url(../img/team_prod_subCopies.png);
+}
+
+#team_prod_title {
+	left:130px;
+	top:428px;
+	width:457px;
+	height:49px;
+	background-image:url(../img/team_prod_title.png);
+}

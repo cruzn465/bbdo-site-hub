@@ -1,25 +1,25 @@
 
 
-#team_digital {
-	left:1438px;
-	top:612px;
-	width:270px;
-	height:50px;
-	background-image:url(../img/team_digital.png);
+#background_grey {
+	left:56px;
+	top:238px;
+	width:632px;
+	height:790px;
+	background-image:url(../img/background_grey.png);
 }
 
-#team_post {
-	left:871px;
-	top:612px;
-	width:183px;
-	height:50px;
-	background-image:url(../img/team_post.png);
+#team_prod_subCopies {
+	left:201px;
+	top:523px;
+	width:317px;
+	height:390px;
+	background-image:url(../img/team_prod_subCopies.png);
 }
 
-#team_prod {
+#team_prod_title {
 	left:130px;
-	top:612px;
+	top:428px;
 	width:457px;
-	height:50px;
-	background-image:url(../img/team_prod.png);
+	height:49px;
+	background-image:url(../img/team_prod_title.png);
 }
