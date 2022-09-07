@@ -22,15 +22,19 @@ function Team() {
         </h2> */}
         <img className="copy" src={Team_copy} alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS" />
         <hr />
-        <Image id="team_bg" src={Team_bg_img} alt="Office Background">
-          {/* <Image id="team_bg_grey" src={Team_bg_grey} alt="Office Background"></Image> */}
-
-        </Image>
-
         <Container>
-          <div id="test-image">
-            {/* <div id="test-image-grey"></div> */}
-          </div>
+          <figure className="position-relative">
+
+          <Image id="team_bg" src={Team_bg_img} alt="Office Background" className="img-fluid" />
+          <Image id="test-image-grey" src={Team_bg_grey}></Image>
+          {/* <Image id="test-image-grey-2" src={Team_bg_grey}></Image> */}
+          {/* <Image id="test-image-grey-3" src={Team_bg_grey}></Image> */}
+
+          </figure>
+
+
+          {/* <div id="test-image"> */}
+          {/* </div> */}
         </Container>
 
       </Container>
