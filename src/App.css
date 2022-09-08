@@ -175,10 +175,63 @@ hr {
   top: 20px;
   right: -1.5px;
 }
-.sprite {
-	position:absolute;
-	background-repeat:no-repeat;
+
+.team_super_titles {
+  width: 35%;;
+  margin-top: 50px;
+  padding: 70px;
+  z-index: 10;
 }
+
+#team_prod {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+}
+
+#team_prod_subCopies {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  width: 35%;
+  padding: 100px;
+  margin-top: 50px;
+}
+
+#team_digital {
+  position: absolute;
+  top: 18px;
+  right: 0px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+#team_digital_subCopies {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  width: 35%;
+  padding: 50px;
+  margin-top: 100px;
+}
+
+#team_post {
+  position: absolute;
+  top: 18px;
+  left: 32.5%;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+#team_post_subCopies {
+  position: absolute;
+  top: 50px;
+  left: 32.5%;
+  width: 35%;
+  padding: 135px;
+  margin-top: 15px;
+}
+
 
 @media only screen and (max-width: 993px) {
 

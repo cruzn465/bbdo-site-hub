@@ -155,3 +155,19 @@ body { margin:0px 0px; padding:0px; }
 	height:49px;
 	background-image:url(../img/team_prod_title.png);
 }
+
+#team_digital_subCopies {
+	left:1312px;
+	top:519px;
+	width:519px;
+	height:354px;
+	background-image:url(../img/team_digital_subCopies.png);
+}
+
+#team_post_subCopies {
+	left:859px;
+	top:524px;
+	width:202px;
+	height:183px;
+	background-image:url(../img/team_post_subCopies.png);
+}
