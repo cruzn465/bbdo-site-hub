@@ -151,7 +151,7 @@ hr {
 }
 
 #test-image-grey {
-  /* height: 100px; */
+  /* height: 88%; */
   width: 35%;
   background-image: url('./img/background_grey.png');
   position: absolute;
@@ -160,15 +160,15 @@ hr {
 }
 
 #test-image-grey-2 {
-  /* height: 100px; */
+  /* height: 88%; */
   width: 35%;
   background-image: url('./img/background_grey.png');
   position: absolute;
   top: 20px;
-  left: 400px;
+  left: 32.5%;
 }
 #test-image-grey-3 {
-  /* height: 100px; */
+  /* height: 88%; */
   width: 35%;
   background-image: url('./img/background_grey.png');
   position: absolute;
