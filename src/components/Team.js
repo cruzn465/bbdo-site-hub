@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Image from 'react-bootstrap/Image'
 import Team_super from '../img/team_super.png'
 import Team_copy from '../img/team_copy.png'
@@ -12,15 +12,37 @@ import Team_digital from '../img/team_digital.png'
 import Team_post_subcopies from '../img/post_titles.png'
 import Team_post from '../img/team_post.png'
 
+// Following the video with these imports:
+import { useRef, useEffect, useState } from 'react';
+import { TweenMax, Power3 } from 'gsap'
+import gsap from 'gsap';
 
 
 
 function Team() {
+  // // toggle on and off based on user clicks
+  // let prodtoggle = false
+  // let digitaltoggle = false 
+  // let posttoggle = false
+  const [prodToggleClicked, setprodToggleClicked] = useState(false)
+  function handleProdToggleClicked() {
+    setprodToggleClicked(!prodToggleClicked)
+    console.log(prodToggleClicked)
+  }
+
+  // // store a reference to the box div
+  const boxRef = useRef();
+
+  // // wait until DOM has been rendered
+  useEffect(() => {
+    gsap.to(boxRef.current, 2,{ opacity: "0" });
+  });
+
   return (
     <Container fluid className="bg">
       <div id='spacer'></div>
       <Container id="test-container">
-        <Image className="header" src={Team_super} alt="Who We Are"></Image>
+        <Image ref={boxRef} className="header" src={Team_super} alt="Who We Are"></Image>
         <hr />
         {/* <h2 id="team-copy-not-pic">
           WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS, <br/>
@@ -30,27 +52,55 @@ function Team() {
         <img className="copy" src={Team_copy} alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS" />
         <hr />
         <Container>
-          <figure className="position-relative">
+          <Container >
+            <Row id="office_bg">
+              <Col id="grey-1" className="grey" >
+                <span className="team-title-center work-sans-font">
+                  <div className="font-titles">PRODUCTION</div>
+                  <div>Cinematography</div>
+                  <div>Creator Partnership</div>
+                  <div>Directing</div>
+                  <div>Experiential</div>
+                  <div>Influencer Campaigns</div>
+                  <div>Live Events</div>
+                  <div>Photography</div>
+                  <div>Producing</div>
+                  <div>Virtual Reality</div>
+                  <div>Voiceover Recording</div>
+                </span>
+              </Col>
+              <Col id="grey-2" className="grey" xs={4}>
+                <span className="team-title-center work-sans-font">
+                  <div className="font-titles">POST</div>
+                  <div>Animation</div>
+                  <div>Audio Mixing</div>
+                  <div>Editorial</div>
+                  <div>Sound Design</div>
+                  <div>Visual Effects</div>
+                  <div className="hidden">1</div>
+                  <div className="hidden">1</div>
+                  <div className="hidden">1</div>
+                  <div className="hidden">1</div>
+                  <div className="hidden">1</div>
+                </span>              
+                </Col>
+              <Col id="grey-3" className="grey">
+                <span className="team-title-center work-sans-font">
+                  <div className="font-titles">DIGITAL</div>
+                  <div>Augmented Reality</div>
+                  <div>Banner Design</div>
+                  <div>Community Management</div>
+                  <div>Digital Development</div>
+                  <div>Dynamic Creation and Optimization</div>
+                  <div>Platform-Native Content Creation</div>
+                  <div>Tech & Prototyping</div>
+                  <div>Web 3.0</div>
+                  <div>Website Design</div>
+                  <div className="hidden">1</div>
 
-          <Image id="team_bg" src={Team_bg_img} alt="Office Background" className="img-fluid" />
-          <Image id="test-image-grey" src={Team_bg_grey}></Image>
-          <Image id="team_prod" className="team_super_titles" src={Team_prod}></Image>
-          <Image id="team_prod_subCopies" src={Team_prod_subcopies}></Image>
-
-          <Image id="test-image-grey-2" src={Team_bg_grey}></Image>
-          <Image id="team_post" className="team_super_titles" src={Team_post}></Image>
-          <Image id="team_post_subCopies" src={Team_post_subcopies}></Image>
-
-
-          <Image id="test-image-grey-3" src={Team_bg_grey}></Image>
-          <Image id="team_digital" className="team_super_titles" src={Team_digital}></Image>
-          <Image id="team_digital_subCopies" src={Team_digital_subcopies}></Image>
-
-          </figure>
-
-
-          {/* <div id="test-image"> */}
-          {/* </div> */}
+                </span>              </Col>
+            </Row>
+          </Container>
         </Container>
 
       </Container>

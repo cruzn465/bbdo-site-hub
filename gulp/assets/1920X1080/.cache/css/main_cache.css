@@ -1,17 +1,25 @@
 
 
-#team_digital_subCopies {
-	left:1312px;
-	top:519px;
-	width:519px;
-	height:354px;
-	background-image:url(../img/team_digital_subCopies.png);
+#background_grey_2 {
+	left:687px;
+	top:238px;
+	width:550px;
+	height:790px;
+	background-image:url(../img/background_grey_2.png);
 }
 
-#team_post_subCopies {
-	left:859px;
-	top:524px;
-	width:202px;
-	height:183px;
-	background-image:url(../img/team_post_subCopies.png);
+#background_grey_3 {
+	left:1236px;
+	top:238px;
+	width:632px;
+	height:790px;
+	background-image:url(../img/background_grey_3.png);
+}
+
+#team_prod_title_fpo {
+	left:130px;
+	top:428px;
+	width:457px;
+	height:49px;
+	background-image:url(../img/team_prod_title_fpo.png);
 }

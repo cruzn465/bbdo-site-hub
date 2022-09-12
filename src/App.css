@@ -73,7 +73,7 @@
   #logo {
     height: 60px;
   }
-  
+
 }
 
 /* desktop and smaller*/
@@ -81,9 +81,11 @@
   #video {
     height: 100%
   }
+
   .header {
     max-width: 80% !important;
   }
+
   .copy {
     max-width: 100% !important;
   }
@@ -104,12 +106,12 @@
   position: absolute;
   top: 0;
   background-image: url("./img/bg.jpg");
-  background-repeat: repeat-y !important; 
+  background-repeat: repeat-y !important;
   height: 100vh;
   z-index: -1;
   overflow-x: hidden;
-	overflow-y:scroll;
-  
+  overflow-y: scroll;
+
 }
 
 #spacer {
@@ -143,11 +145,74 @@ hr {
   max-width: 90%;
 }
 
-#test-image {
-  height: 30vh;
-  width: 90%;
+#office_bg {
+  display: flex;
+  height: 80vh;
+  width: 100%;
+  /* align-items: center; */
   background-image: url('./img/team_bg_img.jpg');
-  background-size:100% auto;
+  background-size: cover;
+}
+
+.grey {
+  display: flex;
+  align-items: center;
+}
+
+#grey-1 {
+  background-image: url('./img/background_grey.png');
+}
+
+#grey-2 {
+  /* height:  80vh; */
+  /* display: flex;
+  justify-self: center;
+  align-items: center; */
+  /* flex-grow: .8; */
+  background-image: url('./img/background_grey_2.png');
+  /* opacity: .1; */
+}
+
+#grey-3 {
+  /* height:  80vh; */
+  /* display: flex;
+  justify-self: center;
+  align-items: center; */
+  /* flex-grow: 1; */
+  background-image: url('./img/background_grey_3.png');
+  /* opacity: .1; */
+}
+
+.work-sans-font {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.font-titles {
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.team-title-center {
+  /* align-items: center; */
+  /* height: 80vh; */
+  width: 100%;
+  color: aliceblue;
+}
+
+.team_titles {
+  /* padding: 50px; */
+}
+
+.test-span {
+  color: azure;
+  padding: 5px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 #test-image-grey {
@@ -167,6 +232,7 @@ hr {
   top: 20px;
   left: 32.5%;
 }
+
 #test-image-grey-3 {
   /* height: 88%; */
   width: 35%;
@@ -177,7 +243,8 @@ hr {
 }
 
 .team_super_titles {
-  width: 35%;;
+  width: 35%;
+  ;
   margin-top: 50px;
   padding: 70px;
   z-index: 10;
@@ -185,7 +252,8 @@ hr {
 
 #team_prod {
   position: absolute;
-  top: 20px;
+  /* top: 20px; */
+  top: 7em;
   left: 0px;
 }
 
@@ -240,7 +308,7 @@ hr {
   }
 }
 
-/* super large screens */
+/* large screens */
 @media only screen and (min-width: 992px) {
   #logo {
     height: 70px;
@@ -248,6 +316,15 @@ hr {
 
   .container {
     max-width: 1200px !important;
+  }
+
+}
+
+/* super large screens */
+@media only screen and (min-width: 1200px) {
+
+  #team_prod {
+    top: 8em;
   }
 
 
