@@ -24,25 +24,56 @@ function Team() {
   // let prodtoggle = false
   // let digitaltoggle = false 
   // let posttoggle = false
+  const prodRef = useRef();
   const [prodToggleClicked, setprodToggleClicked] = useState(false)
+  const postRef = useRef();
+  const [postToggleClicked, setpostToggleClicked] = useState(false)
+  const digRef = useRef();
+  const [digToggleClicked, setdigToggleClicked] = useState(false)
+
+  const greyRef = useRef();
+
+
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked)
-    console.log(prodToggleClicked)
+    // console.log(prodToggleClicked)
+    if (!prodToggleClicked) {
+      gsap.to(prodRef.current, .7,{height: "300px" });
+      gsap.to(greyRef.current, .7,{height: "0px" });
+      
+    }
+    else gsap.to(prodRef.current, .7,{height: "50px" });
   }
 
-  // // store a reference to the box div
-  const boxRef = useRef();
+  function handlePostToggleClicked() {
+    setpostToggleClicked(!postToggleClicked)
+    // console.log(prodToggleClicked)
+    if (!postToggleClicked) gsap.to(postRef.current, .7,{height: "300px" });
+    else gsap.to(postRef.current, .7,{height: "50px" });
+  }
 
-  // // wait until DOM has been rendered
-  useEffect(() => {
-    gsap.to(boxRef.current, 2,{ opacity: "0" });
-  });
+  function handleDigToggleClicked() {
+    setdigToggleClicked(!digToggleClicked)
+    // console.log(prodToggleClicked)
+    if (!digToggleClicked) gsap.to(digRef.current, .7,{height: "300px" });
+    else gsap.to(digRef.current, .7,{height: "10px" });
+  }
+  // // store a reference to the box div
+  // const boxRef = useRef();
+
+  // useEffect(() => {
+  //   // toggle 
+  //   console.log("toggling reverse to", prodToggleClicked);
+  //    gsap.to(prodRef.current, 2,{height: "100px" });
+  //   // tl.current.prodToggleClicked(prodToggleClicked);    
+  // }, [prodToggleClicked]);
+
 
   return (
     <Container fluid className="bg">
       <div id='spacer'></div>
       <Container id="test-container">
-        <Image ref={boxRef} className="header" src={Team_super} alt="Who We Are"></Image>
+        <Image className="header" src={Team_super} alt="Who We Are"></Image>
         <hr />
         {/* <h2 id="team-copy-not-pic">
           WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS, <br/>
@@ -54,9 +85,9 @@ function Team() {
         <Container>
           <Container >
             <Row id="office_bg">
-              <Col id="grey-1" className="grey" >
-                <span className="team-title-center work-sans-font">
-                  <div className="font-titles">PRODUCTION</div>
+              <Col useRef={greyRef} id="grey-1" className="grey" >
+                <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => setprodToggleClicked(!prodToggleClicked)}>
+                  <div onClick={() => handleProdToggleClicked()} className="font-titles">PRODUCTION</div>
                   <div>Cinematography</div>
                   <div>Creator Partnership</div>
                   <div>Directing</div>
@@ -70,8 +101,8 @@ function Team() {
                 </span>
               </Col>
               <Col id="grey-2" className="grey" xs={4}>
-                <span className="team-title-center work-sans-font">
-                  <div className="font-titles">POST</div>
+                <span ref={postRef} className="team-title-center work-sans-font" onClick={() => setpostToggleClicked(!postToggleClicked)}>
+                  <div onClick={() => handlePostToggleClicked()} className="font-titles">POST</div>
                   <div>Animation</div>
                   <div>Audio Mixing</div>
                   <div>Editorial</div>
@@ -85,8 +116,8 @@ function Team() {
                 </span>              
                 </Col>
               <Col id="grey-3" className="grey">
-                <span className="team-title-center work-sans-font">
-                  <div className="font-titles">DIGITAL</div>
+                <span ref={digRef} className="team-title-center work-sans-font" onClick={() => setdigToggleClicked(!digToggleClicked)}>
+                  <div onClick={() => handleDigToggleClicked()} className="font-titles">DIGITAL</div>
                   <div>Augmented Reality</div>
                   <div>Banner Design</div>
                   <div>Community Management</div>
