@@ -33,6 +33,21 @@ function Team() {
 
   const greyRef = useRef();
 
+  // const tl = useRef();
+
+  // useEffect(() => {            
+  //   // add a box and circle animation to our timeline and play on first render
+  //   console.log("creating timeline");
+  //   tl.current && tl.current.progress(0).kill();
+  //   tl.current = gsap.timeline()
+  //     .to(q(".box"), {
+  //       rotation: 360
+  //     })
+  //     .to(q(".circle"), {
+  //       x: 100
+  //     });
+
+  // }, []);
 
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked)
@@ -56,7 +71,7 @@ function Team() {
     setdigToggleClicked(!digToggleClicked)
     // console.log(prodToggleClicked)
     if (!digToggleClicked) gsap.to(digRef.current, .7,{height: "300px" });
-    else gsap.to(digRef.current, .7,{height: "10px" });
+    else gsap.to(digRef.current, .7,{height: "50px" });
   }
   // // store a reference to the box div
   // const boxRef = useRef();
@@ -67,6 +82,7 @@ function Team() {
   //    gsap.to(prodRef.current, 2,{height: "100px" });
   //   // tl.current.prodToggleClicked(prodToggleClicked);    
   // }, [prodToggleClicked]);
+
 
 
   return (
@@ -86,8 +102,8 @@ function Team() {
           <Container >
             <Row id="office_bg">
               <Col useRef={greyRef} id="grey-1" className="grey" >
-                <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => setprodToggleClicked(!prodToggleClicked)}>
-                  <div onClick={() => handleProdToggleClicked()} className="font-titles">PRODUCTION</div>
+                <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
+                  <div onClick={() => setprodToggleClicked(!prodToggleClicked)}className="font-titles">PRODUCTION</div>
                   <div>Cinematography</div>
                   <div>Creator Partnership</div>
                   <div>Directing</div>
@@ -101,8 +117,8 @@ function Team() {
                 </span>
               </Col>
               <Col id="grey-2" className="grey" xs={4}>
-                <span ref={postRef} className="team-title-center work-sans-font" onClick={() => setpostToggleClicked(!postToggleClicked)}>
-                  <div onClick={() => handlePostToggleClicked()} className="font-titles">POST</div>
+                <span ref={postRef} className="team-title-center work-sans-font" onClick={() => handlePostToggleClicked()}>
+                  <div onClick={() => setpostToggleClicked(!postToggleClicked)}className="font-titles">POST</div>
                   <div>Animation</div>
                   <div>Audio Mixing</div>
                   <div>Editorial</div>
@@ -116,8 +132,8 @@ function Team() {
                 </span>              
                 </Col>
               <Col id="grey-3" className="grey">
-                <span ref={digRef} className="team-title-center work-sans-font" onClick={() => setdigToggleClicked(!digToggleClicked)}>
-                  <div onClick={() => handleDigToggleClicked()} className="font-titles">DIGITAL</div>
+                <span ref={digRef} className="team-title-center work-sans-font" onClick={() => handleDigToggleClicked()}>
+                  <div onClick={() => setdigToggleClicked(!digToggleClicked)} className="font-titles">DIGITAL</div>
                   <div>Augmented Reality</div>
                   <div>Banner Design</div>
                   <div>Community Management</div>
@@ -129,7 +145,8 @@ function Team() {
                   <div>Website Design</div>
                   <div className="hidden">1</div>
 
-                </span>              </Col>
+                </span>              
+                </Col>
             </Row>
           </Container>
         </Container>

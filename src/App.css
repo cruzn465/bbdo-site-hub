@@ -120,7 +120,7 @@
 }
 
 #test-container {
-  /* background-color: azure; */
+  margin-bottom: 20px;
 }
 
 .header {
@@ -170,7 +170,7 @@ hr {
   align-items: center; */
   /* flex-grow: .8; */
   background-image: url('./img/background_grey_2.png');
-  /* opacity: .1; */
+  opacity: .1;
 }
 
 #grey-3 {
@@ -180,7 +180,7 @@ hr {
   align-items: center; */
   /* flex-grow: 1; */
   background-image: url('./img/background_grey_3.png');
-  /* opacity: .1; */
+  opacity: .1;
 }
 
 .work-sans-font {
