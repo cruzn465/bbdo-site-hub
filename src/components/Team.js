@@ -49,8 +49,14 @@ function Team() {
 
   // }, []);
 
+  // think of how to make it so that when a user clicks anywhere, this will evaluate what is being clicked and expand the correct list.
+  // function evaluateClick() {
+
+  // }
+
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked)
+    
     // console.log(prodToggleClicked)
     if (!prodToggleClicked) {
       gsap.to(prodRef.current, .7,{height: "300px" });
@@ -101,7 +107,7 @@ function Team() {
         <Container>
           <Container >
             <Row id="office_bg">
-              <Col useRef={greyRef} id="grey-1" className="grey" >
+              <Col useRef={greyRef} id="grey-1" className={prodToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
                 <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
                   <div onClick={() => setprodToggleClicked(!prodToggleClicked)}className="font-titles">PRODUCTION</div>
                   <div>Cinematography</div>
@@ -116,7 +122,7 @@ function Team() {
                   <div>Voiceover Recording</div>
                 </span>
               </Col>
-              <Col id="grey-2" className="grey" xs={4}>
+              <Col id="grey-2" className={postToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'} xs={4}>
                 <span ref={postRef} className="team-title-center work-sans-font" onClick={() => handlePostToggleClicked()}>
                   <div onClick={() => setpostToggleClicked(!postToggleClicked)}className="font-titles">POST</div>
                   <div>Animation</div>
@@ -131,7 +137,7 @@ function Team() {
                   <div className="hidden">1</div>
                 </span>              
                 </Col>
-              <Col id="grey-3" className="grey">
+              <Col id="grey-3" className={digToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
                 <span ref={digRef} className="team-title-center work-sans-font" onClick={() => handleDigToggleClicked()}>
                   <div onClick={() => setdigToggleClicked(!digToggleClicked)} className="font-titles">DIGITAL</div>
                   <div>Augmented Reality</div>
