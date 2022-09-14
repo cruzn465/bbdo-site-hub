@@ -1,25 +1,25 @@
 
 
-#background_grey {
-	left:56px;
+#background_grey_2 {
+	left:687px;
+	top:238px;
+	width:550px;
+	height:790px;
+	background-image:url(../img/background_grey_2.png);
+}
+
+#background_grey_3 {
+	left:1236px;
 	top:238px;
 	width:632px;
 	height:790px;
-	background-image:url(../img/background_grey.png);
+	background-image:url(../img/background_grey_3.png);
 }
 
-#team_prod_subCopies {
-	left:201px;
-	top:523px;
-	width:317px;
-	height:390px;
-	background-image:url(../img/team_prod_subCopies.png);
-}
-
-#team_prod_title {
+#team_prod_title_fpo {
 	left:130px;
 	top:428px;
 	width:457px;
 	height:49px;
-	background-image:url(../img/team_prod_title.png);
+	background-image:url(../img/team_prod_title_fpo.png);
 }
