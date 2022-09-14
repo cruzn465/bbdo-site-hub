@@ -12,18 +12,12 @@ import Team_copy from '../img/team_copy.png'
 // import Team_post_subcopies from '../img/post_titles.png'
 // import Team_post from '../img/team_post.png'
 
-// Following the video with these imports:
 import { useRef, useState } from 'react';
-// import { TweenMax, Power3 } from 'gsap'
 import gsap from 'gsap';
 
 
 
 function Team() {
-  // // toggle on and off based on user clicks
-  // let prodtoggle = false
-  // let digitaltoggle = false 
-  // let posttoggle = false
   const prodRef = useRef();
   const [prodToggleClicked, setprodToggleClicked] = useState(false)
   const postRef = useRef();

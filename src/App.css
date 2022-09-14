@@ -248,6 +248,7 @@ hr {
   color: aliceblue;
   height: 3em; 
   overflow-y: hidden;
+  cursor: pointer;
 }
 
 .team_titles {
