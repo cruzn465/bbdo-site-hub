@@ -53,7 +53,11 @@ function Team() {
 
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked)
+    setpostToggleClicked(false)
+    setdigToggleClicked(false)
+
     // when prod is clicked, set other heights to 50
+    // console.log("prod: ", prodToggleClicked,"post: ", postToggleClicked,"dig: ", digToggleClicked,)
     if (!prodToggleClicked) {
       gsap.to(prodRef.current, .7, { height: "300px" });
       gsap.to(postRef.current, .7, { height: "50px" });
@@ -73,7 +77,9 @@ function Team() {
 
   function handlePostToggleClicked() {
     setpostToggleClicked(!postToggleClicked)
-    // console.log(prodToggleClicked)
+    setprodToggleClicked(false)
+    setdigToggleClicked(false)
+    // console.log("prod: ", prodToggleClicked,"post: ", postToggleClicked,"dig: ", digToggleClicked,)
     if (!postToggleClicked) {
       gsap.to(postRef.current, .7, { height: "300px" });
       gsap.to(prodRef.current, .7, { height: "50px" });
@@ -92,7 +98,9 @@ function Team() {
 
   function handleDigToggleClicked() {
     setdigToggleClicked(!digToggleClicked)
-    // console.log(prodToggleClicked)
+    setprodToggleClicked(true)
+    setprodToggleClicked(true)
+
     if (!digToggleClicked) {
       gsap.to(digRef.current, .7, { height: "300px" });
       gsap.to(postRef.current, .7, { height: "50px" });
