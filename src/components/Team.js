@@ -103,7 +103,7 @@ function Team() {
   return (
     <Container fluid className="bg">
       <div id='spacer'></div>
-      <Container id="test-container">
+      <Container className="all-content">
         <Image className="header" src={Team_super} alt="Who We Are"></Image>
         <hr />
         {/* <h2 id="team-copy-not-pic">
@@ -114,7 +114,7 @@ function Team() {
         <img className="copy" src={Team_copy} alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS" />
         <hr />
         <Container>
-          <Container >
+          {/* <Container > */}
             <Row id="office_bg">
               <Col useRef={greyRef} id="grey-1" className={prodToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
                 <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
@@ -163,7 +163,6 @@ function Team() {
                 </span>              
                 </Col>
             </Row>
-          </Container>
         </Container>
 
       </Container>

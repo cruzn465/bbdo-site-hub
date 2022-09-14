@@ -119,9 +119,6 @@
   z-index: -1;
 }
 
-#test-container {
-  margin-bottom: 20px;
-}
 
 .header {
   max-width: 50%;
@@ -149,9 +146,13 @@ hr {
   display: flex;
   height: 80vh;
   width: 100%;
-  /* align-items: center; */
+  margin-left: 0px;
   background-image: url('./img/team_bg_img.jpg');
   background-size: cover;
+}
+
+.all-content {
+  margin: 0px 10px 30px 10px;
 }
 
 .grey {
