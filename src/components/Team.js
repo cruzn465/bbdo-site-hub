@@ -3,18 +3,18 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from 'react-bootstrap/Image'
 import Team_super from '../img/team_super.png'
 import Team_copy from '../img/team_copy.png'
-import Team_bg_img from '../img/team_bg_img.jpg'
-import Team_bg_grey from '../img/background_grey.png'
-import Team_prod_subcopies from '../img/prod_titles.png'
-import Team_prod from '../img/team_prod.png'
-import Team_digital_subcopies from '../img/digital_titles.png'
-import Team_digital from '../img/team_digital.png'
-import Team_post_subcopies from '../img/post_titles.png'
-import Team_post from '../img/team_post.png'
+// import Team_bg_img from '../img/team_bg_img.jpg'
+// import Team_bg_grey from '../img/background_grey.png'
+// import Team_prod_subcopies from '../img/prod_titles.png'
+// import Team_prod from '../img/team_prod.png'
+// import Team_digital_subcopies from '../img/digital_titles.png'
+// import Team_digital from '../img/team_digital.png'
+// import Team_post_subcopies from '../img/post_titles.png'
+// import Team_post from '../img/team_post.png'
 
 // Following the video with these imports:
-import { useRef, useEffect, useState } from 'react';
-import { TweenMax, Power3 } from 'gsap'
+import { useRef, useState } from 'react';
+// import { TweenMax, Power3 } from 'gsap'
 import gsap from 'gsap';
 
 
@@ -31,7 +31,10 @@ function Team() {
   const digRef = useRef();
   const [digToggleClicked, setdigToggleClicked] = useState(false)
 
-  const greyRef = useRef();
+  const greyRef1 = useRef();
+  const greyRef2 = useRef();
+  const greyRef3 = useRef();
+
 
   // const tl = useRef();
 
@@ -58,35 +61,58 @@ function Team() {
     setprodToggleClicked(!prodToggleClicked)
     // when prod is clicked, set other heights to 50
     if (!prodToggleClicked) {
-      gsap.to(prodRef.current, .7,{height: "300px" });
-      gsap.to(postRef.current, .7,{height: "50px" });
-      gsap.to(digRef.current, .7,{height: "50px" });
-      // gsap.to(greyRef.current, .7,{height: "0px" });
-      
+      gsap.to(prodRef.current, .7, { height: "300px" });
+      gsap.to(postRef.current, .7, { height: "50px" });
+      gsap.to(digRef.current, .7, { height: "50px" });
+
+      // console.log(greyRef)
+      gsap.to(greyRef1.current, .7,{height: "80vh"});
+      gsap.to(greyRef2.current, .7,{height: "0vh"});
+      gsap.to(greyRef3.current, .7,{height: "0vh"});
+
     }
-    else gsap.to(prodRef.current, .7,{height: "50px" });
+    else {
+      gsap.to(prodRef.current, .7, { height: "50px" })
+      gsap.to(greyRef1.current, .7,{height: "0vh"});
+    };
   }
 
   function handlePostToggleClicked() {
     setpostToggleClicked(!postToggleClicked)
     // console.log(prodToggleClicked)
     if (!postToggleClicked) {
-      gsap.to(postRef.current, .7,{height: "300px" });
-      gsap.to(prodRef.current, .7,{height: "50px" });
-      gsap.to(digRef.current, .7,{height: "50px" });
+      gsap.to(postRef.current, .7, { height: "300px" });
+      gsap.to(prodRef.current, .7, { height: "50px" });
+      gsap.to(digRef.current, .7, { height: "50px" });
+
+      gsap.to(greyRef1.current, .7,{height: "0vh"});
+      gsap.to(greyRef2.current, .7,{height: "80vh"});
+      gsap.to(greyRef3.current, .7,{height: "0vh"});
     }
-    else gsap.to(postRef.current, .7,{height: "50px" });
+    else {
+      gsap.to(postRef.current, .7, { height: "50px" });
+      gsap.to(greyRef2.current, .7,{height: "0vh"});
+      
+    }
   }
 
   function handleDigToggleClicked() {
     setdigToggleClicked(!digToggleClicked)
     // console.log(prodToggleClicked)
     if (!digToggleClicked) {
-      gsap.to(digRef.current, .7,{height: "300px" });
-      gsap.to(postRef.current, .7,{height: "50px" });
-      gsap.to(prodRef.current, .7,{height: "50px" });
+      gsap.to(digRef.current, .7, { height: "300px" });
+      gsap.to(postRef.current, .7, { height: "50px" });
+      gsap.to(prodRef.current, .7, { height: "50px" });
+
+      gsap.to(greyRef1.current, .7,{height: "0vh"});
+      gsap.to(greyRef2.current, .7,{height: "0vh"});
+      gsap.to(greyRef3.current, .7,{height: "80vh"});
     }
-    else gsap.to(digRef.current, .7,{height: "50px" });
+    else {
+      gsap.to(digRef.current, .7, { height: "50px" });
+      gsap.to(greyRef3.current, .7,{height: "0vh"});
+
+    }
   }
   // // store a reference to the box div
   // const boxRef = useRef();
@@ -113,56 +139,123 @@ function Team() {
         </h2> */}
         <img className="copy" src={Team_copy} alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS" />
         <hr />
-        <Container>
-          {/* <Container > */}
-            <Row id="office_bg">
-              <Col useRef={greyRef} id="grey-1" className={prodToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
-                <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
-                  <div onClick={() => setprodToggleClicked(!prodToggleClicked)}className="font-titles">PRODUCTION</div>
-                  <div>Cinematography</div>
-                  <div>Creator Partnership</div>
-                  <div>Directing</div>
-                  <div>Experiential</div>
-                  <div>Influencer Campaigns</div>
-                  <div>Live Events</div>
-                  <div>Photography</div>
-                  <div>Producing</div>
-                  <div>Virtual Reality</div>
-                  <div>Voiceover Recording</div>
-                </span>
-              </Col>
-              <Col id="grey-2" className={postToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'} xs={4}>
-                <span ref={postRef} className="team-title-center work-sans-font" onClick={() => handlePostToggleClicked()}>
-                  <div onClick={() => setpostToggleClicked(!postToggleClicked)}className="font-titles">POST</div>
-                  <div>Animation</div>
-                  <div>Audio Mixing</div>
-                  <div>Editorial</div>
-                  <div>Sound Design</div>
-                  <div>Visual Effects</div>
-                  <div className="hidden">1</div>
-                  <div className="hidden">1</div>
-                  <div className="hidden">1</div>
-                  <div className="hidden">1</div>
-                  <div className="hidden">1</div>
-                </span>              
-                </Col>
-              <Col id="grey-3" className={digToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
-                <span ref={digRef} className="team-title-center work-sans-font" onClick={() => handleDigToggleClicked()}>
-                  <div onClick={() => setdigToggleClicked(!digToggleClicked)} className="font-titles">DIGITAL</div>
-                  <div>Augmented Reality</div>
-                  <div>Banner Design</div>
-                  <div>Community Management</div>
-                  <div>Digital Development</div>
-                  <div>Dynamic Creation and Optimization</div>
-                  <div>Platform-Native Content Creation</div>
-                  <div>Tech & Prototyping</div>
-                  <div>Web 3.0</div>
-                  <div>Website Design</div>
-                  <div className="hidden">1</div>
+        <Container id="outer-container">
 
-                </span>              
-                </Col>
+          <Container id="office_bg">
+          </Container>
+          <Container id="grey-bg" className="abs-cont">
+            <Row>
+              <Col ref={greyRef1} id="grey-1" className='grey'>
+
+              </Col>
+              <Col ref={greyRef2} id="grey-2" className='grey' xs={4}>
+
+              </Col>
+              <Col ref={greyRef3} id="grey-3" className='grey'>
+
+              </Col>
             </Row>
+          </Container>
+          <Container id="text" className="abs-cont">
+          <Row>
+            <Col className='grey'>
+              <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
+                <div onClick={() => setprodToggleClicked(!prodToggleClicked)} className="font-titles">PRODUCTION</div>
+                <div>Cinematography</div>
+                <div>Creator Partnership</div>
+                <div>Directing</div>
+                <div>Experiential</div>
+                <div>Influencer Campaigns</div>
+                <div>Live Events</div>
+                <div>Photography</div>
+                <div>Producing</div>
+                <div>Virtual Reality</div>
+                <div>Voiceover Recording</div>
+              </span>
+            </Col>
+            <Col className='grey' xs={4}>
+              <span ref={postRef} className="team-title-center work-sans-font" onClick={() => handlePostToggleClicked()}>
+                <div onClick={() => setpostToggleClicked(!postToggleClicked)} className="font-titles">POST</div>
+                <div>Animation</div>
+                <div>Audio Mixing</div>
+                <div>Editorial</div>
+                <div>Sound Design</div>
+                <div>Visual Effects</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+              </span>
+            </Col>
+            <Col className='grey'>
+              <span ref={digRef} className="team-title-center work-sans-font" onClick={() => handleDigToggleClicked()}>
+                <div onClick={() => setdigToggleClicked(!digToggleClicked)} className="font-titles">DIGITAL</div>
+                <div>Augmented Reality</div>
+                <div>Banner Design</div>
+                <div>Community Management</div>
+                <div>Digital Development</div>
+                <div>Dynamic Creation and Optimization</div>
+                <div>Platform-Native Content Creation</div>
+                <div>Tech & Prototyping</div>
+                <div>Web 3.0</div>
+                <div>Website Design</div>
+                <div className="hidden">1</div>
+
+              </span>
+            </Col>
+          </Row>
+          </Container>
+
+          {/* <Container > */}
+          {/* <Row id="office_bg">
+            <Col useRef={greyRef} id="grey-1" className={prodToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
+              <span ref={prodRef} className="team-title-center work-sans-font" onClick={() => handleProdToggleClicked()}>
+                <div onClick={() => setprodToggleClicked(!prodToggleClicked)} className="font-titles">PRODUCTION</div>
+                <div>Cinematography</div>
+                <div>Creator Partnership</div>
+                <div>Directing</div>
+                <div>Experiential</div>
+                <div>Influencer Campaigns</div>
+                <div>Live Events</div>
+                <div>Photography</div>
+                <div>Producing</div>
+                <div>Virtual Reality</div>
+                <div>Voiceover Recording</div>
+              </span>
+            </Col>
+            <Col id="grey-2" className={postToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'} xs={4}>
+              <span ref={postRef} className="team-title-center work-sans-font" onClick={() => handlePostToggleClicked()}>
+                <div onClick={() => setpostToggleClicked(!postToggleClicked)} className="font-titles">POST</div>
+                <div>Animation</div>
+                <div>Audio Mixing</div>
+                <div>Editorial</div>
+                <div>Sound Design</div>
+                <div>Visual Effects</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+                <div className="hidden">1</div>
+              </span>
+            </Col>
+            <Col id="grey-3" className={digToggleClicked ? 'grey clear-bg animated' : 'grey clear-bg'}>
+              <span ref={digRef} className="team-title-center work-sans-font" onClick={() => handleDigToggleClicked()}>
+                <div onClick={() => setdigToggleClicked(!digToggleClicked)} className="font-titles">DIGITAL</div>
+                <div>Augmented Reality</div>
+                <div>Banner Design</div>
+                <div>Community Management</div>
+                <div>Digital Development</div>
+                <div>Dynamic Creation and Optimization</div>
+                <div>Platform-Native Content Creation</div>
+                <div>Tech & Prototyping</div>
+                <div>Web 3.0</div>
+                <div>Website Design</div>
+                <div className="hidden">1</div>
+
+              </span>
+            </Col>
+          </Row> */}
         </Container>
 
       </Container>
