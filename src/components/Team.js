@@ -56,11 +56,12 @@ function Team() {
 
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked)
-    
-    // console.log(prodToggleClicked)
+    // when prod is clicked, set other heights to 50
     if (!prodToggleClicked) {
       gsap.to(prodRef.current, .7,{height: "300px" });
-      gsap.to(greyRef.current, .7,{height: "0px" });
+      gsap.to(postRef.current, .7,{height: "50px" });
+      gsap.to(digRef.current, .7,{height: "50px" });
+      // gsap.to(greyRef.current, .7,{height: "0px" });
       
     }
     else gsap.to(prodRef.current, .7,{height: "50px" });
@@ -69,14 +70,22 @@ function Team() {
   function handlePostToggleClicked() {
     setpostToggleClicked(!postToggleClicked)
     // console.log(prodToggleClicked)
-    if (!postToggleClicked) gsap.to(postRef.current, .7,{height: "300px" });
+    if (!postToggleClicked) {
+      gsap.to(postRef.current, .7,{height: "300px" });
+      gsap.to(prodRef.current, .7,{height: "50px" });
+      gsap.to(digRef.current, .7,{height: "50px" });
+    }
     else gsap.to(postRef.current, .7,{height: "50px" });
   }
 
   function handleDigToggleClicked() {
     setdigToggleClicked(!digToggleClicked)
     // console.log(prodToggleClicked)
-    if (!digToggleClicked) gsap.to(digRef.current, .7,{height: "300px" });
+    if (!digToggleClicked) {
+      gsap.to(digRef.current, .7,{height: "300px" });
+      gsap.to(postRef.current, .7,{height: "50px" });
+      gsap.to(prodRef.current, .7,{height: "50px" });
+    }
     else gsap.to(digRef.current, .7,{height: "50px" });
   }
   // // store a reference to the box div
