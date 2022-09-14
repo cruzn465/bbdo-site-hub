@@ -8,12 +8,12 @@ function Collective() {
     return (
       <Container fluid className="bg">
       <div id='spacer'></div>
-      <Container id="test-container">
+      <Container id="all-content">
         <Image className="header" id="collective-header" src={Collective_super} alt="Who We Are" />
         <hr  />  
         <Image className="copy" src={Collective_copy} alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS" />
         <hr />  
-
+        <h2 className="germain" id="curr-mem">CURRENT MEMBERS</h2>
       </Container>
     </Container>
     );

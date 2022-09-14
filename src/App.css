@@ -352,6 +352,21 @@ hr {
   margin-top: 15px;
 }
 
+/* Collective page start */
+.germain {
+  font-family: 'Germania One', cursive;
+  font-size: 3em;
+  color: white;
+}
+
+#curr-mem {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+/* Collective page end */
+
+
 
 @media only screen and (max-width: 993px) {
 
@@ -378,6 +393,4 @@ hr {
   #team_prod {
     top: 8em;
   }
-
-
 }
