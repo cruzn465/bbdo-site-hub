@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Nichole Cruzalegui",
+        "pronouns": "she/her",
+        "title": "Developer",
+        "img": "assets/imgs/col_mem_1.png"
+    },
+    {
+        "id": 2,
+        "name": "Philip Savage",
+        "pronouns": "he/him",
+        "title": "Producer",
+        "img": "assets/imgs/col_mem_2.png"
+    },
+    {
+        "id": 3,
+        "name": "Jimmy McGee",
+        "pronouns": "everyone",
+        "title": "Manager",
+        "img": "assets/imgs/col_mem_3.png"
+    }
+    
+]
