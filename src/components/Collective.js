@@ -9,9 +9,7 @@ import memberArr from "../members.json";
 // import Member from "./Member";
 
 // modularize into Member components
-function CurrentMember(props) {
-  // console.log("props", props);
-  const { img, name, title, pronouns } = props;
+function CurrentMember({ img, name, title, pronouns }) {
   return (
     <div className="flex-mem">
       <div>
@@ -22,9 +20,14 @@ function CurrentMember(props) {
           alt="current member"
         />
       </div>
-      <div id="name-title-div" className="work-sans-font">
-        {name} <br />
-        {title} | {pronouns}
+      <div id="name-title-div">
+        <div className="work-sans-font" id="curr-mem-name">
+          {name}
+          <div id="curr-mem-details">
+            {title} | {pronouns}
+          </div>
+        </div>
+        <br />
       </div>
     </div>
   );

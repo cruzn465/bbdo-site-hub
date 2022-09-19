@@ -370,18 +370,29 @@ hr {
 }
 
 .member {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
   height: 8rem;
 }
 
 #name-title-div {
   display: flex;
   align-items: center;
+  text-transform: uppercase;
+  color: white;
 }
 
 #curr-mem-img {
   height: 12rem
+}
+
+#curr-mem-name {
+  font-size: 4rem;
+}
+
+#curr-mem-details {
+  font-size: 1.8rem;
+  font-weight: 100;
 }
 /* Collective page end */
 
