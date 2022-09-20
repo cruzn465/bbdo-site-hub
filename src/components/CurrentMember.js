@@ -7,7 +7,7 @@ function CurrentMember() {
   // { img, name, title, pronouns }
   const { id } = useParams();
   console.log("Name: ", memberArr[id]);
-  const { img, name, title, pronouns } = memberArr[id];
+  const { img, name, title, pronouns } = memberArr[id - 1];
   return (
     <>
       <Container className="font-titles">

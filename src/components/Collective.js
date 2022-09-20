@@ -50,15 +50,16 @@ function Collective() {
         CURRENT MEMBERS
       </h2>
       <div className="flex-mem">{members}</div>
-      <Container className="font-titles">
-        <hr />
-        {/* <CurrentMember
+      {/* <Container className="font-titles">
+        <hr /> */}
+      {/* <CurrentMember
             img={currMem.img}
             name={currMem.name}
             title={currMem.title}
             pronouns={currMem.pronouns}
           /> */}
-      </Container>
+      {/* </Container> */}
+      <Outlet></Outlet>
     </>
   );
 }

@@ -4,63 +4,63 @@
         "name": "Nichole Cruzalegui",
         "pronouns": "she/her",
         "title": "Developer",
-        "img": "assets/imgs/col_mem_1.png"
+        "img": "/assets/imgs/col_mem_1.png"
     },
     {
         "id": 2,
-        "name": "Philip Savage",
+        "name": "James Young",
         "pronouns": "he/him",
-        "title": "Producer",
-        "img": "assets/imgs/col_mem_2.png"
+        "title": "Head of Digital Production",
+        "img": "/assets/imgs/col_mem_2.png"
     },
     {
         "id": 3,
         "name": "Jimmy McGee",
         "pronouns": "everyone",
         "title": "QA Manager",
-        "img": "assets/imgs/col_mem_3.png"
+        "img": "/assets/imgs/col_mem_3.png"
     },
         {
         "id": 4,
         "name": "Kelly Matousek",
         "pronouns": "she/her",
         "title": "Studios Director",
-        "img": "assets/imgs/col_mem_4.png"
+        "img": "/assets/imgs/col_mem_4.png"
     },
     {
         "id": 5,
         "name": "Kevin Bostic",
         "pronouns": "he/him",
         "title": "Producer",
-        "img": "assets/imgs/col_mem_5.png"
+        "img": "/assets/imgs/col_mem_5.png"
     },
     {
         "id": 6,
         "name": "Ray McGale",
         "pronouns": "he/him",
         "title": "PA",
-        "img": "assets/imgs/col_mem_6.png"
+        "img": "/assets/imgs/col_mem_6.png"
     },
         {
         "id": 7,
         "name": "Eric Bintner",
         "pronouns": "he/him",
         "title": "Creative Tech Lead",
-        "img": "assets/imgs/col_mem_7.png"
+        "img": "/assets/imgs/col_mem_7.png"
     },
     {
         "id": 8,
         "name": "Harvey Lacsina",
         "pronouns": "he/him",
         "title": "Producer",
-        "img": "assets/imgs/col_mem_8.png"
+        "img": "/assets/imgs/col_mem_8.png"
     },
     {
         "id": 9,
         "name": "John Cardoso",
         "pronouns": "he/him",
         "title": "Senior Developer",
-        "img": "assets/imgs/col_mem_9.png"
+        "img": "/assets/imgs/col_mem_9.png"
     }
     
 ]
