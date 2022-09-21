@@ -13,7 +13,7 @@ function Routing() {
       <Route path="the-team" element={<Team />} />
       <Route path="the-collective" element={<Collective />}>
         {/* <Route path="/:memId" element={<CurrentMember />} /> */}
-        <Route path=":id" element={<CurrentMember />} />
+        <Route path=":slug" element={<CurrentMember />} />
       </Route>
       <Route path="/" element={<Home />} />
     </Routes>

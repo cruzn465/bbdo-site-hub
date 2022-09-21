@@ -1,18 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate, Link, Outlet } from "react-router-dom";
-import { Row, Col, Container } from "react-bootstrap";
+import { useNavigate, useParams } from "react-router-dom";
+// import {  Link, Outlet } from "react-router-dom";
+// import { Row, Col, Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Collective_super from "../img/collective_super.png";
 import Collective_copy from "../img/collective_copy.png";
 import memberArr from "../members.json";
-// import CurrentMember from "./CurrentMember";
+import CurrentMember from "./CurrentMember";
 
 // modularize into Member components
 
 function Collective() {
-  const [currMem, setCurrMem] = useState(memberArr[0]);
+  const [currMem, setCurrMem] = useState(null);
   const navigate = useNavigate();
+  const { slug } = useParams();
   const members = memberArr.map((member) => (
     <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
       <img
@@ -20,7 +22,7 @@ function Collective() {
         className="member"
         alt="individual member"
         onClick={() => {
-          navigate(`/the-collective/${member.id}`);
+          navigate(`/the-collective/${member.slug}`);
         }}
       />
     </div>
@@ -50,16 +52,8 @@ function Collective() {
         CURRENT MEMBERS
       </h2>
       <div className="flex-mem">{members}</div>
-      {/* <Container className="font-titles">
-        <hr /> */}
-      {/* <CurrentMember
-            img={currMem.img}
-            name={currMem.name}
-            title={currMem.title}
-            pronouns={currMem.pronouns}
-          /> */}
-      {/* </Container> */}
-      <Outlet></Outlet>
+      <div>{slug ? <CurrentMember /> : ""}</div>
+      {/* <Outlet /> */}
     </>
   );
 }

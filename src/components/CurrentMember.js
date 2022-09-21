@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import memberArr from "../members.json";
+import testArr from "../test.json";
 import { Container } from "react-bootstrap";
 
 function CurrentMember() {
-  // { img, name, title, pronouns }
-  const { id } = useParams();
-  console.log("Name: ", memberArr[id]);
-  const { img, name, title, pronouns } = memberArr[id - 1];
+  const { slug } = useParams();
+  const currMem = testArr[slug];
+  const { img, name, title, pronouns } = currMem;
+
   return (
     <>
       <Container className="font-titles">

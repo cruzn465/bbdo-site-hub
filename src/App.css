@@ -267,6 +267,10 @@ hr {
   opacity: 0;
 }
 
+.hidden2 {
+  display: none !important;
+}
+
 #test-image-grey {
   /* height: 88%; */
   width: 35%;
