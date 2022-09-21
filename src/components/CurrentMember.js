@@ -1,11 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import testArr from "../test.json";
+import slugArr from "../slugs.json";
 import { Container } from "react-bootstrap";
 
 function CurrentMember() {
   const { slug } = useParams();
-  const currMem = testArr[slug];
+  const currMem = slugArr[slug];
   const { img, name, title, pronouns } = currMem;
 
   return (

@@ -1,5 +1,5 @@
-[
-    {
+{
+    "nichole-cruzalegui": {
         "id": 1,
         "name": "Nichole Cruzalegui",
         "firstName": "Nichole",
@@ -9,7 +9,7 @@
         "title": "Developer",
         "img": "/assets/imgs/col_mem_1.png"
     },
-    {
+    "james-young": {
         "id": 2,
         "name": "James Young",
         "firstName": "James",
@@ -19,7 +19,7 @@
         "title": "Head of Digital Production",
         "img": "/assets/imgs/col_mem_2.png"
     },
-    {
+    "jimmy-mcgee": {
         "id": 3,
         "name": "Jimmy McGee",
         "firstName": "Jimmy",
@@ -29,7 +29,7 @@
         "title": "QA Manager",
         "img": "/assets/imgs/col_mem_3.png"
     },
-        {
+    "kelly-matousek": {
         "id": 4,
         "name": "Kelly Matousek",
         "pronouns": "she/her",
@@ -37,7 +37,7 @@
         "title": "Studios Director",
         "img": "/assets/imgs/col_mem_4.png"
     },
-    {
+    "kevin-bostic": {
         "id": 5,
         "name": "Kevin Bostic",
         "pronouns": "he/him",
@@ -45,15 +45,15 @@
         "title": "Producer",
         "img": "/assets/imgs/col_mem_5.png"
     },
-    {
+    "ray-mcgale": {
         "id": 6,
         "name": "Ray McGale",
         "pronouns": "he/him",
-        "slug": "ray-mcGale",
+        "slug": "ray-mcgale",
         "title": "PA",
         "img": "/assets/imgs/col_mem_6.png"
     },
-        {
+    "eric-bintner": {
         "id": 7,
         "name": "Eric Bintner",
         "pronouns": "he/him",
@@ -61,7 +61,7 @@
         "title": "Creative Tech Lead",
         "img": "/assets/imgs/col_mem_7.png"
     },
-    {
+    "harvey-lacsina": {
         "id": 8,
         "name": "Harvey Lacsina",
         "pronouns": "he/him",
@@ -69,7 +69,7 @@
         "title": "Producer",
         "img": "/assets/imgs/col_mem_8.png"
     },
-    {
+    "john-cardoso": {
         "id": 9,
         "name": "John Cardoso",
         "pronouns": "he/him",
@@ -77,4 +77,4 @@
         "title": "Senior Developer",
         "img": "/assets/imgs/col_mem_9.png"
     }
-]
+}
