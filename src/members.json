@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Nichole Cruzalegui",
+        "firstName": "Nichole",
+        "lastName": "Cruzalegui",
+        "slug": "nichole-cruzalegui",
+        "pronouns": "she/her",
+        "title": "Developer",
+        "img": "/assets/imgs/col_mem_1.png"
+    },
+    {
+        "id": 2,
+        "name": "James Young",
+        "firstName": "James",
+        "lastName": "Young",
+        "slug": "james-young",
+        "pronouns": "he/him",
+        "title": "Head of Digital Production",
+        "img": "/assets/imgs/col_mem_2.png"
+    },
+    {
+        "id": 3,
+        "name": "Jimmy McGee",
+        "firstName": "Jimmy",
+        "lastName": "McGee",
+        "slug": "jimmy-mcgee",
+        "pronouns": "everyone",
+        "title": "QA Manager",
+        "img": "/assets/imgs/col_mem_3.png"
+    }
+]

@@ -162,7 +162,7 @@ hr {
 .all-content {
   /* margin-left: 0px;
   margin-right: 0px; */
-
+  margin-bottom: 30px !important;
 }
 
 .grey {
@@ -248,6 +248,7 @@ hr {
   color: aliceblue;
   height: 3em; 
   overflow-y: hidden;
+  cursor: pointer;
 }
 
 .team_titles {
@@ -264,6 +265,10 @@ hr {
 
 .hidden {
   opacity: 0;
+}
+
+.hidden2 {
+  display: none !important;
 }
 
 #test-image-grey {
@@ -351,6 +356,51 @@ hr {
   margin-top: 15px;
 }
 
+/* Collective page start */
+.germain {
+  font-family: 'Germania One', cursive;
+  font-size: 3em;
+  color: white;
+}
+
+#curr-mem-title {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.flex-mem {
+  display: flex;
+  justify-content: center;
+}
+
+.member {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  height: 8rem;
+}
+
+#name-title-div {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+#curr-mem-img {
+  height: 12rem
+}
+
+#curr-mem-name {
+  font-size: 4rem;
+}
+
+#curr-mem-details {
+  font-size: 1.8rem;
+  font-weight: 100;
+}
+/* Collective page end */
+
+
 
 @media only screen and (max-width: 993px) {
 
@@ -377,6 +427,4 @@ hr {
   #team_prod {
     top: 8em;
   }
-
-
 }

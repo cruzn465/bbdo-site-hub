@@ -198,3 +198,75 @@ body { margin:0px 0px; padding:0px; }
 	height:790px;
 	background-image:url(../img/background_grey_3.png);
 }
+
+#col_mem_1 {
+	left:234px;
+	top:208px;
+	width:150px;
+	height:149px;
+	background-image:url(../img/col_mem_1.png);
+}
+
+#col_mem_2 {
+	left:399px;
+	top:208px;
+	width:150px;
+	height:149px;
+	background-image:url(../img/col_mem_2.png);
+}
+
+#col_mem_3 {
+	left:564px;
+	top:208px;
+	width:149px;
+	height:149px;
+	background-image:url(../img/col_mem_3.png);
+}
+
+#col_mem_4 {
+	left:728px;
+	top:208px;
+	width:151px;
+	height:149px;
+	background-image:url(../img/col_mem_4.png);
+}
+
+#col_mem_5 {
+	left:863px;
+	top:208px;
+	width:184px;
+	height:149px;
+	background-image:url(../img/col_mem_5.png);
+}
+
+#col_mem_6 {
+	left:1061px;
+	top:208px;
+	width:150px;
+	height:149px;
+	background-image:url(../img/col_mem_6.png);
+}
+
+#col_mem_7 {
+	left:1230px;
+	top:208px;
+	width:149px;
+	height:150px;
+	background-image:url(../img/col_mem_7.png);
+}
+
+#col_mem_8 {
+	left:1400px;
+	top:208px;
+	width:149px;
+	height:150px;
+	background-image:url(../img/col_mem_8.png);
+}
+
+#col_mem_9 {
+	left:1567px;
+	top:208px;
+	width:149px;
+	height:150px;
+	background-image:url(../img/col_mem_9.png);
+}
