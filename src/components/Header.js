@@ -1,11 +1,11 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Logo from "../img/logo.png";
+import Logo from "../img/BBDOStudios_logo_gif.gif";
 import TheWorkLink from "../img/header_the_work.png";
 import TheWorkLinkClicked from "../img/header_the_work_clicked.png";
 
@@ -17,6 +17,9 @@ import TheCollectiveLinkClicked from "../img/header_the_collective_clicked.png";
 
 import TalkButton from "../img/header_talk_btn.png";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+
+// gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
   const path = useLocation().pathname;
@@ -25,6 +28,9 @@ function Header() {
   let workLink = TheWorkLink;
   let teamLink = TheTeamLink;
   let collectiveLink = TheCollectiveLink;
+  let bgToggle = false;
+  const headerBg = useRef();
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   if (location === "the-work") {
     workLink = TheWorkLinkClicked;
@@ -34,26 +40,34 @@ function Header() {
     collectiveLink = TheCollectiveLinkClicked;
   }
 
-  // const [y, setY] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+    if (position > 50) {
+      // do the gsap animation?
+      console.log("position is less than 50");
+      gsap.to(headerBg.current, 1, {
+        backgroundColor: "rgba(0, 0, 0, .8)",
+      });
+    } else {
+      // do the gsap reversed animation
+      console.log("FALSE");
+      gsap.to(headerBg.current, 1, {
+        backgroundColor: "rgba(0, 0, 0, 0)",
+      });
+    }
+  };
 
-  // const handleNavigation = (e) => {
-  //   const window = e.currentTarget;
-  //   if (y > window.scrollY) {
-  //     console.log("scrolling up");
-  //   } else if (y < window.scrollY) {
-  //     console.log("scrolling down");
-  //   }
-  //   setY(window.scrollY);
-  // };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-  // useEffect(() => {
-  //   setY(window.scrollY);
-
-  //   window.addEventListener("scroll", (e) => handleNavigation(e));
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <Navbar expand="lg" variant="dark" fixed="top">
+    <Navbar ref={headerBg} expand="lg" variant="dark" fixed="top">
       <Container id="nav-container">
         <Navbar.Brand as={Link} to={"/"}>
           <img id="logo" src={Logo} alt="BBDO logo" />

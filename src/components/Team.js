@@ -27,27 +27,6 @@ function Team() {
   const greyRef2 = useRef();
   const greyRef3 = useRef();
 
-  // const tl = useRef();
-
-  // useEffect(() => {
-  //   // add a box and circle animation to our timeline and play on first render
-  //   console.log("creating timeline");
-  //   tl.current && tl.current.progress(0).kill();
-  //   tl.current = gsap.timeline()
-  //     .to(q(".box"), {
-  //       rotation: 360
-  //     })
-  //     .to(q(".circle"), {
-  //       x: 100
-  //     });
-
-  // }, []);
-
-  // think of how to make it so that when a user clicks anywhere, this will evaluate what is being clicked and expand the correct list.
-  // function evaluateClick() {
-
-  // }
-
   function handleProdToggleClicked() {
     setprodToggleClicked(!prodToggleClicked);
     setpostToggleClicked(false);
