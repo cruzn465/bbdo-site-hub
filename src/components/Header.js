@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -17,7 +18,10 @@ import TheCollectiveLinkClicked from "../img/header_the_collective_clicked.png";
 import TalkButton from "../img/header_talk_btn.png";
 import { Link } from "react-router-dom";
 
-function Header({ location }) {
+function Header() {
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+
   let workLink = TheWorkLink;
   let teamLink = TheTeamLink;
   let collectiveLink = TheCollectiveLink;
