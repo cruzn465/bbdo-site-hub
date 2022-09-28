@@ -4,12 +4,30 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "../img/logo.png";
 import TheWorkLink from "../img/header_the_work.png";
+import TheWorkLinkClicked from "../img/header_the_work_clicked.png";
+
 import TheTeamLink from "../img/header_the_team.png";
+import TheTeamLinkClicked from "../img/header_the_team_clicked.png";
+
 import TheCollectiveLink from "../img/header_the_collective.png";
+import TheCollectiveLinkClicked from "../img/header_the_collective_clicked.png";
+
 import TalkButton from "../img/header_talk_btn.png";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({ location }) {
+  let workLink = TheWorkLink;
+  let teamLink = TheTeamLink;
+  let collectiveLink = TheCollectiveLink;
+
+  if (location === "the-work") {
+    workLink = TheWorkLinkClicked;
+  } else if (location === "the-team") {
+    teamLink = TheTeamLinkClicked;
+  } else if (location === "the-collective") {
+    collectiveLink = TheCollectiveLinkClicked;
+  }
+
   return (
     <Navbar expand="lg" variant="dark" fixed="top">
       <Container id="nav-container">
@@ -23,7 +41,7 @@ function Header() {
               <img
                 className="header-links"
                 id="the-work-link"
-                src={TheWorkLink}
+                src={workLink}
                 alt="The Work link"
               />
             </Nav.Link>
@@ -31,7 +49,7 @@ function Header() {
               <img
                 className="header-links"
                 id="the-team-link"
-                src={TheTeamLink}
+                src={teamLink}
                 alt="The Team link"
               />
             </Nav.Link>
@@ -39,7 +57,7 @@ function Header() {
               <img
                 className="header-links"
                 id="the-collective-link"
-                src={TheCollectiveLink}
+                src={collectiveLink}
                 alt="The Collective link"
               />
             </Nav.Link>

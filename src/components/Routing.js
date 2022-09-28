@@ -5,8 +5,14 @@ import Work from "./Work";
 import Team from "./Team";
 import Collective from "./Collective";
 import CurrentMember from "./CurrentMember";
+import { useLocation } from "react-router-dom";
 
-function Routing() {
+function Routing({ setLocation }) {
+  const path = useLocation().pathname;
+  const location = path.split("/")[1];
+  // console.log(location);
+  setLocation(location);
+
   return (
     <Routes>
       <Route path="the-work" element={<Work />} />
