@@ -1,41 +1,25 @@
 
 
-#header_talk_btn {
-	left:1555px;
-	top:51px;
-	width:225px;
-	height:93px;
-	background-image:url(../img/header_talk_btn.png);
-}
-
-#header_the_collective {
-	left:1257px;
+#header_the_collective_clicked {
+	left:1254px;
 	top:79px;
-	width:287px;
+	width:293px;
 	height:44px;
-	background-image:url(../img/header_the_collective.png);
+	background-image:url(../img/header_the_collective_clicked.png);
 }
 
-#header_the_team {
-	left:1063px;
+#header_the_team_clicked {
+	left:1059px;
 	top:79px;
-	width:179px;
+	width:186px;
 	height:44px;
-	background-image:url(../img/header_the_team.png);
+	background-image:url(../img/header_the_team_clicked.png);
 }
 
-#header_the_work {
-	left:860px;
+#header_the_work_clicked {
+	left:857px;
 	top:79px;
-	width:187px;
+	width:192px;
 	height:44px;
-	background-image:url(../img/header_the_work.png);
-}
-
-#logo {
-	left:120px;
-	top:67px;
-	width:346px;
-	height:63px;
-	background-image:url(../img/logo.png);
+	background-image:url(../img/header_the_work_clicked.png);
 }
