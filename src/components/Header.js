@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect, useState } from "react";
+
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -27,6 +29,24 @@ function Header({ location }) {
   } else if (location === "the-collective") {
     collectiveLink = TheCollectiveLinkClicked;
   }
+
+  // const [y, setY] = useState(0);
+
+  // const handleNavigation = (e) => {
+  //   const window = e.currentTarget;
+  //   if (y > window.scrollY) {
+  //     console.log("scrolling up");
+  //   } else if (y < window.scrollY) {
+  //     console.log("scrolling down");
+  //   }
+  //   setY(window.scrollY);
+  // };
+
+  // useEffect(() => {
+  //   setY(window.scrollY);
+
+  //   window.addEventListener("scroll", (e) => handleNavigation(e));
+  // }, []);
 
   return (
     <Navbar expand="lg" variant="dark" fixed="top">
