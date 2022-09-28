@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Container fluid className="bg">
-        <div id="spacer"></div>
+        <div className="spacer"></div>
         <Container className="all-content">
           <Router>
             <Header />

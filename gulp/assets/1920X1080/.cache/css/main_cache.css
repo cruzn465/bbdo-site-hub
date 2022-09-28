@@ -1,49 +1,41 @@
 
 
-#col_mem_4 {
-	left:728px;
-	top:208px;
-	width:151px;
-	height:149px;
-	background-image:url(../img/col_mem_4.png);
+#header_talk_btn {
+	left:1555px;
+	top:51px;
+	width:225px;
+	height:93px;
+	background-image:url(../img/header_talk_btn.png);
 }
 
-#col_mem_5 {
-	left:863px;
-	top:208px;
-	width:184px;
-	height:149px;
-	background-image:url(../img/col_mem_5.png);
+#header_the_collective {
+	left:1257px;
+	top:79px;
+	width:287px;
+	height:44px;
+	background-image:url(../img/header_the_collective.png);
 }
 
-#col_mem_6 {
-	left:1061px;
-	top:208px;
-	width:150px;
-	height:149px;
-	background-image:url(../img/col_mem_6.png);
+#header_the_team {
+	left:1063px;
+	top:79px;
+	width:179px;
+	height:44px;
+	background-image:url(../img/header_the_team.png);
 }
 
-#col_mem_7 {
-	left:1230px;
-	top:208px;
-	width:149px;
-	height:150px;
-	background-image:url(../img/col_mem_7.png);
+#header_the_work {
+	left:860px;
+	top:79px;
+	width:187px;
+	height:44px;
+	background-image:url(../img/header_the_work.png);
 }
 
-#col_mem_8 {
-	left:1400px;
-	top:208px;
-	width:149px;
-	height:150px;
-	background-image:url(../img/col_mem_8.png);
-}
-
-#col_mem_9 {
-	left:1567px;
-	top:208px;
-	width:149px;
-	height:150px;
-	background-image:url(../img/col_mem_9.png);
+#logo {
+	left:120px;
+	top:67px;
+	width:346px;
+	height:63px;
+	background-image:url(../img/logo.png);
 }
