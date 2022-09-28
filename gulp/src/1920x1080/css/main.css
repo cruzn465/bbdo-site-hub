@@ -68,16 +68,16 @@ body { margin:0px 0px; padding:0px; }
 }
 
 #team_super {
-	left:467px;
-	top:199px;
-	width:988px;
-	height:158px;
+	left:296px;
+	top:286px;
+	width:1333px;
+	height:210px;
 	background-image:url(../img/team_super.png);
 }
 
 #team_copy {
 	left:145px;
-	top:491px;
+	top:593px;
 	width:1634px;
 	height:199px;
 	background-image:url(../img/team_copy.png);
@@ -130,7 +130,7 @@ body { margin:0px 0px; padding:0px; }
 	left:106px;
 	top:337px;
 	width:1710px;
-	height:125px;
+	height:131px;
 	background-image:url(../img/collective_super.png);
 }
 
