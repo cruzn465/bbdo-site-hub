@@ -414,8 +414,32 @@ hr {
 }
 /* Collective page end */
 
+/*  WORK PAGE START */
+#works {
+  /* background-color: aquamarine; */
+}
+
+.work-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+} 
+
+.work-row > * {
+  flex-basis: 33.33%;
+  height: 200px;
+  background-image: url("http://placekitten.com/400/300");
+
+}
+
+.empty {
+  height: 0;
+}
 
 
+/*  WORK PAGE END */
+
+/* MEDIA QUERIES */
 @media only screen and (max-width: 993px) {
 
   #who_we_are {
