@@ -45,13 +45,13 @@ function Header() {
     setScrollPosition(position);
     if (position > 50) {
       // do the gsap animation?
-      console.log("position is less than 50");
+      // console.log("position is less than 50");
       gsap.to(headerBg.current, 1, {
         backgroundColor: "rgba(0, 0, 0, .8)",
       });
     } else {
       // do the gsap reversed animation
-      console.log("FALSE");
+      // console.log("FALSE");
       gsap.to(headerBg.current, 1, {
         backgroundColor: "rgba(0, 0, 0, 0)",
       });
@@ -76,35 +76,16 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end me-auto">
             <Nav.Link as={Link} to={"/the-work"}>
-              <img
-                className="header-links"
-                id="the-work-link"
-                src={workLink}
-                alt="The Work link"
-              />
+              <img className="header-links" id="the-work-link" src={workLink} alt="The Work link" />
             </Nav.Link>
             <Nav.Link as={Link} to={"/the-team"}>
-              <img
-                className="header-links"
-                id="the-team-link"
-                src={teamLink}
-                alt="The Team link"
-              />
+              <img className="header-links" id="the-team-link" src={teamLink} alt="The Team link" />
             </Nav.Link>
             <Nav.Link as={Link} to={"/the-collective"}>
-              <img
-                className="header-links"
-                id="the-collective-link"
-                src={collectiveLink}
-                alt="The Collective link"
-              />
+              <img className="header-links" id="the-collective-link" src={collectiveLink} alt="The Collective link" />
             </Nav.Link>
             <Nav.Link as={Link} to={"/talk-to-us"}>
-              <img
-                id="talk-to-us-button"
-                src={TalkButton}
-                alt="The Talk button"
-              />
+              <img id="talk-to-us-button" src={TalkButton} alt="The Talk button" />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
