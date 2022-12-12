@@ -1,6 +1,7 @@
 import React from "react";
 // import { useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
+import WorkRow from "./WorkRow";
 
 function Work() {
   const testJson = [
@@ -62,41 +63,6 @@ function Work() {
     arr.forEach((subArr) => {
       return <div>hi</div>;
     });
-
-    // returns the subArray divs
-    function createDivs(subArr) {
-      let emptyDiv = <div className="work-col empty"></div>;
-      if (subArr.length === 3) {
-        return subArr.map((post) => (
-          <div className="work-col" key={post.id}>
-            {post.title.rendered}
-          </div>
-        ));
-      } else if (subArr.length === 2) {
-        return (
-          <>
-            <div className="work-col" key={subArr[0].id}>
-              {subArr[0].title.rendered}
-            </div>
-            <div className="work-col" key={subArr[1].id}>
-              {subArr[1].title.rendered}
-            </div>
-            {emptyDiv}
-          </>
-        );
-      } else {
-        return (
-          <>
-            <div className="work-col" key={subArr[0].id}>
-              {subArr[0].title.rendered}
-            </div>
-            {emptyDiv}
-            {emptyDiv}
-          </>
-        );
-      }
-      //  for (let i = 0; i < subArr.length; i++) {}
-    }
   }
 
   // console.log("groupedPosts", groupedPosts);
@@ -109,15 +75,13 @@ function Work() {
       <Container>
         <Container>
           <Container id="works">
-            {/* {posts.map((post) => (
-          <div className="work" key={post.id}>
-            {post.title.rendered}
-          </div>
-        ))} */}
             {/* HERE I'LL MAKE A DYNAMIC VERSION OF MAPPING IT INTO ROWS AND COLS */}
+            {groupedPosts.map((post, i) => (
+              <WorkRow key={i} posts={post} />
+            ))}
 
             {/* HERE I'LL MAKE A STATIC VERSION WITH COLS AND ROWS */}
-            <div className="work-row">
+            {/* <div className="work-row">
               <div className="work-col"></div>
               <div className="work-col"></div>
               <div className="work-col"></div>
@@ -126,7 +90,7 @@ function Work() {
               <div className="work-col"></div>
               <div className="work-col empty"></div>
               <div className="work-col empty"></div>
-            </div>
+            </div> */}
           </Container>
         </Container>
       </Container>
