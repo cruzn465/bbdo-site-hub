@@ -6,13 +6,40 @@ import WorkRow from "./WorkRow";
 
 function Work() {
   const [posts, setPosts] = useState([]);
+  const [media, setMedia] = useState([]);
+
   useEffect(() => {
     Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts")
-      .then((res) => setPosts(res.data))
+      .then((res) => {
+        setPosts(res.data);
+        console.log("****setting posts****", res.data);
+      })
       .catch((err) => console.log(err));
   }, []);
 
-  // loop through the testJSON array, push in arrays of 3 or less
+  useEffect(() => {
+    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media")
+      .then((res) => {
+        setMedia(res.data);
+        console.log("****setting media****", res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  // loop through posts and add the media link
+  function addToPosts() {
+    let resArr = [...posts];
+    for (let i = 0; i < posts.length; i++) {
+      resArr[i].source_url = media[i].source_url;
+    }
+    console.log("adding media link");
+    setPosts(resArr);
+    return;
+  }
+
+  // addToPosts();
+
+  // loop through array, push in arrays of 3 or less
   function groupPosts(arr) {
     let tempArr = [],
       res = [];
@@ -28,17 +55,20 @@ function Work() {
   }
 
   const groupedPosts = groupPosts(posts);
+  const groupedMedia = groupPosts(media);
+
+  console.log("POSTS AND MEDIA", groupedPosts, groupedMedia);
+
+  // console.log(posts, "posts in work component");
 
   return (
     <>
-      <h1>The Work</h1>
+      {/* <h1>The Work</h1> */}
       <Container>
         <Container>
           <Container id="works">
             {/* HERE I'LL MAKE A DYNAMIC VERSION OF MAPPING IT INTO ROWS AND COLS */}
-            {groupedPosts.map((post, i) => (
-              <WorkRow key={i} posts={post} />
-            ))}
+            {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} />)}
 
             {/* HERE I'LL MAKE A STATIC VERSION WITH COLS AND ROWS */}
             {/* <div className="work-row">
