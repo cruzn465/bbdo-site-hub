@@ -14,8 +14,8 @@ function WorkRow(props) {
     if (subArr.length === 3) {
       return subArr.map((post, i) => (
         <div className="work-col" key={post.id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + media[i].source_url})` }}>
-          {post.title.rendered}
-          {post.id}
+          {/* {post.title.rendered} */}
+          {/* {post.id} */}
         </div>
       ));
     } else if (subArr.length === 2) {
