@@ -430,10 +430,15 @@ hr {
   height: 200px;
   background-image: url("http://placekitten.com/400/300");
   background-size: cover;
+  
 }
 
 .empty {
   height: 0;
+}
+
+.work-col:hover {
+  /* opacity: 0.5; */
 }
 
 
