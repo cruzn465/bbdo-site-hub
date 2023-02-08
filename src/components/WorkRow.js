@@ -14,31 +14,55 @@ function WorkRow(props) {
     let emptyDiv = <div className="work-col empty"></div>;
     if (postSubArray.length === 3) {
       return postSubArray.map((post, i) => (
-        <div className="work-col" key={post.id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}>
-          {/* {post.title.rendered} */}
-          {/* {post.id} */}
-        </div>
+        <>
+          <div className="outer-container">
+            <div className="work-col" key={post.id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}>
+              {/* {post.title.rendered} */}
+              {/* {post.id} */}
+            </div>
+            <div className="red abs-cont"></div>
+          </div>
+        </>
       ));
     } else if (postSubArray.length === 2) {
       return (
         <>
-          <div className="work-col" key={postSubArray[0].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
-            {/* {postSubArray[0].title.rendered} */}
+          <div className="outer-container">
+            <div className="work-col" key={postSubArray[0].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
+              {/* {postSubArray[0].title.rendered} */}
+            </div>
+            <div className="red abs-cont"></div>
           </div>
-          <div className="work-col" key={postSubArray[1].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
-            {/* {postSubArray[1].title.rendered} */}
+          <div className="outer-container">
+            <div className="work-col" key={postSubArray[1].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
+              {/* {postSubArray[1].title.rendered} */}
+            </div>
+            <div className="red abs-cont"></div>
           </div>
-          {emptyDiv}
+          <div className="outer-container no-display">
+            {emptyDiv}
+            <div className="red abs-cont"></div>
+          </div>
         </>
       );
     } else {
       return (
         <>
-          <div className="work-col" key={postSubArray[0].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
-            {/* {postSubArray[0].title.rendered} */}
+          <div className="outer-container">
+            <div className="work-col" key={postSubArray[0].id} style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
+              {/* {postSubArray[0].title.rendered} */}
+            </div>
+            <div className="red abs-cont"></div>
           </div>
-          {emptyDiv}
-          {emptyDiv}
+
+          <div className="outer-container no-display">
+            {emptyDiv}
+            <div className="red abs-cont"></div>
+          </div>
+          <div className="outer-container no-display">
+            {emptyDiv}
+            <div className="red abs-cont"></div>
+          </div>
         </>
       );
     }
