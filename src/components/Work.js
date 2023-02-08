@@ -12,7 +12,7 @@ function Work() {
     Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts")
       .then((res) => {
         setPosts(res.data);
-        console.log("****setting posts****", res.data);
+        // console.log("****setting posts****", res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -21,7 +21,7 @@ function Work() {
     Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media")
       .then((res) => {
         setMedia(res.data);
-        console.log("****setting media****", res.data);
+        // console.log("****setting media****", res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -32,7 +32,7 @@ function Work() {
     for (let i = 0; i < posts.length; i++) {
       resArr[i].source_url = media[i].source_url;
     }
-    console.log("adding media link");
+    // console.log("adding media link");
     setPosts(resArr);
     return;
   }
@@ -57,7 +57,7 @@ function Work() {
   const groupedPosts = groupPosts(posts);
   const groupedMedia = groupPosts(media);
 
-  console.log("POSTS AND MEDIA", groupedPosts, groupedMedia);
+  // console.log("POSTS AND MEDIA", groupedPosts, groupedMedia);
 
   // console.log(posts, "posts in work component");
 
