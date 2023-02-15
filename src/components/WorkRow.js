@@ -1,8 +1,18 @@
 import { hover } from "@testing-library/user-event/dist/hover";
-import React from "react";
+import React, { useState } from "react";
 
 function WorkRow(props) {
-  const { posts, media } = props;
+  const { posts, media, setModalShow, setPost, setSelectedMedia } = props;
+  // const [lgShow, setLgShow] = useState(false);
+
+  function handleClick(e, post, media) {
+    // e.preventDefault();
+    setModalShow(true);
+    setPost(post);
+    setSelectedMedia(media);
+    console.log("media*******", media);
+  }
+
   // const { media } = props;
   // console.log(media, "MEDIA");
   // console.log(posts, "posts in workrow component");
@@ -13,12 +23,13 @@ function WorkRow(props) {
   function createDivs(postSubArray, mediaSubArray) {
     let emptyDiv = <div className="work-col empty"></div>;
     if (postSubArray.length === 3) {
+      // console.log("mediaSubArray", mediaSubArray);
       return postSubArray.map((post, i) => (
         <React.Fragment key={post.id}>
-          <div className="outer-container" key={post.id}>
+          {/* {console.log("hi", post.id)} */}
+          <div className="outer-container pointer" onClick={(e) => handleClick(e, post, mediaSubArray[i])}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}>
               {/* {post.title.rendered} */}
-              {/* {post.id} */}
             </div>
             <div className="red abs-cont"></div>
           </div>
@@ -27,15 +38,15 @@ function WorkRow(props) {
     } else if (postSubArray.length === 2) {
       return (
         <React.Fragment key={postSubArray[0].id}>
-          <div className="outer-container" key={postSubArray[0].id}>
+          <div className="outer-container pointer" key={postSubArray[0].id} onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0])}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
             <div className="red abs-cont"></div>
           </div>
-          <div className="outer-container" key={postSubArray[1].id}>
+          <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1])}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
-              {/* {postSubArray[1].title.rendered} */}
+              {postSubArray[1].title.rendered}
             </div>
             <div className="red abs-cont"></div>
           </div>
@@ -48,7 +59,13 @@ function WorkRow(props) {
     } else {
       return (
         <React.Fragment key={postSubArray[0].id}>
-          <div className="outer-container">
+          {/* <Modal size="lg" show={lgShow} onHide={() => setLgShow(false)} aria-labelledby="example-modal-sizes-title-lg">
+            <Modal.Header closeButton>
+              <Modal.Title id="example-modal-sizes-title-lg">Large Modal</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{postSubArray[0].title.rendered}</Modal.Body>
+          </Modal> */}
+          <div className="outer-container pointer" onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0])}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
@@ -67,7 +84,11 @@ function WorkRow(props) {
       );
     }
   }
-  return <div className="work-row">{createDivs(posts, media)}</div>;
+  return (
+    <>
+      <div className="work-row">{createDivs(posts, media)}</div>
+    </>
+  );
 }
 
 export default WorkRow;

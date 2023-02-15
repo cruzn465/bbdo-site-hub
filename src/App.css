@@ -258,6 +258,7 @@ hr {
   /* opacity: .1; */
 }
 
+/* FONTS START */
 .work-sans-font {
   font-family: 'Work Sans', sans-serif;
 }
@@ -266,6 +267,8 @@ hr {
   font-weight: 700;
   font-size: 2.5em;
 }
+
+/* FONTS END */
 
 .team-title-center {
   width: 100%;
@@ -462,8 +465,47 @@ hr {
   height: 200px;
 }
 
+.pointer {
+  cursor: pointer !important;
+}
+/* MODAL STYLES START */
 
+.modal-content {
+  border-radius: unset;
+  background-color: #171413f7;
+  color: #fefefe;
+  font-family: 'Work Sans' sans-serif;
+  font-weight: bolder;
+  padding: 5px 5px 0px 5px;
+}
 
+.cap {
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: 800;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+.modal-body {
+  padding: 0px 50px 50px 50px;
+}
+#modal-img {
+  height: 350px;
+  /* max-width: 50vw; */
+  background-position: center;
+}
+
+#modal-button {
+  width: 45px;
+}
+/* MODAL STYLES END */
+
+.h-center {
+  text-align: center;
+}
 /*  WORK PAGE END */
 
 /* MEDIA QUERIES */
