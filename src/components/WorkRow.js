@@ -50,13 +50,17 @@ function WorkRow(props) {
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
-            <div className="red abs-cont"></div>
+            <div className="red abs-cont">
+              <h2 className="post-titles cap">{decode(postSubArray[0].title.rendered)}</h2>
+            </div>
           </div>
           <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1])}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
               {postSubArray[1].title.rendered}
             </div>
-            <div className="red abs-cont"></div>
+            <div className="red abs-cont">
+              <h2 className="post-titles cap">{decode(postSubArray[1].title.rendered)}</h2>
+            </div>
           </div>
           <div className="outer-container no-display">
             {emptyDiv}
@@ -71,7 +75,9 @@ function WorkRow(props) {
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
-            <div className="red abs-cont"></div>
+            <div className="red abs-cont">
+              <h2 className="post-titles cap">{decode(postSubArray[0].title.rendered)}</h2>
+            </div>
           </div>
 
           <div className="outer-container no-display" key="4356">
