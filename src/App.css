@@ -459,14 +459,53 @@ hr {
   /* opacity: 0; */
 }
 
-.red:hover {
-  background-color: #ea482f;
-  opacity: 0.87;
+
+
+.text:hover {
+  /* background-color: #ea482f; */
+  opacity: 1;
   height: 200px;
 }
 
+#hover:hover {
+  opacity: 1;
+}
+
+#hover {
+  opacity: 0;
+  height: 200px;
+  
+}
+
+.text {
+  opacity: 0;
+  /* pointer-events: none; */
+  height: 200px;
+}
+.red {
+  background-color: #ea482fe6;
+  opacity: 0;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+.red:hover {
+  background-color: #ea482fe6;
+  opacity: 1;
+  height: 200px;
+}
 .pointer {
   cursor: pointer !important;
+}
+
+.post-titles {
+  color: #fefefe;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 30px;
+  opacity: 1;
 }
 /* MODAL STYLES START */
 
