@@ -1,6 +1,9 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
+import XButton from "../img/x-button.png";
+// GET AN XBUTTONCLICKED VERSION SO IT LOOKS LIKE IT'S WORKING
+// import XButtonClicked from "../img/header_the_team_clicked.png";
 
 function WorkModal(props) {
   const { post, selectedMedia } = props;
@@ -12,7 +15,7 @@ function WorkModal(props) {
     return txt.value;
   }
 
-  console.log("MODAL media", selectedMedia);
+  // console.log("MODAL media", selectedMedia);
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -20,7 +23,7 @@ function WorkModal(props) {
         <Modal.Title id="contained-modal-title-vcenter">Modal heading</Modal.Title>
       </Modal.Header> */}
       <div onClick={props.onHide}>
-        <img className="pointer" id="modal-button" src="/assets/imgs/x-button.png"></img>
+        <img className="pointer" id="modal-button" src={XButton} alt="close modal"></img>
       </div>
       <Modal.Body>
         <h4 className="h-center modal-title cap work-sans-font">{title}</h4>

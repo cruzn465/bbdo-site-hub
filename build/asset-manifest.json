@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.b9b06a9b.css",
+    "main.js": "./static/js/main.2c46e4f8.js",
+    "static/js/787.8f10c6d4.chunk.js": "./static/js/787.8f10c6d4.chunk.js",
+    "static/media/Bbdostudiosreel081022bbdostudiosoptimized.mp4": "./static/media/Bbdostudiosreel081022bbdostudiosoptimized.1d6f384e03e34f75e196.mp4",
+    "static/media/BBDOStudios_logo_gif.gif": "./static/media/BBDOStudios_logo_gif.33450da6d22420c357d3.gif",
+    "static/media/team_bg_img.jpg": "./static/media/team_bg_img.3c53e822734534d67d41.jpg",
+    "static/media/bg.jpg": "./static/media/bg.20f44e24117076b7712d.jpg",
+    "static/media/team_copy.png": "./static/media/team_copy.2540b75d5960e8ffe0e6.png",
+    "static/media/collective_copy.png": "./static/media/collective_copy.9b6ca6eb2683a72a38a5.png",
+    "static/media/collective_super.png": "./static/media/collective_super.a1503215f43e5bf1cbfa.png",
+    "static/media/team_super.png": "./static/media/team_super.d1afee8c3b82c111ca6a.png",
+    "index.html": "./index.html",
+    "main.b9b06a9b.css.map": "./static/css/main.b9b06a9b.css.map",
+    "main.2c46e4f8.js.map": "./static/js/main.2c46e4f8.js.map",
+    "787.8f10c6d4.chunk.js.map": "./static/js/787.8f10c6d4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9b06a9b.css",
+    "static/js/main.2c46e4f8.js"
+  ]
+}

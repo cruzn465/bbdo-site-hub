@@ -492,7 +492,7 @@ hr {
   padding: 25px;
 }
 .red:hover {
-  background-color: #ea482fe6;
+  background-color: #f14227ee;
   opacity: 1;
   height: 200px;
 }
@@ -501,11 +501,12 @@ hr {
 }
 
 .post-titles {
-  color: #fefefe;
+  color: #ececec;
   font-weight: 800;
   letter-spacing: 1px;
   font-size: 30px;
   opacity: 1;
+  text-shadow: 1px 1px 6px #00000035;
 }
 /* MODAL STYLES START */
 
