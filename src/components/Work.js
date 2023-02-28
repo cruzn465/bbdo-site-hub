@@ -16,7 +16,7 @@ function Work() {
     Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts")
       .then((res) => {
         setPosts(res.data);
-        // console.log("****setting posts****", res.data);
+        console.log("****setting posts****", res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -25,7 +25,7 @@ function Work() {
     Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media")
       .then((res) => {
         setMedia(res.data);
-        // console.log("****setting media****", res.data);
+        console.log("****setting media****", res.data);
       })
       .catch((err) => console.log(err));
   }, []);

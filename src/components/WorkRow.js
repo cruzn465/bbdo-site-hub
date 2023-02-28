@@ -34,7 +34,8 @@ function WorkRow(props) {
         <React.Fragment key={post.id}>
           {/* {console.log("hi", post.id)} */}
           <div className="outer-container pointer" onClick={(e) => handleClick(e, post, mediaSubArray[i])}>
-            <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}>
+            {/* <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}> */}
+            <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].media_details.sizes.medium_large.source_url})` }}>
               {/* {post.title.rendered} */}
             </div>
             <div className="red abs-cont">
@@ -46,7 +47,7 @@ function WorkRow(props) {
     } else if (postSubArray.length === 2) {
       return (
         <React.Fragment key={postSubArray[0].id}>
-          <div className="outer-container pointer" key={postSubArray[0].id} onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0])}>
+          <div className="outer-container pointer" key={postSubArray[0].id} onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0].media_details.sizes.medium_large.source_url)}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
@@ -54,7 +55,7 @@ function WorkRow(props) {
               <h2 className="post-titles cap">{decode(postSubArray[0].title.rendered)}</h2>
             </div>
           </div>
-          <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1])}>
+          <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1].media_details.sizes.medium_large.source_url)}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
               {postSubArray[1].title.rendered}
             </div>
@@ -72,7 +73,7 @@ function WorkRow(props) {
       return (
         <React.Fragment key={postSubArray[0].id}>
           <div className="outer-container pointer" onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0])}>
-            <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
+            <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].media_details.sizes.medium_large.source_url})` }}>
               {/* {postSubArray[0].title.rendered} */}
             </div>
             <div className="red abs-cont">
