@@ -1,4 +1,6 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import React from "react";
 import Home from "./Home";
 import Work from "./Work";
@@ -8,15 +10,17 @@ import CurrentMember from "./CurrentMember";
 
 function Routing() {
   return (
-    <Routes>
-      <Route path="the-work" element={<Work />} />
-      <Route path="the-team" element={<Team />} />
-      <Route path="the-collective" element={<Collective />}>
-        {/* <Route path="/:memId" element={<CurrentMember />} /> */}
-        <Route path=":slug" element={<CurrentMember />} />
-      </Route>
-      <Route path="/" element={<Home />} />
-    </Routes>
+    // <Router>
+      <Routes>
+        <Route exact path="/the-work" element={<Work />} />
+        <Route exact path="the-team" element={<Team />} />
+        <Route path="the-collective" element={<Collective />}>
+          {/* <Route path="/:memId" element={<CurrentMember />} /> */}
+          <Route path=":slug" element={<CurrentMember />} />
+        </Route>
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    // </Router>
   );
 }
 

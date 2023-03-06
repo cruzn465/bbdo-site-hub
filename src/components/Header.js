@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Logo from "../img/BBDOStudios_logo_gif.gif";
+import Logo from "../img/BBDOStudios_logo.webp";
 import TheWorkLink from "../img/header_the_work.png";
 import TheWorkLinkClicked from "../img/header_the_work_clicked.png";
 
@@ -67,6 +68,7 @@ function Header() {
   }, []);
 
   return (
+    // <Router>
     <Navbar ref={headerBg} expand="lg" variant="dark" fixed="top">
       <Container id="nav-container">
         <Navbar.Brand as={Link} to={"/"}>
@@ -91,6 +93,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    // </Router>
   );
 }
 
