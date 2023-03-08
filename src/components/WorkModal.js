@@ -6,7 +6,10 @@ import XButton from "../img/x-button.png";
 // import XButtonClicked from "../img/header_the_team_clicked.png";
 
 function WorkModal(props) {
-  const { post, selectedMedia } = props;
+  const { post } = props;
+  // const { post, selectedMedia } = props;
+  // const source_url = selectedMedia.source_url
+  // console.log("selectedMedia*******", selectedMedia);
   const title = decode(post.title.rendered);
 
   function decode(str) {
@@ -27,7 +30,7 @@ function WorkModal(props) {
       </div>
       <Modal.Body>
         <h4 className="h-center modal-title cap work-sans-font">{title}</h4>
-        <div className="work-col" id="modal-img" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + selectedMedia.source_url})` }}></div>
+        <div className="work-col" id="modal-img" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + source_url})` }}></div>
         {/* <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p> */}
       </Modal.Body>
       {/* <Modal.Footer></Modal.Footer> */}

@@ -55,7 +55,14 @@ function Work() {
           <Container id="works">
             {/* HERE I'LL MAKE A DYNAMIC VERSION OF MAPPING IT INTO ROWS AND COLS */}
             {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)}
-            {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} post={post} selectedMedia={selectedMedia} />}
+            {modalShow && (
+              <WorkModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                // selectedMedia={selectedMedia}
+                post={post}
+              />
+            )}
           </Container>
         </Container>
       </Container>

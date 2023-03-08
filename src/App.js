@@ -6,16 +6,16 @@ import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <Container fluid className="bg"></Container>
-      <div className="spacer"></div>
-      <Container className="all-content">
-        <Router>
+    <Router>
+      <div className="App">
+        <Container fluid className="bg"></Container>
+        <div className="spacer"></div>
+        <Container className="all-content">
           <Header />
           <Routing />
-        </Router>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </Router>
   );
 }
 
