@@ -6,10 +6,9 @@ import XButton from "../img/x-button.png";
 // import XButtonClicked from "../img/header_the_team_clicked.png";
 
 function WorkModal(props) {
-  const { post } = props;
-  // const { post, selectedMedia } = props;
-  // const source_url = selectedMedia.source_url
-  // console.log("selectedMedia*******", selectedMedia);
+  const { post, selectedMedia } = props;
+  const source_url = selectedMedia.source_url;
+  console.log("selectedMedia*******", selectedMedia);
   const title = decode(post.title.rendered);
 
   function decode(str) {
