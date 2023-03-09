@@ -10,7 +10,7 @@ function App() {
       <Container fluid className="bg"></Container>
       <div className="spacer"></div>
       <Container className="all-content">
-        <Router>
+        <Router basename="/">
           <Header />
           <Routing />
         </Router>
