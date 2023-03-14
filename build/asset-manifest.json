@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.1c6adec2.css",
-    "main.js": "/static/js/main.739f348b.js",
+    "main.js": "/static/js/main.fb49c0cb.js",
     "static/js/787.8f10c6d4.chunk.js": "/static/js/787.8f10c6d4.chunk.js",
     "static/media/Bbdostudiosreel081022bbdostudiosoptimized.mp4": "/static/media/Bbdostudiosreel081022bbdostudiosoptimized.1d6f384e03e34f75e196.mp4",
     "static/media/BBDOStudios_logo.webp": "/static/media/BBDOStudios_logo.453b0dee62c7fdde793b.webp",
@@ -13,11 +13,11 @@
     "static/media/team_super.png": "/static/media/team_super.d1afee8c3b82c111ca6a.png",
     "index.html": "/index.html",
     "main.1c6adec2.css.map": "/static/css/main.1c6adec2.css.map",
-    "main.739f348b.js.map": "/static/js/main.739f348b.js.map",
+    "main.fb49c0cb.js.map": "/static/js/main.fb49c0cb.js.map",
     "787.8f10c6d4.chunk.js.map": "/static/js/787.8f10c6d4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1c6adec2.css",
-    "static/js/main.739f348b.js"
+    "static/js/main.fb49c0cb.js"
   ]
 }
