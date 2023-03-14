@@ -12,9 +12,10 @@ function Work() {
   const [modalShow, setModalShow] = React.useState(false);
   const [post, setPost] = useState({});
   const [selectedMedia, setSelectedMedia] = useState({});
-
+  // https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?per_page=100
+  // https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=2
   useEffect(() => {
-    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts")
+    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?per_page=100")
       .then((res) => {
         setPosts(res.data);
         console.log("****setting posts****", res.data);
@@ -23,7 +24,7 @@ function Work() {
   }, []);
 
   useEffect(() => {
-    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media")
+    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?per_page=100")
       .then((res) => {
         setMedia(res.data);
         console.log("****setting media****", res.data);

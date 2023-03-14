@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 // import Button from "react-bootstrap/Button";
 import XButton from "../img/x-button.png";
+import loadingGif from "../img/Arrows bar.gif";
 // GET AN XBUTTONCLICKED VERSION SO IT LOOKS LIKE IT'S WORKING
 // import XButtonClicked from "../img/header_the_team_clicked.png";
 
