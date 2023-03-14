@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import WorkRow from "./WorkRow";
 import WorkModal from "./WorkModal";
+import loadingGif from "../img/Arrows bar.gif";
 
 function Work() {
   const [posts, setPosts] = useState([]);
@@ -53,9 +54,12 @@ function Work() {
       <Container>
         <Container>
           <Container id="works">
+            {/*  */}
             {/* HERE I'LL MAKE A DYNAMIC VERSION OF MAPPING IT INTO ROWS AND COLS */}
-            {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)}
-            {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} post={post} selectedMedia={selectedMedia} />}
+            {/* {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)} */}
+            {media.length > 0 ? groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>}
+
+            {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} selectedMedia={selectedMedia} post={post} />}
           </Container>
         </Container>
       </Container>
