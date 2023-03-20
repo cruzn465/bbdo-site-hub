@@ -12,25 +12,72 @@ function Work() {
   const [modalShow, setModalShow] = React.useState(false);
   const [post, setPost] = useState({});
   const [selectedMedia, setSelectedMedia] = useState({});
+  // VARS FROM THE YOUTUBE PAGINATION VIDDY:
+  const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  // const [postsPerPage, setPostsPerPage] = useState(10);
+
   // https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?per_page=100
   // https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=2
   useEffect(() => {
-    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?per_page=100")
+    Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}`)
       .then((res) => {
-        setPosts(res.data);
-        console.log("****setting posts****", res.data);
+        // console.log("init posts", posts);
+        // console.log("adding posts", res.data);
+
+        // console.log("****setting posts****", res.data);
+
+        // setPosts([...posts, ...res.data]);
+        setPosts([...posts, ...res.data]);
+        // *****FIGURE OUT THE (REACT) THAT THE REFRESH MAKES THE APP LOSE ITS PLACE FOR THE AMOUNT OF POSTS? IT SHOULD PERSIST/RELOAD ONLY PAGE 1
       })
       .catch((err) => console.log(err));
   }, []);
 
+  /*
+  USES ASYNC/AWAIT INSTEAD OF 
+  ALSO  DONT FORGET THAT THIS WORKS WITH A LOADING VAR THAT I COMMENTED OUT 
+  
+  
+*/
+  // useEffect(() => {
+  //   // TO USE ASYNC/AWAIT, YOU NEED TO DECLARE AN ASYNC FXN AND THE INVOKE IT
+  //   // THIS IS BC YOU CAN'T MAKE USEEFFECT ASYNCRONOUS!
+  //   const fetchPosts = async () => {
+  //     setLoading(true);
+  //     const res = await Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=1");
+  //     // setPosts(res.data);
+  //     setPosts([...posts, ...res.data]);
+  //     setLoading(false);
+  //   };
+  //   fetchPosts();
+  // }, []);
+
   useEffect(() => {
-    Axios.get("https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?per_page=100")
+    Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}`)
       .then((res) => {
-        setMedia(res.data);
-        console.log("****setting media****", res.data);
+        setMedia([...media, ...res.data]);
+        // setMedia(res.data);
+
+        // console.log("****setting media****", res.data);
       })
       .catch((err) => console.log(err));
   }, []);
+
+  // MAKE A HANDLE FETCH THAT UPDATES THE CURRENTPAGE AND ALSO DOES A FETCH
+
+  function handleFetch(e, post, media) {
+    // e.preventDefault();
+    setCurrentPage(currentPage + 1);
+    const fetchMorePosts = async () => {
+      const res = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}`);
+      setPosts([...posts, ...res.data]);
+      setLoading(false);
+    };
+    fetchMorePosts();
+    setCurrentPage(media);
+    console.log("FETCH NEXT PAGE");
+  }
 
   // loop through array, push in arrays of 3 or less
   function groupPosts(arr) {
@@ -50,15 +97,17 @@ function Work() {
   const groupedPosts = groupPosts(posts);
   const groupedMedia = groupPosts(media);
 
+  console.log("mounted", posts);
   return (
     <>
       <Container>
         <Container>
           <Container id="works">
-            {/*  */}
-            {/* HERE I'LL MAKE A DYNAMIC VERSION OF MAPPING IT INTO ROWS AND COLS */}
             {/* {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)} */}
-            {media.length > 0 ? groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>}
+            {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)}
+
+            {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
+            {/* {!loading ? groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>} */}
 
             {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} selectedMedia={selectedMedia} post={post} />}
           </Container>

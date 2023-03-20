@@ -57,7 +57,7 @@ function WorkRow(props) {
           </div>
           <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1].media_details.sizes.medium_large.source_url)}>
             <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
-              {postSubArray[1].title.rendered}
+              {/* {postSubArray[1].title.rendered} */}
             </div>
             <div className="red abs-cont">
               <h2 className="post-titles cap">{decode(postSubArray[1].title.rendered)}</h2>
