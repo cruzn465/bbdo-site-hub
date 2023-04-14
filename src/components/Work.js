@@ -3,6 +3,8 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import WorkRow from "./WorkRow";
+import WorkRows from "./WorkRows";
+
 import WorkModal from "./WorkModal";
 import FetchMoreButton from "./FetchMoreButton";
 
@@ -12,9 +14,19 @@ import { Button } from "bootstrap";
 function Work() {
   const [posts, setPosts] = useState([]);
   const [media, setMedia] = useState([]);
+
+  const [mediaObj, setMediaObj] = useState({});
+  /* 
+  HERE'S THE PLAN, I'M GOING TO MAKE AN OBJECT WITH ALL THE MEDIA AND I'LL MAKE THE KEY THE ID (WHICH I'LL GET FROM THE POST OBJ)
+  THEN IN THE WORK ROW COMPONENT, I'LL  INDIVIDUALLY FETCH 
+  https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media/${ID}
+  and then get the medium large size from the media details
+
+  */
+
   const [modalShow, setModalShow] = React.useState(false);
   const [post, setPost] = useState({});
-  const [selectedMedia, setSelectedMedia] = useState({});
+  const [selectedMedia, setSelectedMedia] = useState("");
   const [totalPages, setTotalPages] = useState(0);
   // VARS FROM THE YOUTUBE PAGINATION VIDDY:
   const [loading, setLoading] = useState(false);
@@ -49,16 +61,8 @@ function Work() {
   //     .catch((err) => console.log(err));
   // }, []);
 
-  /*
-  USES ASYNC/AWAIT INSTEAD OF 
-  ALSO  DONT FORGET THAT THIS WORKS WITH A LOADING VAR THAT I COMMENTED OUT 
-  
-  
-*/
-
-  // FETCHING POSTS
+  // FETCHING POSTS & MEDIA
   useEffect(() => {
-    // TO USE ASYNC/AWAIT, YOU NEED TO DECLARE AN ASYNC FXN AND THE INVOKE IT THIS IS BC YOU CAN'T MAKE USEEFFECT ASYNCRONOUS!
     const fetchPostsAndMedia = async () => {
       let totalPosts = [];
       let totalMedia = [];
@@ -72,68 +76,46 @@ function Work() {
 
       let totalPagesTemp = await parseFloat(resP.headers.get("X-WP-TotalPages"));
       // setTotalPages(totalPagesTemp);
-      setPosts([...posts, ...resP.data]);
-      setMedia([...media, ...resM.data]);
+
+      // setPosts(resP.data);
+      // setMedia(resM.data);
 
       // loop through "totalPagesTemp"xs
       for (let i = 0; i < totalPagesTemp - 1; i++) {
         currentPage += 1;
         const resLoopP = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`);
         const resLoopM = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}&per_page=100`);
-        // setPosts([...posts, ...resLoopP.data]);
-        // setMedia([...media, ...resLoopM.data]);
         totalPosts = [...totalPosts, ...resLoopP.data];
         totalMedia = [...totalMedia, ...resLoopM.data];
       }
+
       setPosts(totalPosts);
       setMedia(totalMedia);
 
       console.log("****setting posts****", totalPosts);
       console.log("****setting media****", totalMedia);
 
+      // MAKE THE MEDIAOBJ FROM TOTAL MEDIA
+      let tempObj = {};
+      for (let i = 0; i < totalMedia.length; i++) {
+        let curr = totalMedia[i];
+
+        // let featMedia = curr._links["wp:featuredmedia"][0];
+        // let { href } = featMedia;
+        // let id = href.slice(63); //slices off anything past "https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media/"
+        // const res = await Axios.get(href);
+        // tempObj[id] = res.data;
+        // "/wp-content/uploads/2023/01/30_Thumbnail_BacardiHoliday-768x430.png"
+        // tempObj[id] = res.data.media_details.sizes.medium_large.source_url;
+        tempObj[curr.id] = curr;
+      }
+      console.log("tempObj", tempObj);
+      setMediaObj(tempObj);
       setLoading(false);
     };
 
     fetchPostsAndMedia();
-    // setCurrentPage(currentPage + 1);
   }, []);
-
-  // FETCHING MEDIA
-  // useEffect(() => {
-  //   const fetchMedia = async () => {
-  //     const res = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}`);
-  //     // setMedia(res.data);
-  //     setMedia([...media, ...res.data]);
-  //     console.log("****setting media****", res.data);
-  //   };
-  //   fetchMedia();
-  // }, []);
-
-  // MAKE A HANDLE FETCH THAT UPDATES THE CURRENTPAGE AND ALSO DOES A FETCH
-
-  // function handleFetch(e, post, media) {
-  //   // e.preventDefault();
-  //   setLoading(true);
-
-  //   console.log(currentPage);
-  //   const fetchMorePosts = async () => {
-  //     const endpoint = `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}`;
-  //     console.log(endpoint);
-  //     const resPosts = await Axios.get(endpoint);
-  //     setPosts([...posts, ...resPosts.data]);
-  //     setLoading(false);
-  //   };
-  //   fetchMorePosts();
-
-  //   const fetchMoreMedia = async () => {
-  //     const resMedia = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}`);
-  //     setMedia([...media, ...resMedia.data]);
-  //   };
-  //   fetchMoreMedia();
-  //   // setCurrentPage(media);
-  //   console.log("FETCH NEXT PAGE");
-  //   setCurrentPage(currentPage + 1);
-  // }
 
   // loop through array, push in arrays of 3 or less
   function groupPosts(arr) {
@@ -151,7 +133,8 @@ function Work() {
   }
 
   const groupedPosts = groupPosts(posts);
-  const groupedMedia = groupPosts(media);
+  // const groupedMedia = groupPosts(media);
+  // console.log(mediaObj);
 
   return (
     <>
@@ -160,7 +143,21 @@ function Work() {
           <Container id="works">
             {/* {media.length > 0 && groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />)} */}
             {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
-            {!loading && media.length > 0 ? groupedPosts.map((postSubArray, i) => <WorkRow key={i} posts={postSubArray} media={groupedMedia[i]} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>}
+            {/* {!loading && !!mediaObj ? (
+              <WorkRows
+                posts={posts}
+                mediaObj={mediaObj}
+                groupedPosts={groupedPosts}
+
+                // setModalShow={setModalShow}
+                // setPost={setPost}
+                // setSelectedMedia={setSelectedMedia}
+              />
+            ) : (
+              <img id="loading" src={loadingGif}></img>
+            )} */}
+
+            {!loading && media.length > 0 ? groupedPosts.map((postSubArray, i) => <WorkRow mediaObj={mediaObj} key={i} posts={postSubArray} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>}
             {/* {currentPage !== totalPages && !loading ? <FetchMoreButton handleFetch={handleFetch} /> : null} */}
             {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} selectedMedia={selectedMedia} post={post} />}
           </Container>
