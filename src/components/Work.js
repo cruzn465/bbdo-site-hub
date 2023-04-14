@@ -68,13 +68,19 @@ function Work() {
       let totalMedia = [];
       setLoading(true);
       let currentPage = 1;
-      const resP = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`);
-      const resM = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}&per_page=100`);
+      const resP = await Axios.get(
+        `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`
+      );
+      const resM = await Axios.get(
+        `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}&per_page=100`
+      );
 
       totalPosts = [...resP.data];
       totalMedia = [...resM.data];
 
-      let totalPagesTemp = await parseFloat(resP.headers.get("X-WP-TotalPages"));
+      let totalPagesTemp = await parseFloat(
+        resP.headers.get("X-WP-TotalPages")
+      );
       // setTotalPages(totalPagesTemp);
 
       // setPosts(resP.data);
@@ -83,8 +89,12 @@ function Work() {
       // loop through "totalPagesTemp"xs
       for (let i = 0; i < totalPagesTemp - 1; i++) {
         currentPage += 1;
-        const resLoopP = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`);
-        const resLoopM = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}&per_page=100`);
+        const resLoopP = await Axios.get(
+          `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`
+        );
+        const resLoopM = await Axios.get(
+          `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}&per_page=100`
+        );
         totalPosts = [...totalPosts, ...resLoopP.data];
         totalMedia = [...totalMedia, ...resLoopM.data];
       }
@@ -133,8 +143,6 @@ function Work() {
   }
 
   const groupedPosts = groupPosts(posts);
-  // const groupedMedia = groupPosts(media);
-  // console.log(mediaObj);
 
   return (
     <>
@@ -157,9 +165,29 @@ function Work() {
               <img id="loading" src={loadingGif}></img>
             )} */}
 
-            {!loading && media.length > 0 ? groupedPosts.map((postSubArray, i) => <WorkRow mediaObj={mediaObj} key={i} posts={postSubArray} setModalShow={setModalShow} setPost={setPost} setSelectedMedia={setSelectedMedia} />) : <img id="loading" src={loadingGif}></img>}
+            {!loading && media.length > 0 ? (
+              groupedPosts.map((postSubArray, i) => (
+                <WorkRow
+                  mediaObj={mediaObj}
+                  key={i}
+                  posts={postSubArray}
+                  setModalShow={setModalShow}
+                  setPost={setPost}
+                  setSelectedMedia={setSelectedMedia}
+                />
+              ))
+            ) : (
+              <img id="loading" src={loadingGif}></img>
+            )}
             {/* {currentPage !== totalPages && !loading ? <FetchMoreButton handleFetch={handleFetch} /> : null} */}
-            {modalShow && <WorkModal show={modalShow} onHide={() => setModalShow(false)} selectedMedia={selectedMedia} post={post} />}
+            {modalShow && (
+              <WorkModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                selectedMedia={selectedMedia}
+                post={post}
+              />
+            )}
           </Container>
         </Container>
       </Container>

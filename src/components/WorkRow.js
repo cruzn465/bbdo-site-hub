@@ -5,7 +5,7 @@ import Axios from "axios";
 function WorkRow(props) {
   const { posts, media, setModalShow, setPost, setSelectedMedia, mediaObj } =
     props;
-  console.log(posts);
+  // console.log(posts);
   // const [lgShow, setLgShow] = useState(false);
   // const title = decode(post.title.rendered);
 
@@ -17,12 +17,12 @@ function WorkRow(props) {
   // };
   // fetchImg();
 
-  function handleClick(e, post, media) {
+  function handleClick(e, post, mediaStr) {
     // e.preventDefault();
     setModalShow(true);
     setPost(post);
-    setSelectedMedia(media);
-    console.log("media STR*******", media);
+    setSelectedMedia(mediaStr);
+    // console.log("media STR*******", media);
   }
 
   function decode(str) {
@@ -32,6 +32,7 @@ function WorkRow(props) {
   }
 
   function findSourceUrl(post) {
+    // have a placeholder img made?
     if (!post.featured_media || !post) return "http://placekitten.com/400/300";
     let ft_media_id = post.featured_media;
     let media = mediaObj[ft_media_id];
@@ -62,12 +63,11 @@ function WorkRow(props) {
                 {decode(postCurArr[0].title.rendered)}
               </h2>
             </div>
-            {/* NEED TO COPY FOR THE OTHER DIVS */}
           </div>
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[1]))
+              handleClick(e, postCurArr[1], findSourceUrl(postCurArr[1]))
             }
           >
             <div
@@ -85,7 +85,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[2]))
+              handleClick(e, postCurArr[2], findSourceUrl(postCurArr[2]))
             }
           >
             <div
@@ -127,7 +127,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[1]))
+              handleClick(e, postCurArr[1], findSourceUrl(postCurArr[1]))
             }
           >
             <div
