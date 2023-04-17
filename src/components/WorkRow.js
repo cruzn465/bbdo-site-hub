@@ -1,28 +1,13 @@
-// import { hover } from "@testing-library/user-event/dist/hover";
 import React from "react";
-import Axios from "axios";
 
 function WorkRow(props) {
   const { posts, media, setModalShow, setPost, setSelectedMedia, mediaObj } =
     props;
-  // console.log(posts);
-  // const [lgShow, setLgShow] = useState(false);
-  // const title = decode(post.title.rendered);
-
-  // const fetchImg = async () => {
-  //   const res = await Axios.get(`https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/media?page=${currentPage}`);
-  //   // setMedia(res.data);
-  //   setMedia([...media, ...res.data]);
-  //   console.log("****setting media****", res.data);
-  // };
-  // fetchImg();
 
   function handleClick(e, post, mediaStr) {
-    // e.preventDefault();
     setModalShow(true);
     setPost(post);
     setSelectedMedia(mediaStr);
-    // console.log("media STR*******", media);
   }
 
   function decode(str) {
@@ -32,7 +17,7 @@ function WorkRow(props) {
   }
 
   function findSourceUrl(post) {
-    // have a placeholder img made?
+    // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
     if (!post.featured_media || !post) return "http://placekitten.com/400/300";
     let ft_media_id = post.featured_media;
     let media = mediaObj[ft_media_id];
@@ -182,80 +167,17 @@ function WorkRow(props) {
       );
     }
   }
-  // if (postSubArray.length === 3) {
-  // console.log("mediaSubArray", mediaSubArray);
-  // return postSubArray.map((post, i) => (
-  //   <React.Fragment key={post.id}>
-  //     <div className="outer-container pointer" onClick={(e) => handleClick(e, post, mediaSubArray[i])}>
-  //       {/* <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].source_url})` }}> */}
-  //       <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[i].media_details.sizes.medium_large.source_url})` }}>
-  //         {/* {post.title.rendered} */}
-  //       </div>
-  //       <div className="red abs-cont">
-  //         <h2 className="post-titles cap">{decode(post.title.rendered)}</h2>
-  //       </div>
-  //     </div>
-  //   </React.Fragment>
-  // ));
-  // } else if (postSubArray.length === 2) {
-  //   return (
-  //     <React.Fragment key={postSubArray[0].id}>
-  //       <div className="outer-container pointer" key={postSubArray[0].id} onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0].media_details.sizes.medium_large.source_url)}>
-  //         <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].source_url})` }}>
-  //           {/* {postSubArray[0].title.rendered} */}
-  //         </div>
-  //         <div className="red abs-cont">
-  //           <h2 className="post-titles cap">{decode(postSubArray[0].title.rendered)}</h2>
-  //         </div>
-  //       </div>
-  //       <div className="outer-container pointer" key={postSubArray[1].id} onClick={(e) => handleClick(e, postSubArray[1], mediaSubArray[1].media_details.sizes.medium_large.source_url)}>
-  //         <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[1].source_url})` }}>
-  //           {/* {postSubArray[1].title.rendered} */}
-  //         </div>
-  //         <div className="red abs-cont">
-  //           <h2 className="post-titles cap">{decode(postSubArray[1].title.rendered)}</h2>
-  //         </div>
-  //       </div>
-  //       <div className="outer-container no-display">
-  //         {emptyDiv}
-  //         <div className="red abs-cont"></div>
-  //       </div>
-  //     </React.Fragment>
-  //   );
-  // } else {
-  //   return (
-  //     <React.Fragment key={postSubArray[0].id}>
-  //       <div className="outer-container pointer" onClick={(e) => handleClick(e, postSubArray[0], mediaSubArray[0])}>
-  //         <div className="work-col" style={{ backgroundImage: `url(${"https://wpapibbdostudios.azurewebsites.net" + mediaSubArray[0].media_details.sizes.medium_large.source_url})` }}>
-  //           {/* {postSubArray[0].title.rendered} */}
-  //         </div>
-  //         <div className="red abs-cont">
-  //           <h2 className="post-titles cap">{decode(postSubArray[0].title.rendered)}</h2>
-  //         </div>
-  //       </div>
 
-  //       <div className="outer-container no-display" key="4356">
-  //         {emptyDiv}
-  //         <div className="red abs-cont"></div>
-  //       </div>
-  //       <div className="outer-container no-display" key="78">
-  //         {emptyDiv}
-  //         <div className="red abs-cont"></div>
-  //       </div>
-  //     </React.Fragment>
-  //   );
-  // }
-  // }
-
-  function compLength() {
-    return true;
+  // ADD IN LOGIC TO PREVENT INDIVIDUAL ROWS FROM BEING RENDERED, FOR WHATEVER REASON!
+  function postMediaCheck() {
     if (!posts || !media) return false;
-    if (posts.length === media.length) return true;
-    else return false;
+    return true;
   }
 
   return (
-    <>{compLength() && <div className="work-row">{createDivs(posts)}</div>}</>
+    <>
+      {postMediaCheck() && <div className="work-row">{createDivs(posts)}</div>}
+    </>
   );
 }
 
