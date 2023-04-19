@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,19 +17,7 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 #logo {
-  /* width:237px; */
-  /* height: 60px; */
   width: 230px;
 }
 
@@ -71,29 +48,6 @@
   z-index: -1;
   /* height: 100%; */
   width: 100%;
-}
-
-/* small screen sizes */
-@media only screen and (max-width: 576px) {
-  #logo {
-    /* height: 60px; */
-  }
-
-}
-
-/* desktop and smaller*/
-@media only screen and (max-width: 900px) {
-  #video {
-    height: 100%
-  }
-
-  .header {
-    max-width: 80% !important;
-  }
-
-  .copy {
-    max-width: 100% !important;
-  }
 }
 
 #team-copy-not-pic {
@@ -131,7 +85,7 @@
   width: 100vw;
   z-index: 10;
   position: absolute;
-  top:0;
+  top: 0;
 }
 
 .header {
@@ -197,8 +151,8 @@ hr {
   transition-duration: 2000ms;
   transition-timing-function: linear;
   transition-delay: 1000ms;
-  background: rgb(15,15,15);
-  background: linear-gradient(0deg, rgba(15, 15, 15, .7) 0%, rgba(15,15,15,.7) 0%, rgba(15,15,15,0) 0%, rgba(15,15,15,0) 100%);
+  background: rgb(15, 15, 15);
+  background: linear-gradient(0deg, rgba(15, 15, 15, .7) 0%, rgba(15, 15, 15, .7) 0%, rgba(15, 15, 15, 0) 0%, rgba(15, 15, 15, 0) 100%);
 }
 
 .clear-bg::before {
@@ -208,7 +162,7 @@ hr {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(0deg, rgba(15,15,15,.7) 0%, rgba(15,15,15,.7) 100%, rgba(15,15,15,0) 100%, rgba(15,15,15,0) 100%);
+  background: linear-gradient(0deg, rgba(15, 15, 15, .7) 0%, rgba(15, 15, 15, .7) 100%, rgba(15, 15, 15, 0) 100%, rgba(15, 15, 15, 0) 100%);
   z-index: -1;
   transition: opacity 0.5s linear;
   opacity: 0;
@@ -217,10 +171,10 @@ hr {
 /* .clear-bg:hover::before {
   opacity: 1;
 } */
-.animated{
+.animated {
   opacity: 1;
-  background: linear-gradient(0deg, rgba(15,15,15,.7) 0%, rgba(15,15,15,.7) 100%, rgba(15,15,15,0) 100%, rgba(15,15,15,0) 100%);
-} 
+  background: linear-gradient(0deg, rgba(15, 15, 15, .7) 0%, rgba(15, 15, 15, .7) 100%, rgba(15, 15, 15, 0) 100%, rgba(15, 15, 15, 0) 100%);
+}
 
 #outer-container {
   position: relative;
@@ -273,7 +227,7 @@ hr {
 .team-title-center {
   width: 100%;
   color: aliceblue;
-  height: 3em; 
+  height: 3em;
   overflow-y: hidden;
   cursor: pointer;
 }
@@ -425,12 +379,13 @@ hr {
   font-size: 1.8rem;
   font-weight: 100;
 }
+
 /* Collective page end */
 
 /*  WORK PAGE START */
 
 #loading {
-   margin-top: 15vh;
+  margin-top: 15vh;
 }
 
 #works {
@@ -441,7 +396,7 @@ hr {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
-} 
+}
 
 .work-col {
   display: flex;
@@ -449,7 +404,7 @@ hr {
   height: 200px;
   /* background-image: url("http://placekitten.com/400/300"); */
   background-size: cover;
-  
+
 }
 
 .empty {
@@ -479,7 +434,7 @@ hr {
 #hover {
   opacity: 0;
   height: 200px;
-  
+
 }
 
 .text {
@@ -487,6 +442,7 @@ hr {
   /* pointer-events: none; */
   height: 200px;
 }
+
 .red {
   background-color: #ea482fe6;
   opacity: 0;
@@ -496,11 +452,13 @@ hr {
   align-items: center;
   padding: 25px;
 }
+
 .red:hover {
   background-color: #f14227ee;
   opacity: 1;
   height: 200px;
 }
+
 .pointer {
   cursor: pointer !important;
 }
@@ -513,6 +471,7 @@ hr {
   opacity: 1;
   text-shadow: 1px 1px 6px #00000035;
 }
+
 /* MODAL STYLES START */
 
 .modal-content {
@@ -534,9 +493,11 @@ hr {
   font-style: italic;
   padding-bottom: 10px;
 }
+
 .modal-body {
   padding: 0px 50px 50px 50px;
 }
+
 #modal-img {
   height: 350px;
   /* max-width: 50vw; */
@@ -546,16 +507,42 @@ hr {
 #modal-button {
   width: 45px;
 }
+
 /* MODAL STYLES END */
 
 .h-center {
   text-align: center;
 }
+
 /*  WORK PAGE END */
 
 
-
 /* MEDIA QUERIES */
+
+/* small screen sizes */
+@media only screen and (max-width: 576px) {
+  #logo {
+  width: 150px;
+  }
+
+}
+
+/* desktop and smaller*/
+@media only screen and (max-width: 900px) {
+  #video {
+    height: 100%;
+    scale: 2.5;
+  }
+
+  .header {
+    max-width: 80% !important;
+  }
+
+  .copy {
+    max-width: 100% !important;
+  }
+}
+
 @media only screen and (max-width: 993px) {
 
   #who_we_are {
