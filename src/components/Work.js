@@ -1,15 +1,15 @@
 import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import WorkRow from "./WorkRow";
-import WorkRows from "./WorkRows";
+// import WorkRows from "./WorkRows";
 
 import WorkModal from "./WorkModal";
-import FetchMoreButton from "./FetchMoreButton";
+// import FetchMoreButton from "./FetchMoreButton";
 
 import loadingGif from "../img/Arrows bar.gif";
-import { Button } from "bootstrap";
+// import { Button } from "bootstrap";
 
 function Work() {
   const [posts, setPosts] = useState([]);
@@ -110,7 +110,7 @@ function Work() {
                 />
               ))
             ) : (
-              <img id="loading" src={loadingGif}></img>
+              <img id="loading" src={loadingGif} alt="Loading GIF"></img>
             )}
             {modalShow && (
               <WorkModal

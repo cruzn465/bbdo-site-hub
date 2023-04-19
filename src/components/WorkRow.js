@@ -1,8 +1,7 @@
 import React from "react";
 
 function WorkRow(props) {
-  const { posts, media, setModalShow, setPost, setSelectedMedia, mediaObj } =
-    props;
+  const { posts, setModalShow, setPost, setSelectedMedia, mediaObj } = props;
 
   function handleClick(e, post, mediaStr) {
     setModalShow(true);
@@ -170,7 +169,7 @@ function WorkRow(props) {
 
   // ADD IN LOGIC TO PREVENT INDIVIDUAL ROWS FROM BEING RENDERED, FOR WHATEVER REASON!
   function postMediaCheck() {
-    if (!posts || !media) return false;
+    if (!posts || !mediaObj) return false;
     return true;
   }
 
