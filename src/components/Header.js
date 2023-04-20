@@ -75,20 +75,42 @@ function Header() {
           <img id="logo" src={Logo} alt="BBDO logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Nav.Link as={Link} to={"/talk-to-us"}>
+          <img id="talk-to-us-button" src={TalkButton} alt="The Talk button" />
+        </Nav.Link>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end me-auto">
             <Nav.Link as={Link} to={"/the-work"}>
-              <img className="header-links" id="the-work-link" src={workLink} alt="The Work link" />
+              <img
+                className="header-links"
+                id="the-work-link"
+                src={workLink}
+                alt="The Work link"
+              />
             </Nav.Link>
             <Nav.Link as={Link} to={"/the-team"}>
-              <img className="header-links" id="the-team-link" src={teamLink} alt="The Team link" />
+              <img
+                className="header-links"
+                id="the-team-link"
+                src={teamLink}
+                alt="The Team link"
+              />
             </Nav.Link>
             <Nav.Link as={Link} to={"/the-collective"}>
-              <img className="header-links" id="the-collective-link" src={collectiveLink} alt="The Collective link" />
+              <img
+                className="header-links"
+                id="the-collective-link"
+                src={collectiveLink}
+                alt="The Collective link"
+              />
             </Nav.Link>
-            <Nav.Link as={Link} to={"/talk-to-us"}>
-              <img id="talk-to-us-button" src={TalkButton} alt="The Talk button" />
-            </Nav.Link>
+            {/* <Nav.Link as={Link} to={"/talk-to-us"}>
+              <img
+                id="talk-to-us-button"
+                src={TalkButton}
+                alt="The Talk button"
+              />
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>
