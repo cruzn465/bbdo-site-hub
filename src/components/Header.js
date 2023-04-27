@@ -75,7 +75,7 @@ function Header() {
           <img id="logo" src={Logo} alt="BBDO logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav.Link as={Link} to={"/talk-to-us"}>
+        <Nav.Link className="mobile" as={Link} to={"/talk-to-us"}>
           <img id="talk-to-us-button" src={TalkButton} alt="The Talk button" />
         </Nav.Link>
         <Navbar.Collapse id="basic-navbar-nav">
@@ -104,13 +104,15 @@ function Header() {
                 alt="The Collective link"
               />
             </Nav.Link>
-            {/* <Nav.Link as={Link} to={"/talk-to-us"}>
+            {/* <a ref="mailto: studioteam@bbdostudios.com"> */}
+            <Nav.Link className="desktop" as={Link} to={"/talk-to-us"}>
               <img
                 id="talk-to-us-button"
                 src={TalkButton}
                 alt="The Talk button"
               />
-            </Nav.Link> */}
+            </Nav.Link>
+            {/* </a> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

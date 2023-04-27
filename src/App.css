@@ -26,7 +26,8 @@
 }
 
 #talk-to-us-button {
-  height: 55px;
+  /* height: 55px; */
+  width: 100px;
 }
 
 .navbar-collapse {
@@ -405,7 +406,10 @@ hr {
   flex-basis: 100%;
   height: 200px;
   /* background-image: url("http://placekitten.com/400/300"); */
+
+  /* VERY IMPORTANT FOR THESE IMGS TO BE TRULY CENTERED!! :) */
   background-size: cover;
+  background-position-x: center;
 
 }
 
@@ -518,6 +522,12 @@ hr {
 
 /*  WORK PAGE END */
 
+/* NAV BAR START */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* NAV BAR END */
 
 
 /* MEDIA QUERIES */
@@ -525,28 +535,46 @@ hr {
 /* small screen sizes */
 @media only screen and (max-width: 576px) {
   #logo {
-  width: 150px;
+  width: 120px;
+  }
+  #talk-to-us-button {
+    /* height: 40px; */
+    width: 90px;
+  }
+  .navbar-brand {
+    margin-right:20vw;
   }
 
 }
 
-/* desktop and smaller*/
+@media only screen and (max-width: 350px) {
+  .navbar-brand {
+    margin-right: 0px;
+  }
+}
+
+
+/* desktop and smaller*/  
 
 @media only screen and (max-width: 1200px) {
     #video {
       height: 100%;
-      width: auto;
-      /* scale: 2.5; */
+      /* width: auto; */
+      scale: 1.5;
     }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 990px) {
+  .navbar-brand {
+    margin-right: 10vw;
+  }
   #nav-container {
-    padding: 15px 25px;
+    padding: 5px 5px 5px 5px;
+    /* max-width: ; */
   }
-  #video {
-    /* height: 100%; */
-    /* scale: 2.5; */
-  }
+  /* #video {
+    height: 100%;
+    scale: 2.5;
+  } */
 
   .header {
     max-width: 80% !important;
@@ -557,18 +585,32 @@ hr {
   }
 }
 
-@media only screen and (max-width: 993px) {
+@media only screen and (max-width: 991px) {
+  .header-links {
+    height: 20px;
+  }
+
   .desktop {
     display: none;
   }
   hr {
       border: #ed1e24 1.7px solid !important;
   }
+
+  .navbar-toggler {
+    border: none;
+  }
   .navbar-collapse {
     /* background-color: #090909db; */
     background-color: #1d1c1cdb;
     border-radius: 50px;
   }
+
+
+.navbar>.container {
+  justify-content: center !important;
+  text-align: center;
+}
 
   #who_we_are {
     max-width: 80% !important;
