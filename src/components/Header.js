@@ -104,13 +104,23 @@ function Header() {
                 alt="The Collective link"
               />
             </Nav.Link>
-            {/* <a ref="mailto: studioteam@bbdostudios.com"> */}
-            <Nav.Link className="desktop" as={Link} to={"/talk-to-us"}>
+            <Nav.Link
+              className="desktop"
+              // as={Link}
+              // to={"/talk-to-us"}
+              onClick={() =>
+                (window.location = "mailto:studioteam@bbdostudios.com")
+              }
+            >
               <img
                 id="talk-to-us-button"
                 src={TalkButton}
                 alt="The Talk button"
               />
+
+              {/* <div className="header-links cap work-sans-font" id="red-box">
+                talk to us
+              </div> */}
             </Nav.Link>
             {/* </a> */}
           </Nav>

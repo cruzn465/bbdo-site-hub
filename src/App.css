@@ -25,6 +25,14 @@
   height: 30px;
 }
 
+#red-box {
+  
+  /* font-style: ; */
+  /* width: 30px; */
+  /* height: 30px; */
+  background-color: #ed1e24;
+}
+
 #talk-to-us-button {
   /* height: 55px; */
   width: 100px;
@@ -34,7 +42,7 @@
   flex-grow: 0 !important;
   /* background-color: #090909db; */
   /* background-color: #1d1c1cdb; */
-  /* border-radius: 50px; */
+  border-radius: 20px;
 }
 
 .navbar-nav {
@@ -629,7 +637,7 @@ hr {
     /* background-color: #090909db; */
     max-width: 60vw;
     background-color: #1d1c1cdb;
-    border-radius: 50px;
+    border-radius: 20px;
   }
 
 
