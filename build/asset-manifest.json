@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.77850d9a.css",
-    "main.js": "/static/js/main.d66d1989.js",
+    "main.css": "/static/css/main.2f8a503e.css",
+    "main.js": "/static/js/main.60a75803.js",
     "static/js/787.8f10c6d4.chunk.js": "/static/js/787.8f10c6d4.chunk.js",
     "static/media/Bbdostudiosreel081022bbdostudiosoptimized.mp4": "/static/media/Bbdostudiosreel081022bbdostudiosoptimized.1d6f384e03e34f75e196.mp4",
-    "static/media/TheTeam.webp": "/static/media/TheTeam.b9d07c3063113ae71d36.webp",
-    "static/media/BBDOStudios_logo.webp": "/static/media/BBDOStudios_logo.453b0dee62c7fdde793b.webp",
+    "static/media/BBDOStudios_logo.webp": "/static/media/BBDOStudios_logo.c016622a62c5535a7dec.webp",
+    "static/media/TheTeam.webp": "/static/media/TheTeam.22f9136a449ce57d9574.webp",
     "static/media/team_bg_img.jpg": "/static/media/team_bg_img.e5f5d11695c611365144.jpg",
     "static/media/bg.jpg": "/static/media/bg.20f44e24117076b7712d.jpg",
     "static/media/team_copy_m.png": "/static/media/team_copy_m.4d90fa9c13f4c39fbf05.png",
@@ -14,12 +14,12 @@
     "static/media/collective_super.png": "/static/media/collective_super.a1503215f43e5bf1cbfa.png",
     "static/media/team_super.png": "/static/media/team_super.d1afee8c3b82c111ca6a.png",
     "index.html": "/index.html",
-    "main.77850d9a.css.map": "/static/css/main.77850d9a.css.map",
-    "main.d66d1989.js.map": "/static/js/main.d66d1989.js.map",
+    "main.2f8a503e.css.map": "/static/css/main.2f8a503e.css.map",
+    "main.60a75803.js.map": "/static/js/main.60a75803.js.map",
     "787.8f10c6d4.chunk.js.map": "/static/js/787.8f10c6d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77850d9a.css",
-    "static/js/main.d66d1989.js"
+    "static/css/main.2f8a503e.css",
+    "static/js/main.60a75803.js"
   ]
 }

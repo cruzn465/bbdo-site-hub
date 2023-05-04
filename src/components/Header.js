@@ -32,6 +32,7 @@ function Header() {
   let bgToggle = false;
   const headerBg = useRef();
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
   if (location === "the-work") {
     workLink = TheWorkLinkClicked;
@@ -69,18 +70,38 @@ function Header() {
 
   return (
     // <Router>
-    <Navbar ref={headerBg} expand="lg" variant="dark" fixed="top">
+    <Navbar
+      ref={headerBg}
+      expand="lg"
+      variant="dark"
+      fixed="top"
+      expanded={expanded}
+    >
       <Container id="nav-container">
         <Navbar.Brand as={Link} to={"/"}>
           <img id="logo" src={Logo} alt="BBDO logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Nav.Link className="mobile" as={Link} to={"/talk-to-us"}>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          onClick={() => setExpanded(expanded ? false : "expanded")}
+        />
+        <Nav.Link
+          className="mobile"
+          // as={Link}
+          // to={"/talk-to-us"}
+          onClick={() =>
+            (window.location = "mailto:studioteam@bbdostudios.com")
+          }
+        >
           <img id="talk-to-us-button" src={TalkButton} alt="The Talk button" />
         </Nav.Link>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end me-auto">
-            <Nav.Link as={Link} to={"/the-work"}>
+            <Nav.Link
+              as={Link}
+              to={"/the-work"}
+              onClick={() => setExpanded(false)}
+            >
               <img
                 className="header-links"
                 id="the-work-link"
@@ -88,7 +109,11 @@ function Header() {
                 alt="The Work link"
               />
             </Nav.Link>
-            <Nav.Link as={Link} to={"/the-team"}>
+            <Nav.Link
+              as={Link}
+              to={"/the-team"}
+              onClick={() => setExpanded(false)}
+            >
               <img
                 className="header-links"
                 id="the-team-link"
@@ -96,7 +121,11 @@ function Header() {
                 alt="The Team link"
               />
             </Nav.Link>
-            <Nav.Link as={Link} to={"/the-collective"}>
+            <Nav.Link
+              as={Link}
+              to={"/the-collective"}
+              onClick={() => setExpanded(false)}
+            >
               <img
                 className="header-links"
                 id="the-collective-link"
