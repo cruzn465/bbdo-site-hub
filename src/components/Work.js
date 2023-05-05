@@ -94,35 +94,35 @@ function Work() {
 
   return (
     <>
-      <Container>
-        <Container>
-          <Container id="works">
-            {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
-            {!loading && media.length > 0 ? (
-              groupedPosts.map((postSubArray, i) => (
-                <WorkRow
-                  mediaObj={mediaObj}
-                  key={i}
-                  posts={postSubArray}
-                  setModalShow={setModalShow}
-                  setPost={setPost}
-                  setSelectedMedia={setSelectedMedia}
-                />
-              ))
-            ) : (
-              <img id="loading" src={loadingGif} alt="Loading GIF"></img>
-            )}
-            {modalShow && (
-              <WorkModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                selectedMedia={selectedMedia}
-                post={post}
-              />
-            )}
-          </Container>
-        </Container>
+      {/* <Container> */}
+      {/* <Container> */}
+      <Container id="works">
+        {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
+        {!loading && media.length > 0 ? (
+          groupedPosts.map((postSubArray, i) => (
+            <WorkRow
+              mediaObj={mediaObj}
+              key={i}
+              posts={postSubArray}
+              setModalShow={setModalShow}
+              setPost={setPost}
+              setSelectedMedia={setSelectedMedia}
+            />
+          ))
+        ) : (
+          <img id="loading" src={loadingGif} alt="Loading GIF"></img>
+        )}
+        {modalShow && (
+          <WorkModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            selectedMedia={selectedMedia}
+            post={post}
+          />
+        )}
       </Container>
+      {/* </Container> */}
+      {/* </Container> */}
     </>
   );
 }

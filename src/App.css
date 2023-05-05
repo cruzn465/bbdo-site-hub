@@ -25,12 +25,24 @@
   height: 30px;
 }
 
+#red-box {
+  
+  /* font-style: ; */
+  /* width: 30px; */
+  /* height: 30px; */
+  background-color: #ed1e24;
+}
+
 #talk-to-us-button {
-  height: 55px;
+  /* height: 55px; */
+  width: 100px;
 }
 
 .navbar-collapse {
   flex-grow: 0 !important;
+  /* background-color: #090909db; */
+  /* background-color: #1d1c1cdb; */
+  border-radius: 20px;
 }
 
 .navbar-nav {
@@ -103,7 +115,6 @@ hr {
   opacity: 1 !important;
   margin-top: 25px !important;
   margin-bottom: 25px !important;
-
 }
 
 .copy {
@@ -403,7 +414,10 @@ hr {
   flex-basis: 100%;
   height: 200px;
   /* background-image: url("http://placekitten.com/400/300"); */
+
+  /* VERY IMPORTANT FOR THESE IMGS TO BE TRULY CENTERED!! :) */
   background-size: cover;
+  background-position-x: center;
 
 }
 
@@ -516,23 +530,70 @@ hr {
 
 /*  WORK PAGE END */
 
+/* NAV BAR START */
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+/* NAV BAR END */
+
 
 /* MEDIA QUERIES */
 
 /* small screen sizes */
 @media only screen and (max-width: 576px) {
   #logo {
-  width: 150px;
+  width: 120px;
+  }
+  #talk-to-us-button {
+    /* height: 40px; */
+    width: 90px;
+  }
+  .navbar-brand {
+    margin-right:20vw;
   }
 
 }
 
-/* desktop and smaller*/
-@media only screen and (max-width: 900px) {
-  #video {
+@media only screen and (max-width: 350px) {
+  .navbar-brand {
+    margin-right: 0px;
+  }
+
+  .hidden-on-super-small {
+
+  }
+}
+
+
+/* desktop and smaller*/  
+
+@media only screen and (max-width: 1200px) {
+    #video {
+      height: 100%;
+      /* width: auto; */
+      scale: 1.5;
+    }
+}
+@media only screen and (max-width: 990px) {
+  /* #works {
+    max-width: 90vw;
+  } */
+  .all-content {
+    max-width: 100vw;
+  }
+
+  .navbar-brand {
+    margin-right: 10vw;
+  }
+  #nav-container {
+    padding: 5px 5px 5px 5px;
+    /* max-width: ; */
+  }
+  /* #video {
     height: 100%;
     scale: 2.5;
-  }
+  } */
 
   .header {
     max-width: 80% !important;
@@ -543,7 +604,47 @@ hr {
   }
 }
 
-@media only screen and (max-width: 993px) {
+@media only screen and (max-width: 991px) {
+
+  .post-titles {
+    font-size: 20px;
+  }
+  #mobile-outer-container {
+    /* width: 65vw; */
+  }
+  .hidden-on-mobile {
+    visibility: hidden;
+    /* height: 0px; */
+    /* width: 0px; */
+  }
+  .header-links {
+    height: 20px;
+  }
+
+  .desktop {
+    display: none;
+    /* visibility: hidden; */
+  }
+
+  hr {
+      border: #ed1e24 1.7px solid !important;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-collapse {
+    /* background-color: #090909db; */
+    max-width: 60vw;
+    background-color: #1d1c1cdb;
+    border-radius: 20px;
+  }
+
+
+.navbar>.container {
+  justify-content: center !important;
+  text-align: center;
+}
 
   #who_we_are {
     max-width: 80% !important;
@@ -552,9 +653,17 @@ hr {
 
 /* large screens */
 @media only screen and (min-width: 992px) {
-  #logo {
-    /* width: 70px; */
+
+  .hidden-on-desktop {
+    /* visibility: hidden; */
+    /* height: 0px; */
+    /* width: 0px; */
   }
+  .mobile {
+    display: none;
+    /* visibility: hidden; */
+  }
+
 
   .container {
     max-width: 1300px !important;

@@ -3,6 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Team_super from "../img/team_super.png";
 import Team_copy from "../img/team_copy.png";
+import Team_copy_m from "../img/team_copy_m.png";
+import TeamMobile from "../img/TheTeam.webp";
+
 // import Team_bg_img from '../img/team_bg_img.jpg'
 // import Team_bg_grey from '../img/background_grey.png'
 // import Team_prod_subcopies from '../img/prod_titles.png'
@@ -106,21 +109,27 @@ function Team() {
           WITH QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE THE PEOPLE WHO ARE DRIVEN BY INNOVATION AND POWERED BY <b>THE WORK</b>
         </h2> */}
       <img
-        className="copy"
+        className="copy desktop"
         src={Team_copy}
         alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
       />
+      <img
+        className="copy mobile"
+        src={Team_copy_m}
+        alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
+      />
+
       <hr />
-      <Container id="outer-container">
-        <Container id="office_bg"></Container>
-        <Container id="grey-bg" className="abs-cont">
+      <Container id="outer-container" className="desktop">
+        <Container id="office_bg" className="hidden-on-mobile"></Container>
+        <Container id="grey-bg" className="abs-cont hidden-on-mobile">
           <Row>
             <Col ref={greyRef1} id="grey-1" className="grey"></Col>
             <Col ref={greyRef2} id="grey-2" className="grey" xs={4}></Col>
             <Col ref={greyRef3} id="grey-3" className="grey"></Col>
           </Row>
         </Container>
-        <Container id="text" className="abs-cont">
+        <Container id="text" className="abs-cont hidden-on-mobile">
           <Row>
             <Col className="grey">
               <span
@@ -196,6 +205,14 @@ function Team() {
             </Col>
           </Row>
         </Container>
+      </Container>
+      <Container>
+        <img
+          id="mobile-outer-container"
+          className="mobile copy"
+          src={TeamMobile}
+          alt="Office background with descriptions of BBDO studios work"
+        />
       </Container>
     </>
   );

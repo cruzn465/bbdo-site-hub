@@ -293,3 +293,19 @@ body { margin:0px 0px; padding:0px; }
 	height:44px;
 	background-image:url(../img/header_the_work_clicked.png);
 }
+
+#team_copy_m {
+	left:86px;
+	top:792px;
+	width:1104px;
+	height:312px;
+	background-image:url(../img/team_copy_m.png);
+}
+
+#collective_super_m {
+	left:142px;
+	top:478px;
+	width:996px;
+	height:331px;
+	background-image:url(../img/collective_super_m.png);
+}
