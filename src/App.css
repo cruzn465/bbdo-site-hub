@@ -418,8 +418,8 @@ hr {
   /* VERY IMPORTANT FOR THESE IMGS TO BE TRULY CENTERED!! :) */
   background-size: cover;
   background-position-x: center;
-
 }
+
 
 .empty {
   height: 0;
@@ -575,10 +575,21 @@ hr {
       scale: 1.5;
     }
 }
-@media only screen and (max-width: 990px) {
-  /* #works {
-    max-width: 90vw;
-  } */
+
+@media only screen and (max-width: 991px) {
+
+  #works {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .work-col {
+    height: 160px;
+  }
+  
+  .outer-container {
+    height: 160px;
+  }
+
   .all-content {
     max-width: 100vw;
   }

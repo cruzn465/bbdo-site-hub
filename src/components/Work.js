@@ -13,6 +13,10 @@ import loadingGif from "../img/Arrows bar.gif";
 
 function Work() {
   const [posts, setPosts] = useState([]);
+  // const [cat, setCat] = useState(0);
+
+  // const [groupedPosts, setGroupedPosts] = useState([]);
+
   const [media, setMedia] = useState([]);
   const [mediaObj, setMediaObj] = useState({});
   const [modalShow, setModalShow] = React.useState(false);
@@ -55,7 +59,9 @@ function Work() {
         totalMedia = [...totalMedia, ...resLoopM.data];
       }
 
+      // FILTERING
       setPosts(totalPosts);
+
       setMedia(totalMedia);
 
       // console.log("****setting posts****", totalPosts);
@@ -90,16 +96,18 @@ function Work() {
     return res;
   }
 
-  const groupedPosts = groupPosts(posts);
+  // const groupedPosts = groupPosts(posts);
+  // setGroupedPosts(groupPosts(posts));
 
   return (
     <>
       {/* <Container> */}
       {/* <Container> */}
       <Container id="works">
+        {/* FILTER COMPONENT PASS THE CATEGORY */}
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
-          groupedPosts.map((postSubArray, i) => (
+          groupPosts(posts).map((postSubArray, i) => (
             <WorkRow
               mediaObj={mediaObj}
               key={i}
