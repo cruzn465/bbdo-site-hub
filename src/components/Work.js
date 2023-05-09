@@ -3,6 +3,8 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import WorkRow from "./WorkRow";
+import Filter from "./Filter";
+
 // import WorkRows from "./WorkRows";
 
 import WorkModal from "./WorkModal";
@@ -105,6 +107,7 @@ function Work() {
       {/* <Container> */}
       <Container id="works">
         {/* FILTER COMPONENT PASS THE CATEGORY */}
+        <Filter />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (
