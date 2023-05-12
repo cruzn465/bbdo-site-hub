@@ -1,10 +1,7 @@
 import React from "react";
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 
-function Filter() {
-  const handleSelect = (e) => {
-    console.log(e);
-  };
+function Filter({ handleSelect }) {
   return (
     <>
       <Dropdown title="Dropdown right" onSelect={handleSelect}>
@@ -12,14 +9,14 @@ function Filter() {
           FILTER BY
         </Dropdown.Toggle>
 
-        <Dropdown.Menu onSelect={handleSelect}>
+        <Dropdown.Menu>
           {/* <Dropdown.Item href="#/action-1">ALL</Dropdown.Item> */}
           <Dropdown.Item eventKey="1">ALL</Dropdown.Item>
-          <Dropdown.Item eventKey="2">BRANDED + DOCU-STYLE</Dropdown.Item>
-          <Dropdown.Item eventKey="3">COMMERCIAL SPOTS</Dropdown.Item>
-          <Dropdown.Item eventKey="4">CREATOR + SOCIAL</Dropdown.Item>
-          <Dropdown.Item eventKey="5">DIGITAL</Dropdown.Item>
-          <Dropdown.Item eventKey="6">EXPERIENTIAL + INTERACTIVE</Dropdown.Item>
+          <Dropdown.Item eventKey="3">BRANDED + DOCU-STYLE</Dropdown.Item>
+          <Dropdown.Item eventKey="4">COMMERCIAL SPOTS</Dropdown.Item>
+          <Dropdown.Item eventKey="5">CREATOR + SOCIAL</Dropdown.Item>
+          {/* <Dropdown.Item eventKey="?">DIGITAL</Dropdown.Item> */}
+          <Dropdown.Item eventKey="9">EXPERIENTIAL + INTERACTIVE</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 

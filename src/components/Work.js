@@ -15,7 +15,7 @@ import loadingGif from "../img/Arrows bar.gif";
 
 function Work() {
   const [posts, setPosts] = useState([]);
-  // const [cat, setCat] = useState(0);
+  const [cat, setCat] = useState(1);
 
   // const [groupedPosts, setGroupedPosts] = useState([]);
 
@@ -23,6 +23,8 @@ function Work() {
   const [mediaObj, setMediaObj] = useState({});
   const [modalShow, setModalShow] = React.useState(false);
   const [post, setPost] = useState({});
+  const [totPost, setTotPost] = useState({});
+
   const [selectedMedia, setSelectedMedia] = useState("");
   // const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -61,12 +63,12 @@ function Work() {
         totalMedia = [...totalMedia, ...resLoopM.data];
       }
 
-      // FILTERING
       setPosts(totalPosts);
+      setTotPost(totalPosts);
 
       setMedia(totalMedia);
 
-      // console.log("****setting posts****", totalPosts);
+      console.log("****setting posts****", totalPosts);
       // console.log("****setting media****", totalMedia);
 
       // MAKE THE MEDIAOBJ FROM TOTAL MEDIA
@@ -95,9 +97,51 @@ function Work() {
       tempArr.push(arr[i]);
     }
     if (tempArr.length) res.push(tempArr);
+    // console.log
     return res;
   }
 
+  const handleSelect = (e) => {
+    setLoading(true);
+
+    console.log("cat", e);
+    const strE = String(e);
+    // setCat(strE);
+    // USING FILTER METHOD DOESN'T WORK
+    // const filteredPosts = posts.filter((post) => {
+    // console.log("post.categories", post.categories, post.categories.length);
+    //   for (let i = 0; i < post.categories.length; i++) {
+    //     let cur = post.categories[i];
+    //
+
+    //     if (cur === cat) return post;
+    //   }
+    // });
+    console.log("totPost", totPost);
+    let filteredPosts = [];
+    for (let i = 0; i < totPost.length; i++) {
+      const curPost = totPost[i];
+      console.log(
+        "totPost.categories",
+        curPost.categories,
+        curPost.categories.length
+      );
+      for (let j = 0; j < curPost.categories.length; j++) {
+        let cur = String(curPost.categories[j]);
+        console.log("cur", cur);
+        // console.log("cat", cat);
+        console.log("_________", cur == strE);
+        console.log(typeof cur, typeof strE);
+        if (cur === strE) {
+          filteredPosts.push(curPost);
+        }
+      }
+    }
+    if (strE === "1") filteredPosts = totPost;
+    console.log("filteredPosts-------****", filteredPosts);
+    setPosts(filteredPosts);
+    setLoading(false);
+  };
   // const groupedPosts = groupPosts(posts);
   // setGroupedPosts(groupPosts(posts));
 
@@ -107,7 +151,7 @@ function Work() {
       {/* <Container> */}
       <Container id="works">
         {/* FILTER COMPONENT PASS THE CATEGORY */}
-        <Filter />
+        <Filter setCat={setCat} cat={cat} handleSelect={handleSelect} />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (
