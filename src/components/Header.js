@@ -86,9 +86,7 @@ function Header() {
           onClick={() => setExpanded(expanded ? false : "expanded")}
         />
         <Nav.Link
-          className="mobile"
-          // as={Link}
-          // to={"/talk-to-us"}
+          className="mobile last-dropdown-item"
           onClick={() =>
             (window.location = "mailto:studioteam@bbdostudios.com")
           }
@@ -125,6 +123,7 @@ function Header() {
               as={Link}
               to={"/the-collective"}
               onClick={() => setExpanded(false)}
+              className="last-dropdown-item"
             >
               <img
                 className="header-links"
@@ -134,9 +133,7 @@ function Header() {
               />
             </Nav.Link>
             <Nav.Link
-              className="desktop"
-              // as={Link}
-              // to={"/talk-to-us"}
+              className="desktop last-dropdown-item"
               onClick={() =>
                 (window.location = "mailto:studioteam@bbdostudios.com")
               }

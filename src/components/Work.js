@@ -116,6 +116,8 @@ function Work() {
   return (
     <>
       <Container id="works">
+        {/* THIS IS WHERE THE MOBILE WEBP WILL GO */}
+        <div className="mobile fpo-video"></div>
         <Filter handleSelect={handleSelect} />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (

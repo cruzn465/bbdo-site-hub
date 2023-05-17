@@ -45,10 +45,6 @@
     border-radius: 20px;
   }
 
-  .navbar-nav {
-    align-items: center !important;
-  }
-
   #nav-container {
     padding: 20px 50px 20px 50px;
   }
@@ -420,7 +416,6 @@
     background-position-x: center;
   }
 
-
   .empty {
     height: 0;
   }
@@ -432,8 +427,6 @@
   .work-col:hover {
     /* opacity: 0; */
   }
-
-
 
   .text:hover {
     /* background-color: #ea482f; */
@@ -485,6 +478,11 @@
     opacity: 1;
     text-shadow: 1px 1px 6px #00000035;
   }
+
+  .fpo-video {
+    height: 250px;
+  }
+  /* WORK STYLES START */
 
   /* MODAL STYLES START */
 
@@ -563,34 +561,34 @@
     /* FIGURE OUT HOW WHAT  */
     /* text-align:left;   */
   }
-   .dropdown-menu {
-     width: 30%;
-    --bs-dropdown-bg: #000000d2;
-    border: 3px solid #ffffff;
-    box-shadow: none;
-    border-radius: 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: -5px;
-    --bs-dropdown-link-color: #fff;
-    --bs-dropdown-link-active-bg: #f14227ee;
-   }
+  .dropdown-menu {
+    width: 30%;
+  --bs-dropdown-bg: #000000d2;
+  border: 3px solid #ffffff;
+  box-shadow: none;
+  border-radius: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -5px;
+  --bs-dropdown-link-color: #fff;
+  --bs-dropdown-link-active-bg: #f14227ee;
+  }
 
-   .dropdown-item {
-    border-bottom: 3px solid #ffffff;
-    padding-top: 2px;
-    padding-bottom: 2px;
-   }
+  .dropdown-item {
+  border-bottom: 3px solid #ffffff;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  }
 
-
-   .last-dropdown-item {
-    border-bottom: unset;
-   }
-
-
-  /* .filter-default */
+  .last-dropdown-item {
+  border-bottom: unset !important;
+  }
 
   /* FILTER END */
+
+
+
+
 
 
 
@@ -632,6 +630,9 @@
   }
 
   @media only screen and (max-width: 991px) {
+    .nav-link {
+      border-bottom: 1px solid #ffffffd5;
+    }
     .dropdown-menu {
       width: 50%;
     }
@@ -674,6 +675,8 @@
       height: 100%;
       scale: 2.5;
     } */
+
+    
 
     .header {
       max-width: 80% !important;
@@ -741,6 +744,9 @@
 
   /* large screens */
   @media only screen and (min-width: 992px) {
+    .navbar-nav {
+      align-items: center !important;
+    }
 
     .hidden-on-desktop {
       /* visibility: hidden; */
