@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
@@ -29,7 +29,7 @@ function Header() {
   let workLink = TheWorkLink;
   let teamLink = TheTeamLink;
   let collectiveLink = TheCollectiveLink;
-  let bgToggle = false;
+  // let bgToggle = sfalse;
   const headerBg = useRef();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [expanded, setExpanded] = useState(false);

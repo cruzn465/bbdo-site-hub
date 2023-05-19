@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// import {  Link, Outlet } from "react-router-dom";
-// import { Row, Col, Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import Collective_super from "../img/collective_super.png";
 import Collective_copy from "../img/collective_copy.png";
@@ -51,7 +49,7 @@ function Collective() {
       <h2 className="germain" id="curr-mem-title">
         CURRENT MEMBERS
       </h2>
-      <div className="flex-mem">{members}</div>
+      {/* <div className="flex-mem">{members}</div> */}
       <div>{slug ? <CurrentMember /> : ""}</div>
       {/* <Outlet /> */}
     </>
