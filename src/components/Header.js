@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+// import { BrowserRouter as Router } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 import Container from "react-bootstrap/Container";
@@ -29,7 +29,7 @@ function Header() {
   let workLink = TheWorkLink;
   let teamLink = TheTeamLink;
   let collectiveLink = TheCollectiveLink;
-  let bgToggle = false;
+  // let bgToggle = sfalse;
   const headerBg = useRef();
   const [scrollPosition, setScrollPosition] = useState(0);
   const [expanded, setExpanded] = useState(false);
@@ -86,9 +86,7 @@ function Header() {
           onClick={() => setExpanded(expanded ? false : "expanded")}
         />
         <Nav.Link
-          className="mobile"
-          // as={Link}
-          // to={"/talk-to-us"}
+          className="mobile last-dropdown-item"
           onClick={() =>
             (window.location = "mailto:studioteam@bbdostudios.com")
           }
@@ -125,6 +123,7 @@ function Header() {
               as={Link}
               to={"/the-collective"}
               onClick={() => setExpanded(false)}
+              className="last-dropdown-item"
             >
               <img
                 className="header-links"
@@ -134,9 +133,7 @@ function Header() {
               />
             </Nav.Link>
             <Nav.Link
-              className="desktop"
-              // as={Link}
-              // to={"/talk-to-us"}
+              className="desktop last-dropdown-item"
               onClick={() =>
                 (window.location = "mailto:studioteam@bbdostudios.com")
               }

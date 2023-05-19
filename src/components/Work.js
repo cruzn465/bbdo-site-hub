@@ -3,6 +3,8 @@ import Axios from "axios";
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import WorkRow from "./WorkRow";
+import Filter from "./Filter";
+
 // import WorkRows from "./WorkRows";
 
 import WorkModal from "./WorkModal";
@@ -13,7 +15,6 @@ import loadingGif from "../img/Arrows bar.gif";
 
 function Work() {
   const [posts, setPosts] = useState([]);
-  // const [cat, setCat] = useState(0);
 
   // const [groupedPosts, setGroupedPosts] = useState([]);
 
@@ -21,6 +22,8 @@ function Work() {
   const [mediaObj, setMediaObj] = useState({});
   const [modalShow, setModalShow] = React.useState(false);
   const [post, setPost] = useState({});
+  const [totPost, setTotPost] = useState({});
+
   const [selectedMedia, setSelectedMedia] = useState("");
   // const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -59,9 +62,8 @@ function Work() {
         totalMedia = [...totalMedia, ...resLoopM.data];
       }
 
-      // FILTERING
       setPosts(totalPosts);
-
+      setTotPost(totalPosts);
       setMedia(totalMedia);
 
       // console.log("****setting posts****", totalPosts);
@@ -73,7 +75,6 @@ function Work() {
         let curr = totalMedia[i];
         tempObj[curr.id] = curr;
       }
-      // console.log("tempObj", tempObj);
       setMediaObj(tempObj);
       setLoading(false);
     };
@@ -96,15 +97,28 @@ function Work() {
     return res;
   }
 
+  const handleSelect = (e) => {
+    const strE = String(e);
+    let filteredPosts = [];
+    for (let i = 0; i < totPost.length; i++) {
+      const curPost = totPost[i];
+      for (let j = 0; j < curPost.categories.length; j++) {
+        let cur = String(curPost.categories[j]);
+        if (cur === strE) filteredPosts.push(curPost);
+      }
+    }
+    if (strE === "1") filteredPosts = totPost;
+    setPosts(filteredPosts);
+  };
   // const groupedPosts = groupPosts(posts);
   // setGroupedPosts(groupPosts(posts));
 
   return (
     <>
-      {/* <Container> */}
-      {/* <Container> */}
       <Container id="works">
-        {/* FILTER COMPONENT PASS THE CATEGORY */}
+        {/* THIS IS WHERE THE MOBILE WEBP WILL GO */}
+        <div className="mobile fpo-video"></div>
+        <Filter handleSelect={handleSelect} />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (
