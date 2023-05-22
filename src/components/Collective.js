@@ -13,6 +13,8 @@ function Collective() {
   const [currMem, setCurrMem] = useState(null);
   const navigate = useNavigate();
   const { slug } = useParams();
+
+  // make a fetch for all the members and log it
   const members = memberArr.map((member) => (
     <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
       <img
