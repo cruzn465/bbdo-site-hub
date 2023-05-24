@@ -101,6 +101,7 @@ function Team() {
 
   return (
     <>
+      <div className="mobile spacer"></div>
       <Image className="header" src={Team_super} alt="Who We Are"></Image>
       <hr />
       {/* <h2 id="team-copy-not-pic">

@@ -4,14 +4,11 @@ import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import WorkRow from "./WorkRow";
 import Filter from "./Filter";
-
 // import WorkRows from "./WorkRows";
-
 import WorkModal from "./WorkModal";
 // import FetchMoreButton from "./FetchMoreButton";
-
 import loadingGif from "../img/Arrows bar.gif";
-// import { Button } from "bootstrap";
+import MobileVid from "../img/MobileWebsite_TheWork_V2.webp";
 
 function Work() {
   const [posts, setPosts] = useState([]);
@@ -117,7 +114,26 @@ function Work() {
     <>
       <Container id="works">
         {/* THIS IS WHERE THE MOBILE WEBP WILL GO */}
-        <div className="mobile fpo-video"></div>
+        <Container fluid className="work-bg spacer-video">
+          <div className="mobile fpo-video">
+            <img
+              id="mobile-outer-container"
+              className="mobile copy"
+              src={MobileVid}
+              alt="Video showcasing BBDO work"
+            />
+          </div>
+        </Container>
+        <div className="mobile spacer-video"></div>
+        {/* <div className="mobile spacer"></div> */}
+        {/* <Container fluid className="bg1">
+          <img
+            id="mobile-outer-container"
+            className="mobile copy"
+            src={MobileVid}
+            alt="Video showcasing BBDO work"
+          />
+        </Container> */}
         <Filter handleSelect={handleSelect} />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
