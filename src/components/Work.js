@@ -8,7 +8,7 @@ import Filter from "./Filter";
 import WorkModal from "./WorkModal";
 // import FetchMoreButton from "./FetchMoreButton";
 import loadingGif from "../img/Arrows bar.gif";
-import MobileVid from "../img/MobileWebsite_TheWork_V2.webp";
+import MobileVid from "../img/TheWork.webp";
 
 function Work() {
   const [posts, setPosts] = useState([]);

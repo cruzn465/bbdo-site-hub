@@ -60,6 +60,10 @@
 
   #mobile-video {
     width: 100vw;
+    /* height: 100%; */
+    position: fixed;
+    top: 0;
+    left: 0;
   }
   #team-copy-not-pic {
     display: none;

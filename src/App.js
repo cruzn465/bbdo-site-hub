@@ -35,13 +35,13 @@ function App() {
     setScrollPosition(position);
     if (position > 50) {
       // do the gsap animation?
-      console.log("position is less than 50");
+      // console.log("position is less than 50");
       gsap.to(navBg.current, 1, {
         backgroundColor: "rgba(0, 0, 0, .8)",
       });
     } else {
       // do the gsap reversed animation
-      console.log("FALSE");
+      // console.log("FALSE");
       gsap.to(navBg.current, 1, {
         backgroundColor: "rgba(0, 0, 0, .3)",
       });
@@ -60,7 +60,7 @@ function App() {
       <Container fluid className="bg mobile-no-pad mobile-no-mar"></Container>
       <div className="desktop spacer"></div>
 
-      <Container fluid className="all-content ">
+      <Container className="all-content">
         <Router basename="/">
           <Header />
           <Routing />
