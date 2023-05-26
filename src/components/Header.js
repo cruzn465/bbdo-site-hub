@@ -30,8 +30,6 @@ function Header() {
   let teamLink = TheTeamLink;
   let collectiveLink = TheCollectiveLink;
   // let bgToggle = sfalse;
-  const headerBg = useRef();
-  const [scrollPosition, setScrollPosition] = useState(0);
   const [expanded, setExpanded] = useState(false);
 
   if (location === "the-work") {
@@ -42,41 +40,9 @@ function Header() {
     collectiveLink = TheCollectiveLinkClicked;
   }
 
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-    if (position > 50) {
-      // do the gsap animation?
-      // console.log("position is less than 50");
-      gsap.to(headerBg.current, 1, {
-        backgroundColor: "rgba(0, 0, 0, .8)",
-      });
-    } else {
-      // do the gsap reversed animation
-      // console.log("FALSE");
-      gsap.to(headerBg.current, 1, {
-        backgroundColor: "rgba(0, 0, 0, 0)",
-      });
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     // <Router>
-    <Navbar
-      ref={headerBg}
-      expand="lg"
-      variant="dark"
-      fixed="top"
-      expanded={expanded}
-    >
+    <Navbar expand="lg" variant="dark" fixed="top" expanded={expanded}>
       <Container id="nav-container">
         <Navbar.Brand as={Link} to={"/"}>
           <img id="logo" src={Logo} alt="BBDO logo" />
