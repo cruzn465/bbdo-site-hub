@@ -26,7 +26,7 @@
   }
 
   #red-box {
-    
+
     /* font-style: ; */
     /* width: 30px; */
     /* height: 30px; */
@@ -505,7 +505,7 @@
   }
 
   .spacer-video {
-    height: 87vw;
+    /* height: 87vw; */
   }
   /* WORK STYLES START */
 
@@ -656,15 +656,19 @@
     }
 
     #dropdown-basic {
-      width:100% !important; 
+      width:100% !important;
     }
     .dropdown-menu {
       width: 100% !important;
+    }
+    .spacer-video {
+      height: 87vw;
     }
 
   }
 
   @media only screen and (max-width: 991px) {
+
     .mobile-no-pad {
       padding-left: 0;
       padding-right: 0;
