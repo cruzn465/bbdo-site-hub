@@ -411,6 +411,10 @@
   /* Collective page end */
 
   /*  WORK PAGE START */
+  .hover-title {
+    font-size: 15px;
+    font-weight: 500;
+  }
 
   #loading {
     margin-top: 15vh;
