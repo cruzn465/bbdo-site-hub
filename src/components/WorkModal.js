@@ -9,9 +9,11 @@ import loadingGif from "../img/Arrows bar.gif";
 function WorkModal(props) {
   // const { post, selectedMedia } = props;
   const { post, selectedMedia } = props;
+  const video_id_arr = selectedMedia[1].slice(18).split("/");
+  // console.log(video_id_arr);
 
   // const source_url = selectedMedia.source_url;
-  console.log("post in workmodal*******", post);
+  // console.log("post in workmodal*******", post);
   const title = decode(post.title.rendered);
 
   function decode(str) {
@@ -29,9 +31,6 @@ function WorkModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {/* <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Modal heading</Modal.Title>
-      </Modal.Header> */}
       <div onClick={props.onHide}>
         <img
           className="pointer"
@@ -42,11 +41,28 @@ function WorkModal(props) {
       </div>
       <Modal.Body>
         <h4 className="h-center modal-title cap work-sans-font">{title}</h4>
-        <div
-          className="work-col"
-          id="modal-img"
-          style={{ backgroundImage: `url(${selectedMedia})` }}
-        ></div>
+        {/* IF THERE IS NO VIDEO, THERE WILL BE A STOCK CAT IMG... */}
+        {selectedMedia[0] === "img" && (
+          <div
+            className="work-col"
+            id="modal-img"
+            style={{ backgroundImage: `url(${selectedMedia[1]})` }}
+          ></div>
+        )}
+        {selectedMedia[0] === "video" && (
+          <iframe
+            className="modal-video"
+            // id="modal-img"
+            src={`https://player.vimeo.com/video/${video_id_arr[0]}?h=${video_id_arr[1]}&amp;app_id=122963`}
+            // width="100%"
+            // height="300"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title={title}
+          ></iframe>
+        )}
+
         {/* <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p> */}
       </Modal.Body>
       {/* <Modal.Footer></Modal.Footer> */}

@@ -8,7 +8,7 @@ import React from "react";
 import HomeMobileVid from "../img/Home.webp";
 
 function Home() {
-  var w = window.innerWidth;
+  // var w = window.innerWidth;
   const size = useWindowSize();
   if (size.width) {
     if (size.width <= 991) {
@@ -73,7 +73,12 @@ function Home() {
         <source src={homeVideo} type="video/mp4" className="desktop" />
       </video>
       {/* <Container fluid className="mobile home-vid"> */}
-      <img src={HomeMobileVid} id="mobile-video" className="mobile" />
+      <img
+        src={HomeMobileVid}
+        id="mobile-video"
+        className="mobile"
+        alt="Video showcasing different BBDO projects"
+      />
       {/* </Container> */}
     </>
   );

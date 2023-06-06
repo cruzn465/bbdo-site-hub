@@ -21,7 +21,7 @@ function Work() {
   const [post, setPost] = useState({});
   const [totPost, setTotPost] = useState({});
 
-  const [selectedMedia, setSelectedMedia] = useState("");
+  const [selectedMedia, setSelectedMedia] = useState([]);
   // const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
 
@@ -32,6 +32,7 @@ function Work() {
       let totalMedia = [];
       setLoading(true);
       let currentPage = 1;
+      // https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=1&per_page=100
       const resP = await Axios.get(
         `https://wpapibbdostudios.azurewebsites.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=100`
       );
