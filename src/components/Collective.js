@@ -113,7 +113,7 @@ function Collective() {
       <h2 className="germain" id="curr-mem-title">
         CURRENT MEMBERS
       </h2>
-      {/* <div className="flex-mem">{members}</div> */}
+      <div className="flex-mem">{members}</div>
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />
       ) : (

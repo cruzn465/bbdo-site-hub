@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 // import { BrowserRouter as Router } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -18,7 +18,7 @@ import TheCollectiveLinkClicked from "../img/header_the_collective_clicked.png";
 
 import TalkButton from "../img/header_talk_btn.png";
 import { Link } from "react-router-dom";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 // gsap.registerPlugin(ScrollTrigger);
 

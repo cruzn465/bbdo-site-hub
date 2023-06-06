@@ -21,7 +21,7 @@ function Work() {
   const [post, setPost] = useState({});
   const [totPost, setTotPost] = useState({});
 
-  const [selectedMedia, setSelectedMedia] = useState("");
+  const [selectedMedia, setSelectedMedia] = useState([]);
   // const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
 

@@ -3,10 +3,11 @@ import React from "react";
 function WorkRow(props) {
   const { posts, setModalShow, setPost, setSelectedMedia, mediaObj } = props;
 
-  function handleClick(e, post, mediaStr) {
+  function handleClick(e, post, mediaArr) {
     setModalShow(true);
     setPost(post);
-    setSelectedMedia(mediaStr);
+    // console.log("MEDIA ARRAY!!!!", mediaArr);
+    setSelectedMedia(mediaArr);
   }
 
   function decode(str) {
@@ -24,15 +25,24 @@ function WorkRow(props) {
     return "https://wpapibbdostudios.azurewebsites.net" + source_url;
   }
 
-  // MAKE THIS THE DETERMINE VIDEO MODAL URL fxn
-  // function findSourceUrl(post) {
-  //   // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
-  //   if (!post.featured_media || !post) return "http://placekitten.com/400/300";
-  //   let ft_media_id = post.featured_media;
-  //   let media = mediaObj[ft_media_id];
-  //   let source_url = media.media_details.sizes.medium_large.source_url;
-  //   return "https://wpapibbdostudios.azurewebsites.net" + source_url;
-  // }
+  // RETURN AN ARRAY ["video"/"img", VIMEO LINK/PLACEHOLDER IMAGE]
+  function determineModalMedia(post) {
+    // type & media
+    let t;
+    let m;
+    if (!post) {
+      t = "img";
+      return [t, "http://placekitten.com/400/300"];
+    }
+    // USE STATIC IMAGE FROM findSourceUrl
+    if (!post.acf.video_url) {
+      t = "img";
+      return [t, findSourceUrl(post)];
+    }
+    t = "video";
+    m = post.acf.video_url;
+    return [t, m];
+  }
 
   // decodes and adds a colon
   function addHoverTitle(str) {
@@ -51,7 +61,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[0]))
+              handleClick(e, postCurArr[0], determineModalMedia(postCurArr[0]))
             }
           >
             {/* bg img */}
@@ -68,7 +78,7 @@ function WorkRow(props) {
                   {postCurArr[0].acf.Client &&
                     addHoverTitle(postCurArr[0].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[0].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[0].title.rendered)}
                 </span>
@@ -78,7 +88,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[1], findSourceUrl(postCurArr[1]))
+              handleClick(e, postCurArr[1], determineModalMedia(postCurArr[1]))
             }
           >
             <div
@@ -93,7 +103,7 @@ function WorkRow(props) {
                   {postCurArr[1].acf.Client &&
                     addHoverTitle(postCurArr[1].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[1].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[1].title.rendered)}
                 </span>
@@ -103,7 +113,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[2], findSourceUrl(postCurArr[2]))
+              handleClick(e, postCurArr[2], determineModalMedia(postCurArr[2]))
             }
           >
             <div
@@ -118,7 +128,7 @@ function WorkRow(props) {
                   {postCurArr[2].acf.Client &&
                     addHoverTitle(postCurArr[2].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[2].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[2].title.rendered)}
                 </span>
@@ -133,7 +143,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[0]))
+              handleClick(e, postCurArr[0], determineModalMedia(postCurArr[0]))
             }
           >
             <div
@@ -148,7 +158,7 @@ function WorkRow(props) {
                   {postCurArr[0].acf.Client &&
                     addHoverTitle(postCurArr[0].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[0].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[0].title.rendered)}
                 </span>
@@ -159,7 +169,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[1], findSourceUrl(postCurArr[1]))
+              handleClick(e, postCurArr[1], determineModalMedia(postCurArr[1]))
             }
           >
             <div
@@ -174,7 +184,7 @@ function WorkRow(props) {
                   {postCurArr[1].acf.Client &&
                     addHoverTitle(postCurArr[1].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[1].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[1].title.rendered)}
                 </span>
@@ -193,7 +203,7 @@ function WorkRow(props) {
           <div
             className="outer-container pointer"
             onClick={(e) =>
-              handleClick(e, postCurArr[0], findSourceUrl(postCurArr[0]))
+              handleClick(e, postCurArr[0], determineModalMedia(postCurArr[0]))
             }
           >
             <div
@@ -208,7 +218,7 @@ function WorkRow(props) {
                   {postCurArr[0].acf.Client &&
                     addHoverTitle(postCurArr[0].acf.Client)}
                 </span>
-                <br />
+                {/* {postCurArr[2].acf.Client && <br />} */}
                 <span className="cap">
                   {decode(postCurArr[0].title.rendered)}
                 </span>

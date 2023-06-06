@@ -502,6 +502,8 @@
     font-size: 30px;
     opacity: 1;
     text-shadow: 1px 1px 6px #00000035;
+    display: flex;
+    flex-direction: column;
   }
 
   .fpo-video {
@@ -514,6 +516,11 @@
   /* WORK STYLES START */
 
   /* MODAL STYLES START */
+
+  .modal-video {
+    width: 100%;
+    min-height: 200px;
+  }
 
   .modal-content {
     border-radius: unset;
@@ -794,6 +801,9 @@
 
   /* large screens */
   @media only screen and (min-width: 992px) {
+    .modal-video {
+      min-height: 400px;
+    }
 
     .nav-bg {
       height: 100px;
