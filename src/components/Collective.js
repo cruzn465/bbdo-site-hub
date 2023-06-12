@@ -59,7 +59,7 @@ function Collective() {
       // setTotPost(totalPosts);
       setMedia(totalMedia);
 
-      console.log("****setting coll****", totalColl);
+      // console.log("****setting coll****", totalColl);
       // console.log("****setting media****", totalMedia);
 
       // MAKE THE MEDIAOBJ FROM TOTAL MEDIA
@@ -69,6 +69,8 @@ function Collective() {
         tempObj[curr.id] = curr;
       }
       setMediaObj(tempObj);
+      console.log("****MEDIA OBJ****", tempObj);
+
       setLoading(false);
     };
 
@@ -87,6 +89,55 @@ function Collective() {
       />
     </div>
   ));
+
+  function findSourceUrl(feat_media_id) {
+    // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
+    if (!feat_media_id) return "http://placekitten.com/400/300";
+    console.log(feat_media_id);
+    let media = mediaObj[feat_media_id];
+    // console.log(media);
+
+    let source_url = media.media_details.sizes.thumbnail.source_url;
+    console.log(source_url);
+    // https://wpapibbdostudios.azurewebsites.net/wp-content/uploads/2023/05/10_KhalilGhani-225x300.jpeg
+    // https://wpapibbdostudios.azurewebsites.net/wp-content/uploads/2023/05/10_KhalilGhani-225x300.jpeg
+    return "https://wpapibbdostudios.azurewebsites.net" + source_url;
+  }
+  const wpMembers = allMembers.map((member) => {
+    if (member.featured_media !== 0) {
+      return (
+        <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
+          <img
+            // NEED TO MAKE THIS A CONDITIONAL SRC (ONLY IF MEMBER.FEATURED_MEDIA !== 0)
+            // member.featured_media = 204
+            src={findSourceUrl(member.featured_media)}
+            className="member"
+            alt="individual member"
+            onClick={() => {
+              navigate(`/the-collective/${member.slug}`);
+            }}
+          />
+        </div>
+      );
+    }
+    // IF FEAT._MEDIA === 0, WHAT DO I DO?
+    // else {
+
+    // }
+  });
+
+  //   ({ member.featured_media !== 0 &&
+  //     <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
+  //     <img
+  //       src={member.img}
+  //       className="member"
+  //       alt="individual member"
+  //       onClick={() => {
+  //         navigate(`/the-collective/${member.slug}`);
+  //       }}
+  //     />
+  //   </div>}
+  // )
 
   // click handler for when any member is clicked
   function handleMemberClick(e, id) {
@@ -114,6 +165,8 @@ function Collective() {
         CURRENT MEMBERS
       </h2>
       <div className="flex-mem">{members}</div>
+      <div className="flex-mem">{wpMembers}</div>
+
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />
       ) : (
