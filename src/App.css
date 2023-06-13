@@ -401,11 +401,20 @@
 
   #curr-mem-name {
     font-size: 4rem;
+    position: relative;
+    color: red;
   }
-
   #curr-mem-details {
     font-size: 1.8rem;
     font-weight: 100;
+  }
+
+  #white-name {
+        position: absolute;
+        top: -6px;
+        left: -.5px;
+        color: white;
+        font-size: 3.99rem;
   }
 
   /* Collective page end */

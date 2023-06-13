@@ -18,6 +18,8 @@ function Collective() {
   const [loading, setLoading] = useState(false);
   const [media, setMedia] = useState([]);
   const [mediaObj, setMediaObj] = useState({});
+  const [slugObj, setSlugObj] = useState({});
+
   const navigate = useNavigate();
   const { slug } = useParams();
 
@@ -59,7 +61,7 @@ function Collective() {
       // setTotPost(totalPosts);
       setMedia(totalMedia);
 
-      // console.log("****setting coll****", totalColl);
+      console.log("****setting coll****", totalColl);
       // console.log("****setting media****", totalMedia);
 
       // MAKE THE MEDIAOBJ FROM TOTAL MEDIA
@@ -69,7 +71,27 @@ function Collective() {
         tempObj[curr.id] = curr;
       }
       setMediaObj(tempObj);
-      console.log("****MEDIA OBJ****", tempObj);
+      // console.log("****MEDIA OBJ****", tempObj);
+
+      // MAKE SLUGOBJ (AN OBJ WHERE THE KEYS ARE THE SLUGS AND THE VALS HAVE NAMES)
+      let tempSlugObj = {};
+      for (let i = 0; i < totalColl.length; i++) {
+        // console.log(i);
+        let curCol = totalColl[i];
+        // console.log(curCol);
+
+        let newColObj = {};
+        newColObj.id = curCol.id;
+        newColObj.slug = curCol.slug;
+        newColObj.name = curCol.title.rendered;
+        newColObj.featured_media = curCol.featured_media;
+        // console.log(newColObj);
+        // console.log("newColObj", newColObj);
+
+        tempSlugObj[curCol.slug] = newColObj;
+      }
+      setSlugObj(tempSlugObj);
+      console.log("****SLUG OBJ****", tempSlugObj);
 
       setLoading(false);
     };
@@ -90,27 +112,23 @@ function Collective() {
     </div>
   ));
 
-  function findSourceUrl(feat_media_id) {
+  function findSourceUrl(feat_media_id, mediaObj) {
     // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
     if (!feat_media_id) return "http://placekitten.com/400/300";
-    console.log(feat_media_id);
+    // console.log(feat_media_id);
     let media = mediaObj[feat_media_id];
-    // console.log(media);
-
     let source_url = media.media_details.sizes.thumbnail.source_url;
-    console.log(source_url);
-    // https://wpapibbdostudios.azurewebsites.net/wp-content/uploads/2023/05/10_KhalilGhani-225x300.jpeg
-    // https://wpapibbdostudios.azurewebsites.net/wp-content/uploads/2023/05/10_KhalilGhani-225x300.jpeg
+    // console.log(source_url);
     return "https://wpapibbdostudios.azurewebsites.net" + source_url;
   }
+
+  // IF THERE IS AN FEAT_MEDIA ID, RENDER THE IMG
   const wpMembers = allMembers.map((member) => {
     if (member.featured_media !== 0) {
       return (
         <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
           <img
-            // NEED TO MAKE THIS A CONDITIONAL SRC (ONLY IF MEMBER.FEATURED_MEDIA !== 0)
-            // member.featured_media = 204
-            src={findSourceUrl(member.featured_media)}
+            src={findSourceUrl(member.featured_media, mediaObj)}
             className="member"
             alt="individual member"
             onClick={() => {
@@ -120,28 +138,15 @@ function Collective() {
         </div>
       );
     }
-    // IF FEAT._MEDIA === 0, WHAT DO I DO?
-    // else {
-
-    // }
   });
-
-  //   ({ member.featured_media !== 0 &&
-  //     <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
-  //     <img
-  //       src={member.img}
-  //       className="member"
-  //       alt="individual member"
-  //       onClick={() => {
-  //         navigate(`/the-collective/${member.slug}`);
-  //       }}
-  //     />
-  //   </div>}
-  // )
 
   // click handler for when any member is clicked
   function handleMemberClick(e, id) {
-    setCurrMem(memberArr[id - 1]);
+    // LOOP THROUGH ALL MEMBERS AND SET THE CURRMEM THROUGH THE LOOP
+    for (let i = 0; i < allMembers.length; i++) {
+      if (allMembers[i].id === id) setCurrMem(allMembers[i]);
+    }
+    console.log(currMem);
   }
 
   return (
@@ -172,7 +177,17 @@ function Collective() {
       ) : (
         <img id="loading" src={loadingGif} alt="Loading GIF"></img>
       )}
-      <div>{slug ? <CurrentMember /> : ""}</div>
+      <div>
+        {slug ? (
+          <CurrentMember
+            slugObj={slugObj}
+            mediaObj={mediaObj}
+            findSourceUrl={findSourceUrl}
+          />
+        ) : (
+          ""
+        )}
+      </div>
       {/* <Outlet /> */}
     </>
   );
