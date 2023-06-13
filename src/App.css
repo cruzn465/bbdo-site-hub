@@ -122,6 +122,11 @@
     margin: 20px;
   }
 
+  #team-header {
+    margin-top: 90px;
+    max-width: 47%;
+  }
+
   #collective-header {
     max-width: 90%;
     margin-top: 90px;
@@ -386,6 +391,7 @@
     margin-left: .5rem;
     margin-right: .5rem;
     height: 8rem;
+    border-radius: 100px;
   }
 
   #name-title-div {
@@ -401,11 +407,20 @@
 
   #curr-mem-name {
     font-size: 4rem;
+    position: relative;
+    color: red;
   }
-
   #curr-mem-details {
     font-size: 1.8rem;
     font-weight: 100;
+  }
+
+  #white-name {
+        position: absolute;
+        top: -6px;
+        left: -.5px;
+        color: white;
+        /* font-size: 3.99rem; */
   }
 
   /* Collective page end */
@@ -735,7 +750,8 @@
     }
 
     .header {
-      max-width: 80% !important;
+
+      /* max-width: 80% !important; */
     }
 
     .copy {

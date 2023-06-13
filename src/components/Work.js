@@ -108,6 +108,11 @@ function Work() {
     if (strE === "1") filteredPosts = totPost;
     setPosts(filteredPosts);
   };
+
+  const handlePlayClick = (e) => {
+    console.log("play was clicked!");
+  };
+
   // const groupedPosts = groupPosts(posts);
   // setGroupedPosts(groupPosts(posts));
 
@@ -140,6 +145,7 @@ function Work() {
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (
             <WorkRow
+              handlePlayClick={handlePlayClick}
               mediaObj={mediaObj}
               key={i}
               posts={postSubArray}

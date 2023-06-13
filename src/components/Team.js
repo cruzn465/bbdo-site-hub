@@ -102,7 +102,12 @@ function Team() {
   return (
     <>
       <div className="mobile spacer"></div>
-      <Image className="header" src={Team_super} alt="Who We Are"></Image>
+      <Image
+        className="header"
+        id="team-header"
+        src={Team_super}
+        alt="Who We Are"
+      ></Image>
       <hr />
       {/* <h2 id="team-copy-not-pic">
           WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS, <br/>
@@ -119,7 +124,6 @@ function Team() {
         src={Team_copy_m}
         alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
       />
-
       <hr />
       <Container id="outer-container" className="desktop">
         <Container id="office_bg" className="hidden-on-mobile"></Container>
@@ -201,6 +205,7 @@ function Team() {
                 <div>Tech & Prototyping</div>
                 <div>Web 3.0</div>
                 <div>Website Design</div>
+                <div>Artificial Intelligence</div>
                 <div className="hidden">1</div>
               </span>
             </Col>

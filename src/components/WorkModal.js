@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 // import Button from "react-bootstrap/Button";
 import XButton from "../img/x-button.png";
+import Vimeo from "@vimeo/player";
 import loadingGif from "../img/Arrows bar.gif";
 // GET AN XBUTTONCLICKED VERSION SO IT LOOKS LIKE IT'S WORKING
 // import XButtonClicked from "../img/header_the_team_clicked.png";
@@ -9,6 +10,7 @@ import loadingGif from "../img/Arrows bar.gif";
 function WorkModal(props) {
   // const { post, selectedMedia } = props;
   const { post, selectedMedia } = props;
+
   const video_id_arr = selectedMedia[1].slice(18).split("/");
   // console.log(video_id_arr);
 
@@ -20,6 +22,17 @@ function WorkModal(props) {
     let txt = document.createElement("textarea");
     txt.innerHTML = str;
     return txt.value;
+  }
+  if (true) {
+    // var iframe = document.querySelector("iframe");
+    // var player = new Vimeo.Player(iframe);
+    // player.on("play", function () {
+    //   console.log("Played the video");
+    // });
+    // FOR SOME REASON, IFRAME IS NULL??
+    // console.log(iframe);
+    // iframe.play();
+    // ("video").play();
   }
 
   // console.log("MODAL media", selectedMedia);
@@ -59,6 +72,7 @@ function WorkModal(props) {
             frameborder="0"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
+            autoplay
             title={title}
           ></iframe>
         )}

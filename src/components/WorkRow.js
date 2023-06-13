@@ -1,13 +1,21 @@
 import React from "react";
 
 function WorkRow(props) {
-  const { posts, setModalShow, setPost, setSelectedMedia, mediaObj } = props;
+  const {
+    posts,
+    setModalShow,
+    setPost,
+    setSelectedMedia,
+    mediaObj,
+    handlePlayClick,
+  } = props;
 
   function handleClick(e, post, mediaArr) {
     setModalShow(true);
     setPost(post);
     // console.log("MEDIA ARRAY!!!!", mediaArr);
     setSelectedMedia(mediaArr);
+    handlePlayClick();
   }
 
   function decode(str) {
