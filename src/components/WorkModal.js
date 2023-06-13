@@ -70,6 +70,7 @@ function WorkModal(props) {
             // width="100%"
             // height="300"
             frameborder="0"
+            autoPlay="1"
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             autoplay
