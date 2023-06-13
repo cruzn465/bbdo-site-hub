@@ -386,6 +386,7 @@
     margin-left: .5rem;
     margin-right: .5rem;
     height: 8rem;
+    border-radius: 100px;
   }
 
   #name-title-div {
@@ -414,7 +415,7 @@
         top: -6px;
         left: -.5px;
         color: white;
-        font-size: 3.99rem;
+        /* font-size: 3.99rem; */
   }
 
   /* Collective page end */

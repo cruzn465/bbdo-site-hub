@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import Collective_super from "../img/collective_super.png";
 import Collective_copy from "../img/collective_copy.png";
-import memberArr from "../members.json";
+// import memberArr from "../members.json";
 import CurrentMember from "./CurrentMember";
 import loadingGif from "../img/Arrows bar.gif";
 import Members from "./Members";
@@ -99,18 +99,18 @@ function Collective() {
     fetchMembers();
   }, []);
 
-  const members = memberArr.map((member) => (
-    <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
-      <img
-        src={member.img}
-        className="member"
-        alt="individual member"
-        onClick={() => {
-          navigate(`/the-collective/${member.slug}`);
-        }}
-      />
-    </div>
-  ));
+  // const members = memberArr.map((member) => (
+  //   <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
+  //     <img
+  //       src={member.img}
+  //       className="member"
+  //       alt="individual member"
+  //       onClick={() => {
+  //         navigate(`/the-collective/${member.slug}`);
+  //       }}
+  //     />
+  //   </div>
+  // ));
 
   function findSourceUrl(feat_media_id, mediaObj) {
     // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
@@ -169,8 +169,8 @@ function Collective() {
       <h2 className="germain" id="curr-mem-title">
         CURRENT MEMBERS
       </h2>
-      <div className="flex-mem">{members}</div>
-      <div className="flex-mem">{wpMembers}</div>
+      {/* <div className="flex-mem">{members}</div> */}
+      <div className="flex-mem pointer">{wpMembers}</div>
 
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />

@@ -8,7 +8,7 @@ function CurrentMember({ slugObj, mediaObj, findSourceUrl }) {
   const currMem = slugObj[slug];
   console.log("currMem", currMem);
   // const { img, name, title, pronouns } = currMem;
-  console.log("img url", findSourceUrl(currMem.featured_media, mediaObj));
+  // console.log("img url", findSourceUrl(currMem.featured_media, mediaObj));
   const { name } = currMem;
 
   return (
