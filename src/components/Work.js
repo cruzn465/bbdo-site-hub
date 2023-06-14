@@ -109,13 +109,6 @@ function Work() {
     setPosts(filteredPosts);
   };
 
-  const handlePlayClick = (e) => {
-    console.log("play was clicked!");
-  };
-
-  // const groupedPosts = groupPosts(posts);
-  // setGroupedPosts(groupPosts(posts));
-
   return (
     <>
       <Container id="works">
@@ -131,21 +124,11 @@ function Work() {
           </div>
         </Container>
         <div className="mobile spacer-video"></div>
-        {/* <div className="mobile spacer"></div> */}
-        {/* <Container fluid className="bg1">
-          <img
-            id="mobile-outer-container"
-            className="mobile copy"
-            src={MobileVid}
-            alt="Video showcasing BBDO work"
-          />
-        </Container> */}
         <Filter handleSelect={handleSelect} />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (
             <WorkRow
-              handlePlayClick={handlePlayClick}
               mediaObj={mediaObj}
               key={i}
               posts={postSubArray}
@@ -166,8 +149,6 @@ function Work() {
           />
         )}
       </Container>
-      {/* </Container> */}
-      {/* </Container> */}
     </>
   );
 }
