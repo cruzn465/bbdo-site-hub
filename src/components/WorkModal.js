@@ -2,7 +2,6 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 // import Button from "react-bootstrap/Button";
 import XButton from "../img/x-button.png";
-import Vimeo from "@vimeo/player";
 import loadingGif from "../img/Arrows bar.gif";
 // GET AN XBUTTONCLICKED VERSION SO IT LOOKS LIKE IT'S WORKING
 // import XButtonClicked from "../img/header_the_team_clicked.png";
@@ -22,17 +21,6 @@ function WorkModal(props) {
     let txt = document.createElement("textarea");
     txt.innerHTML = str;
     return txt.value;
-  }
-  if (true) {
-    // var iframe = document.querySelector("iframe");
-    // var player = new Vimeo.Player(iframe);
-    // player.on("play", function () {
-    //   console.log("Played the video");
-    // });
-    // FOR SOME REASON, IFRAME IS NULL??
-    // console.log(iframe);
-    // iframe.play();
-    // ("video").play();
   }
 
   // console.log("MODAL media", selectedMedia);
@@ -65,15 +53,14 @@ function WorkModal(props) {
         {selectedMedia[0] === "video" && (
           <iframe
             className="modal-video"
-            // id="modal-img"
-            src={`https://player.vimeo.com/video/${video_id_arr[0]}?h=${video_id_arr[1]}&amp;app_id=122963`}
+            id="modal-img"
+            // src=" https://player.vimeo.com/ video/81400335?autoplay=1&muted=1 "
+            src={`https://player.vimeo.com/video/${video_id_arr[0]}?h=${video_id_arr[1]}&amp;app_id=122963&autoplay=1&muted=0`}
             // width="100%"
             // height="300"
-            frameborder="0"
-            autoPlay="1"
+            frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture"
-            allowFullScreen
-            autoplay
+            // allowFullScreen
             title={title}
           ></iframe>
         )}
