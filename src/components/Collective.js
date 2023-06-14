@@ -13,7 +13,7 @@ import Members from "./Members";
 // modularize into Member components
 
 function Collective() {
-  const [currMem, setCurrMem] = useState(null);
+  const [currMem, setCurrMem] = useState({});
   const [allMembers, setAllMembers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [media, setMedia] = useState([]);
@@ -22,7 +22,6 @@ function Collective() {
 
   const navigate = useNavigate();
   const { slug } = useParams();
-
   // FETCHING MEMBIES
   useEffect(() => {
     const fetchMembers = async () => {
@@ -58,10 +57,9 @@ function Collective() {
       }
 
       setAllMembers(totalColl);
-      // setTotPost(totalPosts);
       setMedia(totalMedia);
 
-      console.log("****setting coll****", totalColl);
+      // console.log("****setting coll****", totalColl);
       // console.log("****setting media****", totalMedia);
 
       // MAKE THE MEDIAOBJ FROM TOTAL MEDIA
@@ -76,22 +74,21 @@ function Collective() {
       // MAKE SLUGOBJ (AN OBJ WHERE THE KEYS ARE THE SLUGS AND THE VALS HAVE NAMES)
       let tempSlugObj = {};
       for (let i = 0; i < totalColl.length; i++) {
-        // console.log(i);
         let curCol = totalColl[i];
-        // console.log(curCol);
-
-        let newColObj = {};
-        newColObj.id = curCol.id;
-        newColObj.slug = curCol.slug;
-        newColObj.name = curCol.title.rendered;
-        newColObj.featured_media = curCol.featured_media;
+        let newColObj = curCol;
+        // newColObj.id = curCol.id;
+        // newColObj.slug = curCol.slug;
+        // newColObj.title = curCol.title.rendered;
+        // newColObj.featured_media = curCol.featured_media;
         // console.log(newColObj);
         // console.log("newColObj", newColObj);
 
         tempSlugObj[curCol.slug] = newColObj;
       }
       setSlugObj(tempSlugObj);
-      console.log("****SLUG OBJ****", tempSlugObj);
+
+      setCurrMem(tempSlugObj[slug]);
+      // console.log("****SLUG OBJ****", tempSlugObj);
 
       setLoading(false);
     };
@@ -114,38 +111,58 @@ function Collective() {
 
   function findSourceUrl(feat_media_id, mediaObj) {
     // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
-    if (!feat_media_id) return "http://placekitten.com/400/300";
-    // console.log(feat_media_id);
-    let media = mediaObj[feat_media_id];
-    let source_url = media.media_details.sizes.thumbnail.source_url;
-    // console.log(source_url);
-    return "https://wpapibbdostudios.azurewebsites.net" + source_url;
+    if (feat_media_id) {
+      // console.log(feat_media_id);
+      let media = mediaObj[feat_media_id];
+      let source_url = media.media_details.sizes.thumbnail.source_url;
+      // console.log(source_url);
+      return "https://wpapibbdostudios.azurewebsites.net" + source_url;
+    } else {
+      return "";
+    }
+  }
+  // RETURN IMG TAGS BASED ON FEAT_ID EXISTENCE
+  function switchImgTag(feat_media_id, mediaObj, member) {
+    if (!loading) {
+      return (
+        <img
+          src={findSourceUrl(member.featured_media, mediaObj)}
+          className="member"
+          alt="individual member"
+          onClick={() => {
+            navigate(`/the-collective/${member.slug}`);
+          }}
+        />
+      );
+    } else {
+      return "";
+      // <div> TEST TEST TEST</div>
+      // <img id="loading" src={loadingGif} alt="Loading GIF"></img>
+    }
   }
 
   // IF THERE IS AN FEAT_MEDIA ID, RENDER THE IMG
   const wpMembers = allMembers.map((member) => {
     if (member.featured_media !== 0) {
       return (
-        <div key={member.id} onClick={(e) => handleMemberClick(e, member.id)}>
-          <img
+        <div key={member.id} onClick={(e) => handleMemberClick(e, member)}>
+          {/* <img
             src={findSourceUrl(member.featured_media, mediaObj)}
             className="member"
             alt="individual member"
             onClick={() => {
               navigate(`/the-collective/${member.slug}`);
             }}
-          />
+          /> */}
+          {switchImgTag(member.featured_media, mediaObj, member)}
         </div>
       );
     }
   });
 
   // click handler for when any member is clicked
-  function handleMemberClick(e, id) {
-    // LOOP THROUGH ALL MEMBERS AND SET THE CURRMEM THROUGH THE LOOP
-    for (let i = 0; i < allMembers.length; i++) {
-      if (allMembers[i].id === id) setCurrMem(allMembers[i]);
-    }
+  function handleMemberClick(e, m) {
+    setCurrMem(m);
     console.log(currMem);
   }
 
@@ -178,8 +195,11 @@ function Collective() {
         <img id="loading" src={loadingGif} alt="Loading GIF"></img>
       )}
       <div>
-        {slug ? (
+        {!loading && currMem ? (
           <CurrentMember
+            setCurrMem={setCurrMem}
+            currMem={currMem}
+            loading={loading}
             slugObj={slugObj}
             mediaObj={mediaObj}
             findSourceUrl={findSourceUrl}

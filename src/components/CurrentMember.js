@@ -3,13 +3,33 @@ import { useParams } from "react-router-dom";
 // import slugArr from "../slugs.json";
 import { Container } from "react-bootstrap";
 
-function CurrentMember({ slugObj, mediaObj, findSourceUrl }) {
+function CurrentMember({
+  setCurrMem,
+  loading,
+  currMem,
+  slugObj,
+  mediaObj,
+  findSourceUrl,
+}) {
+  console.log("CURR MEM COMP CURR MEM", currMem);
+  // console.log("")
   const { slug } = useParams();
-  const currMem = slugObj[slug];
-  console.log("currMem", currMem);
+  console.log("CURR MEM SLUG?", slug);
+  console.log("SLUG OBJ", slugObj);
+
+  if (slug) setCurrMem(slugObj[slug]);
+
+  console.log("CURR MEM loading?", loading);
+
+  // if (slugObj) {
+  //   currMem = slugObj[slug];
+  // } else {
+  // }
+
+  console.log("currMem in CM COMP", currMem);
   // const { img, name, title, pronouns } = currMem;
   // console.log("img url", findSourceUrl(currMem.featured_media, mediaObj));
-  const { name } = currMem;
+  // const { title } = currMem;
 
   return (
     <>
@@ -26,11 +46,8 @@ function CurrentMember({ slugObj, mediaObj, findSourceUrl }) {
           </div>
           <div id="name-title-div">
             <div className="work-sans-font" id="curr-mem-name">
-              {/* <div> */}
-              <span id="white-name">{name}</span>
-              {name}
-              {/* </div> */}
-
+              {/* <span id="white-name">{title}</span> */}
+              {/* {title} */}
               <div id="curr-mem-details">{/* {title} | {pronouns} */}</div>
             </div>
             <br />
