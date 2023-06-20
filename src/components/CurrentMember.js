@@ -11,15 +11,15 @@ function CurrentMember({
   mediaObj,
   findSourceUrl,
 }) {
-  console.log("CURR MEM COMP CURR MEM", currMem);
   // console.log("")
   const { slug } = useParams();
-  console.log("CURR MEM SLUG?", slug);
-  console.log("SLUG OBJ", slugObj);
+  // console.log("CURR MEM SLUG?", slug);
+  // console.log("SLUG OBJ", slugObj);
 
   if (slug) setCurrMem(slugObj[slug]);
+  // console.log("CURR MEM COMP CURR MEM", currMem);
 
-  console.log("CURR MEM loading?", loading);
+  // console.log("CURR MEM loading?", loading);
 
   // if (slugObj) {
   //   currMem = slugObj[slug];
@@ -46,7 +46,7 @@ function CurrentMember({
           </div>
           <div id="name-title-div">
             <div className="work-sans-font" id="curr-mem-name">
-              {/* <span id="white-name">{title}</span> */}
+              {/* <span id="white-name">{currMem && currMem.title.rendered}</span> */}
               {/* {title} */}
               <div id="curr-mem-details">{/* {title} | {pronouns} */}</div>
             </div>

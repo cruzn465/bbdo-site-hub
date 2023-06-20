@@ -76,12 +76,6 @@ function Collective() {
       for (let i = 0; i < totalColl.length; i++) {
         let curCol = totalColl[i];
         let newColObj = curCol;
-        // newColObj.id = curCol.id;
-        // newColObj.slug = curCol.slug;
-        // newColObj.title = curCol.title.rendered;
-        // newColObj.featured_media = curCol.featured_media;
-        // console.log(newColObj);
-        // console.log("newColObj", newColObj);
 
         tempSlugObj[curCol.slug] = newColObj;
       }
