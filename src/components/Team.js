@@ -196,6 +196,7 @@ function Team() {
                 >
                   DIGITAL
                 </div>
+                <div>Artificial Intelligence</div>
                 <div>Augmented Reality</div>
                 <div>Banner Design</div>
                 <div>Community Management</div>
@@ -205,7 +206,6 @@ function Team() {
                 <div>Tech & Prototyping</div>
                 <div>Web 3.0</div>
                 <div>Website Design</div>
-                <div>Artificial Intelligence</div>
                 <div className="hidden">1</div>
               </span>
             </Col>
