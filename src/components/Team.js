@@ -30,7 +30,28 @@ function Team() {
   const greyRef2 = useRef();
   const greyRef3 = useRef();
 
-  function handleProdToggleClicked() {
+  // function handleProdToggleClicked() {
+  //   setprodToggleClicked(!prodToggleClicked);
+  //   setpostToggleClicked(false);
+  //   setdigToggleClicked(false);
+
+  //   // when prod is clicked, set other heights to 50
+  //   // console.log("prod: ", prodToggleClicked,"post: ", postToggleClicked,"dig: ", digToggleClicked,)
+  //   if (!prodToggleClicked) {
+  //     gsap.to(prodRef.current, 0.7, { height: "300px" });
+  //     gsap.to(postRef.current, 0.7, { height: "50px" });
+  //     gsap.to(digRef.current, 0.7, { height: "50px" });
+
+  //     // console.log(greyRef)
+  //     gsap.to(greyRef1.current, 0.7, { height: "80vh" });
+  //     gsap.to(greyRef2.current, 0.7, { height: "0vh" });
+  //     gsap.to(greyRef3.current, 0.7, { height: "0vh" });
+  //   } else {
+  //     gsap.to(prodRef.current, 0.7, { height: "50px" });
+  //     gsap.to(greyRef1.current, 0.7, { height: "0vh" });
+  //   }
+  // }
+  function handleProdMouseEnter() {
     setprodToggleClicked(!prodToggleClicked);
     setpostToggleClicked(false);
     setdigToggleClicked(false);
@@ -52,7 +73,7 @@ function Team() {
     }
   }
 
-  function handlePostToggleClicked() {
+  function handlePostMouseEnter() {
     setpostToggleClicked(!postToggleClicked);
     setprodToggleClicked(false);
     setdigToggleClicked(false);
@@ -71,7 +92,7 @@ function Team() {
     }
   }
 
-  function handleDigToggleClicked() {
+  function handleDigMouseEnter() {
     setdigToggleClicked(!digToggleClicked);
     setprodToggleClicked(false);
     setpostToggleClicked(false);
@@ -98,6 +119,15 @@ function Team() {
   //    gsap.to(prodRef.current, 2,{height: "100px" });
   //   // tl.current.prodToggleClicked(prodToggleClicked);
   // }, [prodToggleClicked]);
+
+  function handleMouseLeave() {
+    gsap.to([prodRef.current, postRef.current, digRef.current], 0.7, {
+      height: "50px",
+    });
+    gsap.to([greyRef1.current, greyRef2.current, greyRef3.current], 0.7, {
+      height: "0vh",
+    });
+  }
 
   return (
     <>
@@ -138,12 +168,12 @@ function Team() {
         </Container>
         <Container id="text" className="abs-cont hidden-on-mobile">
           <Row>
-            <Col className="grey">
-              <span
-                ref={prodRef}
-                className="team-title-center work-sans-font"
-                onClick={() => handleProdToggleClicked()}
-              >
+            <Col
+              className="grey"
+              onMouseEnter={handleProdMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span ref={prodRef} className="team-title-center work-sans-font">
                 <div
                   onClick={() => setprodToggleClicked(!prodToggleClicked)}
                   className="font-titles"
@@ -162,12 +192,13 @@ function Team() {
                 <div>Voiceover Recording</div>
               </span>
             </Col>
-            <Col className="grey" xs={4}>
-              <span
-                ref={postRef}
-                className="team-title-center work-sans-font"
-                onClick={() => handlePostToggleClicked()}
-              >
+            <Col
+              className="grey"
+              xs={4}
+              onMouseEnter={handlePostMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span ref={postRef} className="team-title-center work-sans-font">
                 <div
                   onClick={() => setpostToggleClicked(!postToggleClicked)}
                   className="font-titles"
@@ -186,12 +217,12 @@ function Team() {
                 <div className="hidden">1</div>
               </span>
             </Col>
-            <Col className="grey">
-              <span
-                ref={digRef}
-                className="team-title-center work-sans-font"
-                onClick={() => handleDigToggleClicked()}
-              >
+            <Col
+              className="grey"
+              onMouseEnter={handleDigMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <span ref={digRef} className="team-title-center work-sans-font">
                 <div
                   onClick={() => setdigToggleClicked(!digToggleClicked)}
                   className="font-titles"
@@ -227,3 +258,5 @@ function Team() {
 }
 
 export default Team;
+
+// USE SPACE BELOW FOR GETTING CODE SNIPPET
