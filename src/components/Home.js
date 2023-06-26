@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import homeVideo from "../img/Bbdostudiosreel081022bbdostudiosoptimized.mp4";
 import React from "react";
 import HomeMobileVid from "../img/Home.webp";
+import HomeTabVid from "../img/HomePage_Header_Tablet.webp";
 
 function Home() {
   // var w = window.innerWidth;
@@ -73,12 +74,20 @@ function Home() {
         <source src={homeVideo} type="video/mp4" className="desktop" />
       </video>
       {/* <Container fluid className="mobile home-vid"> */}
+
       <img
         src={HomeMobileVid}
         id="mobile-video"
         className="mobile"
         alt="Video showcasing different BBDO projects"
       />
+      <img
+        src={HomeTabVid}
+        id="tablet-video"
+        className="tablet"
+        alt="Video showcasing different BBDO projects"
+      />
+
       {/* </Container> */}
     </>
   );

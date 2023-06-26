@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Logo from "../img/UpdatedStudiosLogo.webp";
+import Logo from "../img/StudiosLogo.webp";
 import TheWorkLink from "../img/header_the_work.png";
 import TheWorkLinkClicked from "../img/header_the_work_clicked.png";
 

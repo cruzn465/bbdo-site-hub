@@ -102,19 +102,21 @@ function Team() {
   return (
     <>
       <div className="mobile spacer"></div>
-      <Image
-        className="header"
-        id="team-header"
-        src={Team_super}
-        alt="Who We Are"
-      ></Image>
+      <div className="header-text work-sans-font germain header-font">
+        WHO WE ARE
+        <span className="white-text"> WHO WE ARE</span>
+      </div>
       <hr />
-      {/* <h2 id="team-copy-not-pic">
-          WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS, <br/>
-          DELIVERING BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE.<br/>
-          WITH QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE THE PEOPLE WHO ARE DRIVEN BY INNOVATION AND POWERED BY <b>THE WORK</b>
-        </h2> */}
-      <img
+
+      <h2 className="sub-header-text work-sans-font">
+        WE’RE A TEAM OF AWARD-WINNING&nbsp;CREATORS AND
+        UNCONVENTIONAL&nbsp;MAKERS, DELIVERING&nbsp;BEST-IN-CLASS CONTENT FOR
+        GLOBAL&nbsp;AND&nbsp;LOCAL ALIKE. WITH QUALITY&nbsp;AND&nbsp;EFFICIENCY
+        AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE&nbsp;THE&nbsp;PEOPLE WHO ARE
+        DRIVEN&nbsp;BY&nbsp;INNOVATION AND POWERED&nbsp;BY&nbsp;
+        <span id="the-work-text">THE WORK</span>
+      </h2>
+      {/* <img
         className="copy desktop"
         src={Team_copy}
         alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
@@ -123,7 +125,7 @@ function Team() {
         className="copy mobile"
         src={Team_copy_m}
         alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
-      />
+      /> */}
       <hr />
       <Container id="outer-container" className="desktop">
         <Container id="office_bg" className="hidden-on-mobile"></Container>

@@ -2,9 +2,9 @@ import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Image from "react-bootstrap/Image";
-import Collective_super from "../img/collective_super.png";
-import Collective_copy from "../img/collective_copy.png";
+// import Image from "react-bootstrap/Image";
+// import Collective_super from "../img/collective_super.png";
+// import Collective_copy from "../img/collective_copy.png";
 // import memberArr from "../members.json";
 import CurrentMember from "./CurrentMember";
 import loadingGif from "../img/Arrows bar.gif";
@@ -151,7 +151,7 @@ function Collective() {
           {switchImgTag(member.featured_media, mediaObj, member)}
         </div>
       );
-    }
+    } else return null;
   });
 
   // click handler for when any member is clicked
@@ -163,23 +163,27 @@ function Collective() {
   return (
     <>
       <div className="mobile spacer"></div>
+      <div className="header-text work-sans-font germain header-font">
+        THE PRODUCTION COLLECTIVE
+        <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
+      </div>
 
-      <Image
-        className="header"
-        id="collective-header"
-        src={Collective_super}
-        alt="Who We Are"
-      />
       <hr />
-      <Image
-        className="copy"
-        src={Collective_copy}
-        alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
-      />
-      <hr />
-      <h2 className="germain" id="curr-mem-title">
-        CURRENT MEMBERS
+      <h2 className="sub-header-text work-sans-font">
+        BUILT TO OPEN DOORS FOR&nbsp;CREATEORS, THE&nbsp;BBDO&nbsp;STUDIOS
+        CAREER DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
+        NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
+        IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO
+        AND BEYOND.
       </h2>
+      <hr />
+      {/* <h2 className="germain" id="curr-mem-title">
+        CURRENT MEMBERS
+      </h2> */}
+      <div className="work-sans-font germain header-text">
+        CURRENT MEMBERS
+        <span className="white-text-sub"> CURRENT MEMBERS</span>
+      </div>
       {/* <div className="flex-mem">{members}</div> */}
       <div className="flex-mem pointer">{wpMembers}</div>
 
