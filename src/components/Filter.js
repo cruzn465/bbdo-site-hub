@@ -1,11 +1,26 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
+import { useState } from "react";
 
 function Filter({ handleSelect }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <>
+    <div className="flex">
+      <div id="filter-spacer"></div>
+
       <Dropdown
         title="Dropdown"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onSelect={handleSelect}
         className="work-sans-font"
       >
@@ -13,28 +28,21 @@ function Filter({ handleSelect }) {
           FILTER BY
         </Dropdown.Toggle>
 
-        <Dropdown.Menu>
-          {/* <Dropdown.Item href="#/action-1">ALL</Dropdown.Item> */}
-          <Dropdown.Item eventKey="1">ALL</Dropdown.Item>
-          <Dropdown.Item eventKey="3">BRANDED + DOCU-STYLE</Dropdown.Item>
-          <Dropdown.Item eventKey="4">COMMERCIAL SPOTS</Dropdown.Item>
-          <Dropdown.Item eventKey="5">CREATOR + SOCIAL</Dropdown.Item>
-          {/* <Dropdown.Item eventKey="?">DIGITAL</Dropdown.Item> */}
-          <Dropdown.Item eventKey="9" className="last-dropdown-item">
-            EXPERIENTIAL + INTERACTIVE
-          </Dropdown.Item>
-        </Dropdown.Menu>
+        {isOpen && (
+          <Dropdown.Menu show={isOpen}>
+            {/* <Dropdown.Item href="#/action-1">ALL</Dropdown.Item> */}
+            <Dropdown.Item eventKey="1">ALL</Dropdown.Item>
+            <Dropdown.Item eventKey="3">BRANDED + DOCU-STYLE</Dropdown.Item>
+            <Dropdown.Item eventKey="4">COMMERCIAL SPOTS</Dropdown.Item>
+            <Dropdown.Item eventKey="5">CREATOR + SOCIAL</Dropdown.Item>
+            {/* <Dropdown.Item eventKey="?">DIGITAL</Dropdown.Item> */}
+            <Dropdown.Item eventKey="9" className="last-dropdown-item">
+              EXPERIENTIAL + INTERACTIVE
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        )}
       </Dropdown>
-
-      {/* JUST IN CASE I GIVE UP AND WANT TO DO IT FROM SCRATCH?? */}
-      {/* <Container className="filter-container">
-        <div className="filter-default">FILTER BY</div>
-        <div className="filter-container-sub">
-          <div>1</div>
-          <div>2</div>
-        </div>
-      </Container> */}
-    </>
+    </div>
   );
 }
 

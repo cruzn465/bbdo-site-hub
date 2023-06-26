@@ -646,10 +646,25 @@
     position: relative;
     z-index: 100;
   }
+  #filter-spacer {
+    width: 70%;
+  }
+  .flex {
+    display: flex;
+  }
   .dropdown {
     text-align: end;
     padding-bottom: 15px;
+    width: 30%;
+    /* float: right; */
+    /* overflow: hidden; */
+
   }
+  /* .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
   #dropdown-basic {
     background-color: #000000d2;
     border-radius: unset;
@@ -657,12 +672,12 @@
     border: 3px solid #ffffff;
     padding: 0px 10px 0px 10px;
     box-shadow: none;
-    width: 30%;
+    width: 100%;
     /* FIGURE OUT HOW WHAT  */
     /* text-align:left;   */
   }
   .dropdown-menu {
-    width: 30%;
+    width: 100%;
   --bs-dropdown-bg: #000000d2;
   border: 3px solid #ffffff;
   box-shadow: none;
