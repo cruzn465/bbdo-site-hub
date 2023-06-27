@@ -97,18 +97,28 @@ function Work() {
   }
 
   const handleSelect = (e) => {
-    const strE = String(e);
-    let filteredPosts = [];
-    for (let i = 0; i < totPost.length; i++) {
-      const curPost = totPost[i];
-      for (let j = 0; j < curPost.categories.length; j++) {
-        let cur = String(curPost.categories[j]);
-        if (cur === strE) filteredPosts.push(curPost);
+    if (e) {
+      const strE = String(e);
+      let filteredPosts = [];
+      for (let i = 0; i < totPost.length; i++) {
+        const curPost = totPost[i];
+        for (let j = 0; j < curPost.categories.length; j++) {
+          let cur = String(curPost.categories[j]);
+          if (cur === strE) filteredPosts.push(curPost);
+        }
       }
+      if (strE === "1") filteredPosts = totPost;
+      setPosts(filteredPosts);
     }
-    if (strE === "1") filteredPosts = totPost;
-    setPosts(filteredPosts);
   };
+
+  // const handleDropdownSelect = (eventKey) => {
+  //   // Handle the dropdown item selection here
+  //   // You can pass the selected eventKey to the parent component or perform any other logic
+  //   if (handleSelect) {
+  //     handleSelect(eventKey);
+  //   }
+  // };
 
   return (
     <>
@@ -137,7 +147,11 @@ function Work() {
         </Container>
         <div className="tablet spacer-video-tab"></div>
 
-        <Filter handleSelect={handleSelect} />
+        <Filter
+          handleSelect={handleSelect}
+          setPosts={setPosts}
+          totPost={totPost}
+        />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (

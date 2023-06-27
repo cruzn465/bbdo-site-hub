@@ -227,7 +227,7 @@ function Team() {
                   onClick={() => setdigToggleClicked(!digToggleClicked)}
                   className="font-titles"
                 >
-                  DIGITAL
+                  INTERACTIVE
                 </div>
                 <div>Artificial Intelligence</div>
                 <div>Augmented Reality</div>
