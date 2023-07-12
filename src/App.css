@@ -79,7 +79,7 @@
 
   .sub-header-text {
     color: white;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     max-width: 90%;
     margin: auto;
   }
@@ -89,36 +89,41 @@
     font-weight: bold;
   }
 
-  #team_bg {
-    /* width: 90%; */
-    margin: 20px 0px 50px 0px;
-    /* background-image: url('./img/team_bg_img.jpg'); */
-  }
-
-
   .bg {
     /* position: absolute; */
-    background-image: url("./img/theteam_3k.png");
+    /* background-image: url("./img/theteam_3k.png"); */
     background-color: rgb(0, 0, 0);
     position: fixed;
     top: 0;
     left: 0;
     /* background-repeat: repeat-y !important; */
-    height: 100vh;
+    height: 110vh;
     z-index: -1;
     overflow-x: hidden;
     overflow-y: scroll;
   }
 
+  .background-switcher {
+    /* Switcher styles */
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: #000000; */
+    z-index: -1000;
+  }
+
   .work-bg {
     /* position: absolute; */
-    background-image: url("./img/bg.jpg");
+    /* background-image: url("./img/bg.jpg"); */
     position: fixed;
     top: 0;
     left: 0;
     padding-left: 0;
     padding-right: 0;
     background-repeat: repeat-y !important;
+    background-repeat: repeat-x !important;
     /* height: 100vw; */
     z-index: -1;
     overflow-x: hidden;
@@ -144,8 +149,9 @@
   }
 
   .header-font {
-    font-size: 6rem !important;
+    font-size: 6rem ;
   }
+
   .header-text {
     position: relative;
     color: red !important;
@@ -194,6 +200,14 @@
     background-size: cover;
   }
 
+  .team_height_container {
+    max-height: 700px;
+  }
+  
+  .all_height {
+    height: 100%;
+  }
+
   .abs-cont {
     position: absolute;
     top: 0;
@@ -211,7 +225,7 @@
   .grey {
     display: flex;
     align-items: center;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   #grey-1 {
@@ -415,7 +429,7 @@
   /* Collective page start */
   .germain {
     font-family: 'Germania One', cursive;
-    font-size: 3em;
+    /* font-size: 3em; */
     color: white;
   }
 
@@ -474,7 +488,8 @@
   }
 
   #loading {
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
+    width: 50%;
   }
 
   #works {
@@ -647,15 +662,19 @@
     z-index: 100;
   }
   #filter-spacer {
-    width: 70%;
+    width: 62%;
   }
   .flex {
     display: flex;
   }
+
+  .flex-end {
+    justify-content: flex-end;
+  }
   .dropdown {
     text-align: end;
     padding-bottom: 15px;
-    width: 30%;
+    width: 33%;
     /* float: right; */
     /* overflow: hidden; */
 
@@ -727,25 +746,48 @@
   }
 
 
-
-  /* small screen sizes */
   @media only screen and (max-width: 350px) {
     .navbar-brand {
       margin-right: 0px;
     }
-
+  
     /* .hidden-on-super-small {
+  
+      } */
+  }
+  /* small screen sizes */
+  @media only screen and (max-width: 350px) {
+    .modal-body {
+      padding: 0px 5px 0px 5px;
+    }
+    .navbar-brand {
+      margin-right: 0px;
+    }
 
-    } */
+    .header-font {
+      font-size: 3rem !important;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .header-font {
+      font-size: 3rem !important;
+    }
   }
   @media only screen and (max-width: 540px) {
     .tablet {
       display: none;
     }
+    .header-font {
+      font-size: 5rem;
+    }
   }
 
   @media only screen and (max-width: 576px) {
-
+    
+    .sub-header-text {
+      font-size: 1rem;
+    }
     #logo {
     width: 120px;
     }
@@ -771,14 +813,29 @@
     }
     .spacer-video {
       height: 87vw;
-
-
     }
+  }
+  @media only screen and (max-width: 725px) {
+    .mid-tablet {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 726px) {
+    .mid-tablet {
+      display: none;
+    }
+  }
 
+  @media only screen and (max-width: 1130px) {
+    .header-font {
+      font-size: 5rem;
+    }
   }
 
   @media only screen and (max-width: 991px) {
-
+    .header-font {
+      font-size: 4rem;
+    }
     #nav-container {
       width: 100vw;
     }
@@ -869,6 +926,9 @@
   }
 
   @media screen and (min-width: 541px) and (max-width: 991px) {
+    .sub-header-text {
+      font-size: 1.5rem;
+    }
     #tablet-video {
       /* width: 100%; */
       height: 100%;
@@ -985,8 +1045,13 @@
     .container {
       max-width: 1300px !important;
     }
+    .max_width_content_big_screen {
+      max-width: 1300px !important;
+    }
 
   }
+
+  
 
   /* super large screens */
   @media only screen and (min-width: 1200px) {

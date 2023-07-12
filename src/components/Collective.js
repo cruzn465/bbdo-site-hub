@@ -162,8 +162,17 @@ function Collective() {
 
   return (
     <>
+      <div className="tablet spacer"></div>
       <div className="mobile spacer"></div>
-      <div className="header-text work-sans-font germain header-font">
+      {/* mobile */}
+
+      {/* tablet */}
+      <div className="mid-tablet tablet header-text work-sans-font germain header-font">
+        THE PRODUCTION COLLECTIVE
+        <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
+      </div>
+      {/* desktop */}
+      <div className="desktop header-text work-sans-font germain header-font">
         THE PRODUCTION COLLECTIVE
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>

@@ -7,7 +7,9 @@ import Filter from "./Filter";
 // import WorkRows from "./WorkRows";
 import WorkModal from "./WorkModal";
 // import FetchMoreButton from "./FetchMoreButton";
-import loadingGif from "../img/Arrows bar.gif";
+// import loadingGif from "../img/Arrows bar.gif";
+import loadingGif from "../img/SLATE_V2.gif";
+
 import MobileVid from "../img/TheWork.webp";
 import TabletVid from "../img/TheWorkHeaderLong_Tablet.webp";
 

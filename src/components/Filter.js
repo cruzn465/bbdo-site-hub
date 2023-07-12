@@ -35,7 +35,7 @@ function Filter({ totPost, setPosts }) {
   };
 
   return (
-    <div className="flex">
+    <div className="flex flex-end">
       <div id="filter-spacer"></div>
 
       <Dropdown
@@ -50,7 +50,7 @@ function Filter({ totPost, setPosts }) {
           FILTER BY
         </Dropdown.Toggle>
 
-        <Dropdown.Menu show={isOpen}>
+        <Dropdown.Menu>
           {/* <Dropdown.Item href="#/action-1">ALL</Dropdown.Item> */}
           <Dropdown.Item eventKey="1">ALL</Dropdown.Item>
           <Dropdown.Item eventKey="3">BRANDED + DOCU-STYLE</Dropdown.Item>

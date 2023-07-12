@@ -9,6 +9,7 @@ import { HashRouter as Router } from "react-router-dom";
 
 import Routing from "./components/Routing";
 import Header from "./components/Header";
+import BackgroundSwitcher from "./components/BackgroundSwitcher";
 import { Container } from "react-bootstrap";
 
 // const router = createBrowserRouter([
@@ -58,16 +59,17 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Container fluid className="bg mobile-no-pad mobile-no-mar"></Container>
-      <div className="desktop spacer"></div>
+      <Router basename="/">
+        {/* <Container fluid className="bg mobile-no-pad mobile-no-mar"></Container> */}
+        <BackgroundSwitcher />
+        <div className="desktop spacer"></div>
 
-      <Container className="all-content">
-        <Router basename="/">
+        <Container className="all-content max_width_content_big_screen">
           <Header />
           <Routing />
           <div ref={navBg} className="nav-bg"></div>
-        </Router>
-      </Container>
+        </Container>
+      </Router>
     </div>
   );
 }

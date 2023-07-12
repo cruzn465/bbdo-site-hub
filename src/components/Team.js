@@ -1,19 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Image from "react-bootstrap/Image";
-import Team_super from "../img/team_super.png";
-import Team_copy from "../img/team_copy.png";
-import Team_copy_m from "../img/team_copy_m.png";
 import TeamMobile from "../img/TheTeam.webp";
-
-// import Team_bg_img from '../img/team_bg_img.jpg'
-// import Team_bg_grey from '../img/background_grey.png'
-// import Team_prod_subcopies from '../img/prod_titles.png'
-// import Team_prod from '../img/team_prod.png'
-// import Team_digital_subcopies from '../img/digital_titles.png'
-// import Team_digital from '../img/team_digital.png'
-// import Team_post_subcopies from '../img/post_titles.png'
-// import Team_post from '../img/team_post.png'
+import TeamTab from "../img/TheTeam_Tablet.webp";
 
 import { useRef, useState } from "react";
 import gsap from "gsap";
@@ -64,7 +52,7 @@ function Team() {
       gsap.to(digRef.current, 0.7, { height: "50px" });
 
       // console.log(greyRef)
-      gsap.to(greyRef1.current, 0.7, { height: "80vh" });
+      gsap.to(greyRef1.current, 0.7, { height: "100%" });
       gsap.to(greyRef2.current, 0.7, { height: "0vh" });
       gsap.to(greyRef3.current, 0.7, { height: "0vh" });
     } else {
@@ -84,7 +72,7 @@ function Team() {
       gsap.to(digRef.current, 0.7, { height: "50px" });
 
       gsap.to(greyRef1.current, 0.7, { height: "0vh" });
-      gsap.to(greyRef2.current, 0.7, { height: "80vh" });
+      gsap.to(greyRef2.current, 0.7, { height: "100%" });
       gsap.to(greyRef3.current, 0.7, { height: "0vh" });
     } else {
       gsap.to(postRef.current, 0.7, { height: "50px" });
@@ -104,21 +92,12 @@ function Team() {
 
       gsap.to(greyRef1.current, 0.7, { height: "0vh" });
       gsap.to(greyRef2.current, 0.7, { height: "0vh" });
-      gsap.to(greyRef3.current, 0.7, { height: "80vh" });
+      gsap.to(greyRef3.current, 0.7, { height: "100%" });
     } else {
       gsap.to(digRef.current, 0.7, { height: "50px" });
       gsap.to(greyRef3.current, 0.7, { height: "0vh" });
     }
   }
-  // // store a reference to the box div
-  // const boxRef = useRef();
-
-  // useEffect(() => {
-  //   // toggle
-  //   console.log("toggling reverse to", prodToggleClicked);
-  //    gsap.to(prodRef.current, 2,{height: "100px" });
-  //   // tl.current.prodToggleClicked(prodToggleClicked);
-  // }, [prodToggleClicked]);
 
   function handleMouseLeave() {
     gsap.to([prodRef.current, postRef.current, digRef.current], 0.7, {
@@ -131,6 +110,7 @@ function Team() {
 
   return (
     <>
+      <div className="tablet spacer"></div>
       <div className="mobile spacer"></div>
       <div className="header-text work-sans-font germain header-font">
         WHO WE ARE
@@ -138,7 +118,7 @@ function Team() {
       </div>
       <hr />
 
-      <h2 className="sub-header-text work-sans-font">
+      <h2 className="sub-header-text work-sans-font desktop">
         WE’RE A TEAM OF AWARD-WINNING&nbsp;CREATORS AND
         UNCONVENTIONAL&nbsp;MAKERS, DELIVERING&nbsp;BEST-IN-CLASS CONTENT FOR
         GLOBAL&nbsp;AND&nbsp;LOCAL ALIKE. WITH QUALITY&nbsp;AND&nbsp;EFFICIENCY
@@ -146,28 +126,43 @@ function Team() {
         DRIVEN&nbsp;BY&nbsp;INNOVATION AND POWERED&nbsp;BY&nbsp;
         <span id="the-work-text">THE WORK</span>
       </h2>
-      {/* <img
-        className="copy desktop"
-        src={Team_copy}
-        alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
-      />
-      <img
-        className="copy mobile"
-        src={Team_copy_m}
-        alt="WE’RE A TEAM OF AWARD-WINNING CREATORS AND UNCONVENTIONAL MAKERS"
-      /> */}
+      <h2 className="sub-header-text work-sans-font tablet">
+        WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,
+        DELIVERING&nbsp;BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE. WITH
+        QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO,
+        WE'RE&nbsp;THE&nbsp;PEOPLE WHO ARE DRIVEN&nbsp;BY&nbsp;INNOVATION AND
+        POWERED&nbsp;BY&nbsp;
+        <span id="the-work-text">THE&nbsp;WORK</span>
+      </h2>
+      <h2 className="sub-header-text work-sans-font mobile">
+        WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,
+        DELIVERING BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE. WITH
+        QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE THE
+        PEOPLE WHO ARE DRIVEN BY INNOVATION AND POWERED&nbsp;BY&nbsp;
+        <span id="the-work-text">THE&nbsp;WORK</span>
+      </h2>
+
       <hr />
       <Container id="outer-container" className="desktop">
-        <Container id="office_bg" className="hidden-on-mobile"></Container>
-        <Container id="grey-bg" className="abs-cont hidden-on-mobile">
-          <Row>
+        <Container
+          id="office_bg"
+          className="hidden-on-mobile team_height_container"
+        ></Container>
+        <Container
+          id="grey-bg"
+          className="abs-cont hidden-on-mobile team_height_container"
+        >
+          <Row className="all_height">
             <Col ref={greyRef1} id="grey-1" className="grey"></Col>
             <Col ref={greyRef2} id="grey-2" className="grey" xs={4}></Col>
             <Col ref={greyRef3} id="grey-3" className="grey"></Col>
           </Row>
         </Container>
-        <Container id="text" className="abs-cont hidden-on-mobile">
-          <Row>
+        <Container
+          id="text"
+          className="abs-cont hidden-on-mobile team_height_container"
+        >
+          <Row className="all_height">
             <Col
               className="grey"
               onMouseEnter={handleProdMouseEnter}
@@ -253,6 +248,15 @@ function Team() {
           alt="Office background with descriptions of BBDO studios work"
         />
       </Container>
+      <Container>
+        <img
+          // id="mobile-outer-container"
+          className="tablet copy"
+          src={TeamTab}
+          alt="Office background with descriptions of BBDO studios work"
+        />
+      </Container>
+      {/* <div className="spacer"></div> */}
     </>
   );
 }
