@@ -2,8 +2,8 @@ import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// import Image from "react-bootstrap/Image";
-// import Collective_super from "../img/collective_super.png";
+import Image from "react-bootstrap/Image";
+import Collective_super from "../img/mobile_coll_header.png";
 // import Collective_copy from "../img/collective_copy.png";
 // import memberArr from "../members.json";
 import CurrentMember from "./CurrentMember";
@@ -165,7 +165,12 @@ function Collective() {
       <div className="tablet spacer"></div>
       <div className="mobile spacer"></div>
       {/* mobile */}
-
+      <Image
+        className="header"
+        id="collective-header"
+        src={Collective_super}
+        alt="Who We Are"
+      />
       {/* tablet */}
       <div className="mid-tablet tablet header-text work-sans-font germain header-font">
         THE PRODUCTION COLLECTIVE
@@ -176,7 +181,6 @@ function Collective() {
         THE PRODUCTION COLLECTIVE
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>
-
       <hr />
       <h2 className="sub-header-text work-sans-font">
         BUILT TO OPEN DOORS FOR&nbsp;CREATEORS, THE&nbsp;BBDO&nbsp;STUDIOS
@@ -194,8 +198,7 @@ function Collective() {
         <span className="white-text-sub"> CURRENT MEMBERS</span>
       </div>
       {/* <div className="flex-mem">{members}</div> */}
-      <div className="flex-mem pointer">{wpMembers}</div>
-
+      {/* <div className="flex-mem pointer">{wpMembers}</div>
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />
       ) : (
@@ -214,7 +217,7 @@ function Collective() {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
       {/* <Outlet /> */}
     </>
   );

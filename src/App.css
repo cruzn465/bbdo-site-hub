@@ -145,7 +145,7 @@
 
   .header {
     max-width: 60%;
-    margin: 20px;
+    /* margin: 20px; */
   }
 
   .header-font {
@@ -177,7 +177,6 @@
 
   #collective-header {
     max-width: 90%;
-    margin-top: 90px;
   }
 
   hr {
