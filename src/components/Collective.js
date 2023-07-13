@@ -7,7 +7,9 @@ import Collective_super from "../img/mobile_coll_header.png";
 // import Collective_copy from "../img/collective_copy.png";
 // import memberArr from "../members.json";
 import CurrentMember from "./CurrentMember";
-import loadingGif from "../img/Arrows bar.gif";
+// import loadingGif from "../img/Arrows bar.gif";
+import loadingGif from "../img/SLATE_V2.gif";
+
 import Members from "./Members";
 
 // modularize into Member components
@@ -166,7 +168,7 @@ function Collective() {
       <div className="mobile spacer"></div>
       {/* mobile */}
       <Image
-        className="header"
+        className="header mobile-tablet "
         id="collective-header"
         src={Collective_super}
         alt="Who We Are"
@@ -182,19 +184,25 @@ function Collective() {
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>
       <hr />
-      <h2 className="sub-header-text work-sans-font">
+      <h2 className="sub-header-text work-sans-font desktop">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
         NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
         IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO
         AND BEYOND.
       </h2>
+      <h2 className="sub-header-text work-sans-font tablet">
+        BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
+        DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
+        NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
+        IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN
+        BBDO&nbsp;AND BEYOND.
+      </h2>
       <h2 className="sub-header-text work-sans-font mobile">
-        WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,
-        DELIVERING BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE. WITH
-        QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE THE
-        PEOPLE WHO ARE DRIVEN BY INNOVATION AND POWERED&nbsp;BY&nbsp;
-        <span id="the-work-text">THE&nbsp;WORK</span>
+        BUILT TO OPEN DOORS FOR CREATORS, THE BBDO STUDIOS CAREER DEVELOPMENT
+        INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF NETWORKING AND WORK
+        OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION IS TO HELP SET UP
+        OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO&nbsp;AND BEYOND.
       </h2>
       <hr />
       {/* <h2 className="germain" id="curr-mem-title">
@@ -205,7 +213,7 @@ function Collective() {
         <span className="white-text-sub"> CURRENT MEMBERS</span>
       </div>
       {/* <div className="flex-mem">{members}</div> */}
-      {/* <div className="flex-mem pointer">{wpMembers}</div>
+      <div className="flex-mem pointer">{wpMembers}</div>
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />
       ) : (
@@ -224,7 +232,7 @@ function Collective() {
         ) : (
           ""
         )}
-      </div> */}
+      </div>
       {/* <Outlet /> */}
     </>
   );

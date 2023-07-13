@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1df9c5d9.css",
-    "main.js": "/static/js/main.6593deee.js",
+    "main.css": "/static/css/main.c284c523.css",
+    "main.js": "/static/js/main.2ef14c70.js",
     "static/js/787.8f10c6d4.chunk.js": "/static/js/787.8f10c6d4.chunk.js",
     "static/media/Bbdostudiosreel081022bbdostudiosoptimized.mp4": "/static/media/Bbdostudiosreel081022bbdostudiosoptimized.1d6f384e03e34f75e196.mp4",
     "static/media/HomePage_Header_Tablet.webp": "/static/media/HomePage_Header_Tablet.dfec5aacf8b7757876a7.webp",
@@ -16,13 +16,14 @@
     "static/media/TheCollectiveRepeating.jpg": "/static/media/TheCollectiveRepeating.ec593dd0cbabf2647df4.jpg",
     "static/media/TheTeamRepeating.jpg": "/static/media/TheTeamRepeating.40c964284e8263c82a3a.jpg",
     "static/media/TheWorkRepeating.jpg": "/static/media/TheWorkRepeating.b7baba7b388e271c0a13.jpg",
+    "static/media/mobile_coll_header.png": "/static/media/mobile_coll_header.6ab5455c66a7c281c4a2.png",
     "index.html": "/index.html",
-    "main.1df9c5d9.css.map": "/static/css/main.1df9c5d9.css.map",
-    "main.6593deee.js.map": "/static/js/main.6593deee.js.map",
+    "main.c284c523.css.map": "/static/css/main.c284c523.css.map",
+    "main.2ef14c70.js.map": "/static/js/main.2ef14c70.js.map",
     "787.8f10c6d4.chunk.js.map": "/static/js/787.8f10c6d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1df9c5d9.css",
-    "static/js/main.6593deee.js"
+    "static/css/main.c284c523.css",
+    "static/js/main.2ef14c70.js"
   ]
 }
