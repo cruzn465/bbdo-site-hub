@@ -7,8 +7,11 @@ import Filter from "./Filter";
 // import WorkRows from "./WorkRows";
 import WorkModal from "./WorkModal";
 // import FetchMoreButton from "./FetchMoreButton";
-import loadingGif from "../img/Arrows bar.gif";
+// import loadingGif from "../img/Arrows bar.gif";
+import loadingGif from "../img/SLATE_V2.gif";
+
 import MobileVid from "../img/TheWork.webp";
+import TabletVid from "../img/TheWorkHeaderLong_Tablet.webp";
 
 function Work() {
   const [posts, setPosts] = useState([]);
@@ -96,18 +99,28 @@ function Work() {
   }
 
   const handleSelect = (e) => {
-    const strE = String(e);
-    let filteredPosts = [];
-    for (let i = 0; i < totPost.length; i++) {
-      const curPost = totPost[i];
-      for (let j = 0; j < curPost.categories.length; j++) {
-        let cur = String(curPost.categories[j]);
-        if (cur === strE) filteredPosts.push(curPost);
+    if (e) {
+      const strE = String(e);
+      let filteredPosts = [];
+      for (let i = 0; i < totPost.length; i++) {
+        const curPost = totPost[i];
+        for (let j = 0; j < curPost.categories.length; j++) {
+          let cur = String(curPost.categories[j]);
+          if (cur === strE) filteredPosts.push(curPost);
+        }
       }
+      if (strE === "1") filteredPosts = totPost;
+      setPosts(filteredPosts);
     }
-    if (strE === "1") filteredPosts = totPost;
-    setPosts(filteredPosts);
   };
+
+  // const handleDropdownSelect = (eventKey) => {
+  //   // Handle the dropdown item selection here
+  //   // You can pass the selected eventKey to the parent component or perform any other logic
+  //   if (handleSelect) {
+  //     handleSelect(eventKey);
+  //   }
+  // };
 
   return (
     <>
@@ -124,7 +137,23 @@ function Work() {
           </div>
         </Container>
         <div className="mobile spacer-video"></div>
-        <Filter handleSelect={handleSelect} />
+
+        {/* TABLET WORK BG TOP VIDEO TRY IT OUT */}
+        <Container fluid className="work-bg spacer-video-tab">
+          <img
+            id="tab-mobile-outer-container"
+            className="mobile"
+            src={TabletVid}
+            alt="Video showcasing BBDO work"
+          />
+        </Container>
+        <div className="tablet spacer-video-tab"></div>
+
+        <Filter
+          handleSelect={handleSelect}
+          setPosts={setPosts}
+          totPost={totPost}
+        />
         {/* IF THE LOADING VAR IS TRUTHY, MAP THRU THE SUBARRAYS */}
         {!loading && media.length > 0 ? (
           groupPosts(posts).map((postSubArray, i) => (

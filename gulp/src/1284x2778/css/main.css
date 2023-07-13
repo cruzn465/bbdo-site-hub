@@ -60,11 +60,11 @@ body { margin:0px 0px; padding:0px; }
 }
 
 #bg {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg.jpg);
+	left:142px;
+	top:478px;
+	width:996px;
+	height:331px;
+	background-image:url(../img/bg.png);
 }
 
 #team_super {
@@ -316,28 +316,4 @@ body { margin:0px 0px; padding:0px; }
 	width:103px;
 	height:103px;
 	background-image:url(../img/col_mem_null.png);
-}
-
-#bg_the_col {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_col.jpg);
-}
-
-#bg_the_team {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_team.jpg);
-}
-
-#bg_the_work {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_work.jpg);
 }

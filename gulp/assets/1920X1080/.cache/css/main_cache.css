@@ -1,9 +1,25 @@
 
 
-#team_super {
-	left:578px;
-	top:339px;
-	width:766px;
-	height:130px;
-	background-image:url(../img/team_super.png);
+#bg_the_col {
+	left:0px;
+	top:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url(../img/bg_the_col.jpg);
+}
+
+#bg_the_team {
+	left:0px;
+	top:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url(../img/bg_the_team.jpg);
+}
+
+#bg_the_work {
+	left:0px;
+	top:0px;
+	width:1920px;
+	height:1080px;
+	background-image:url(../img/bg_the_work.jpg);
 }

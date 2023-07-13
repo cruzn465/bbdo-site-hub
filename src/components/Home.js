@@ -1,25 +1,16 @@
-// import Container from "react-bootstrap/Container";
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState, useEffect } from "react";
 import homeVideo from "../img/Bbdostudiosreel081022bbdostudiosoptimized.mp4";
 import React from "react";
 import HomeMobileVid from "../img/Home.webp";
+import HomeTabVid from "../img/HomePage_Header_Tablet.webp";
 
 function Home() {
   // var w = window.innerWidth;
   const size = useWindowSize();
   if (size.width) {
-    if (size.width <= 991) {
-      // mobile
-      console.log("this is mobile", size.width);
+    if (size.width <= 991)
       document.getElementById("video").removeAttribute("autoplay");
-    } else {
-      console.log("this is desktop", size.width);
-
-      document.getElementById("video").play();
-    }
+    else document.getElementById("video").play();
   }
 
   function useWindowSize() {
@@ -47,39 +38,24 @@ function Home() {
     }, []); // Empty array ensures that effect is only run on mount
     return windowSize;
   }
-  // useEffect(() => {
-  //   if (size.width <= 991) {
-  //     // mobile
-  //     document.getElementById("video").removeAttribute("autoplay");
-  //   } else {
-  //     // console.log(document.getElementById("video").setAttribute("autoplay"));
-  //     document.getElementById("video").setAttribute("autoplay", true);
-  //   }
-  // }, []); // Empty array ensures that effect is only run on mount
 
-  // homeVideo.play;
   return (
     <>
-      <video
-        // preload="true"
-        loop
-        muted
-        // autoPlay
-        playsInline
-        controls
-        id="video"
-        className="desktop"
-      >
+      <video loop muted playsInline controls id="video" className="desktop">
         <source src={homeVideo} type="video/mp4" className="desktop" />
       </video>
-      {/* <Container fluid className="mobile home-vid"> */}
       <img
         src={HomeMobileVid}
         id="mobile-video"
         className="mobile"
         alt="Video showcasing different BBDO projects"
       />
-      {/* </Container> */}
+      <img
+        src={HomeTabVid}
+        id="tablet-video"
+        className="tablet"
+        alt="Video showcasing different BBDO projects"
+      />
     </>
   );
 }

@@ -46,7 +46,18 @@
   }
 
   #nav-container {
-    padding: 20px 50px 20px 50px;
+    padding: 20px 0 20px 4px;
+    /* MODIFY THIS LINE */
+    width: calc(100vw - 70px);
+    /* add this, but this also overrides some things... */
+  }
+
+  #dropdown-basic,
+  .dropdown-menu {
+    border: 3px solid #fff;
+    box-shadow: none;
+    width: 32.75%;
+    /* MODIFY THIS LINE */
   }
 
   #video {
@@ -54,50 +65,65 @@
     left: 0px;
     top: 0px;
     z-index: -1;
-    /* height: 100%; */
+    height: 100%;
     width: 100%;
   }
 
   #mobile-video {
-    width: 100vw;
-    /* height: 100%; */
+    /* width: 100vw; */
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
   }
-  #team-copy-not-pic {
-    display: none;
+
+  .sub-header-text {
+    color: white;
+    /* font-size: 1.5rem; */
+    max-width: 90%;
+    margin: auto;
   }
 
-  #team_bg {
-    /* width: 90%; */
-    margin: 20px 0px 50px 0px;
-    /* background-image: url('./img/team_bg_img.jpg'); */
+  #the-work-text {
+    color: #ed1e24;
+    font-weight: bold;
   }
-
 
   .bg {
     /* position: absolute; */
-    background-image: url("./img/bg.jpg");
+    /* background-image: url("./img/theteam_3k.png"); */
+    background-color: rgb(0, 0, 0);
     position: fixed;
     top: 0;
     left: 0;
-    background-repeat: repeat-y !important;
-    height: 100vh;
+    /* background-repeat: repeat-y !important; */
+    height: 110vh;
     z-index: -1;
     overflow-x: hidden;
     overflow-y: scroll;
   }
 
+  .background-switcher {
+    /* Switcher styles */
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: #000000; */
+    z-index: -1000;
+  }
+
   .work-bg {
     /* position: absolute; */
-    background-image: url("./img/bg.jpg");
+    /* background-image: url("./img/bg.jpg"); */
     position: fixed;
     top: 0;
     left: 0;
     padding-left: 0;
     padding-right: 0;
     background-repeat: repeat-y !important;
+    background-repeat: repeat-x !important;
     /* height: 100vw; */
     z-index: -1;
     overflow-x: hidden;
@@ -119,7 +145,29 @@
 
   .header {
     max-width: 60%;
-    margin: 20px;
+    /* margin: 20px; */
+  }
+
+  .header-font {
+    font-size: 6rem ;
+  }
+
+  .header-text {
+    position: relative;
+    color: red !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .white-text {
+    position: absolute;
+    top: -10px;
+    color: white;
+  }
+  .white-text-sub {
+    position: absolute;
+    top: -5px;
+    color: white;
   }
 
   #team-header {
@@ -129,7 +177,6 @@
 
   #collective-header {
     max-width: 90%;
-    margin-top: 90px;
   }
 
   hr {
@@ -152,6 +199,14 @@
     background-size: cover;
   }
 
+  .team_height_container {
+    max-height: 700px;
+  }
+  
+  .all_height {
+    height: 100%;
+  }
+
   .abs-cont {
     position: absolute;
     top: 0;
@@ -169,7 +224,7 @@
   .grey {
     display: flex;
     align-items: center;
-    height: 80vh;
+    /* height: 80vh; */
   }
 
   #grey-1 {
@@ -373,7 +428,7 @@
   /* Collective page start */
   .germain {
     font-family: 'Germania One', cursive;
-    font-size: 3em;
+    /* font-size: 3em; */
     color: white;
   }
 
@@ -432,7 +487,8 @@
   }
 
   #loading {
-    margin-top: 15vh;
+    /* margin-top: 15vh; */
+    width: 50%;
   }
 
   #works {
@@ -604,11 +660,29 @@
     position: relative;
     z-index: 100;
   }
+  #filter-spacer {
+    width: 62%;
+  }
+  .flex {
+    display: flex;
+  }
+
+  .flex-end {
+    justify-content: flex-end;
+  }
   .dropdown {
     text-align: end;
     padding-bottom: 15px;
-    margin-right: 10px;
+    width: 33%;
+    /* float: right; */
+    /* overflow: hidden; */
+
   }
+  /* .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
   #dropdown-basic {
     background-color: #000000d2;
     border-radius: unset;
@@ -616,12 +690,12 @@
     border: 3px solid #ffffff;
     padding: 0px 10px 0px 10px;
     box-shadow: none;
-    width: 30%;
+    width: 100%;
     /* FIGURE OUT HOW WHAT  */
     /* text-align:left;   */
   }
   .dropdown-menu {
-    width: 30%;
+    width: 100%;
   --bs-dropdown-bg: #000000d2;
   border: 3px solid #ffffff;
   box-shadow: none;
@@ -652,18 +726,67 @@
 
 
   /* MEDIA QUERIES */
+  /* Galaxy fold is 280px width */
+  @media only screen and (max-width: 305px) {
+    #nav-container {
+      padding: 0px !important;
+      width: 100vw;
+    }
+    .navbar-brand {
+        margin-right: 10px !important;
+    }
+    .nav-bg {
+      height: 55px;
+    }
 
-  /* small screen sizes */
+    .all-content {
+      margin-bottom: 0px;
+    }
+  }
+
+
   @media only screen and (max-width: 350px) {
     .navbar-brand {
       margin-right: 0px;
     }
-
+  
     /* .hidden-on-super-small {
-
-    } */
+  
+      } */
   }
+  /* small screen sizes */
+  @media only screen and (max-width: 350px) {
+    .modal-body {
+      padding: 0px 5px 0px 5px;
+    }
+    .navbar-brand {
+      margin-right: 0px;
+    }
+
+    .header-font {
+      font-size: 3rem !important;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .header-font {
+      font-size: 3rem !important;
+    }
+  }
+  @media only screen and (max-width: 540px) {
+    .tablet {
+      display: none;
+    }
+    .header-font {
+      font-size: 5rem;
+    }
+  }
+
   @media only screen and (max-width: 576px) {
+    
+    .sub-header-text {
+      font-size: 1rem;
+    }
     #logo {
     width: 120px;
     }
@@ -689,13 +812,32 @@
     }
     .spacer-video {
       height: 87vw;
-
-
     }
+  }
+  @media only screen and (max-width: 725px) {
+    .mid-tablet {
+      display: none;
+    }
+  }
+  @media only screen and (min-width: 726px) {
+    .mid-tablet {
+      display: none;
+    }
+  }
 
+  @media only screen and (max-width: 1130px) {
+    .header-font {
+      font-size: 5rem;
+    }
   }
 
   @media only screen and (max-width: 991px) {
+    .header-font {
+      font-size: 4rem;
+    }
+    #nav-container {
+      width: 100vw;
+    }
 
     .mobile-no-pad {
       padding-left: 0;
@@ -759,6 +901,64 @@
     }
   }
 
+
+/* TABLET QUERIES START */
+  @media screen and (max-width: 411px) {
+    .spacer-video-tab {
+      display: none;
+    }
+  }
+  /* SQUARISH SCREENS */
+  @media screen and (min-width: 300px) and (max-width: 540px) and (max-height: 720px){
+    #mobile-video {
+      width: 100%;
+      height: unset !important
+      ;
+    }
+  }
+
+  @media screen and (min-width: 632px) and (max-width: 991px) and (max-height: 991px) {
+    #tablet-video {
+      width: 100%;
+      height: unset !important;
+    }
+  }
+
+  @media screen and (min-width: 541px) and (max-width: 991px) {
+    .sub-header-text {
+      font-size: 1.5rem;
+    }
+    #tablet-video {
+      /* width: 100%; */
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .mobile {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 412px) and (max-width: 991px) {
+
+
+    .spacer-video {
+      display: none;
+    }
+    #tab-mobile-outer-container {
+      height: 100vw;
+      width: 100vw;
+    }
+    .spacer-video-tab {
+      height: 100vw;
+    }
+
+
+  }
+/* TABLET QUERIES END */
+
+
   @media only screen and (max-width: 991px) {
 
     .post-titles {
@@ -807,16 +1007,15 @@
   }
 
 
-  @media only screen and (max-width: 1200px) {
-    #video {
-      height: 100%;
-      /* width: auto; */
-      /* scale: 1.5; */
-    }
-  }
+
 
   /* large screens */
   @media only screen and (min-width: 992px) {
+    .tablet {
+      display: none;
+    }
+
+
     .modal-video {
       min-height: 400px;
     }
@@ -825,7 +1024,7 @@
       height: 100px;
     }
     #root>div>div.all-content.container {
-      max-width: 95vw !important;
+      /* max-width: 95vw !important; */
     }
     .navbar-nav {
       align-items: center !important;
@@ -845,8 +1044,13 @@
     .container {
       max-width: 1300px !important;
     }
+    .max_width_content_big_screen {
+      max-width: 1300px !important;
+    }
 
   }
+
+  
 
   /* super large screens */
   @media only screen and (min-width: 1200px) {

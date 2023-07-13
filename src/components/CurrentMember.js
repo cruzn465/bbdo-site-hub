@@ -46,8 +46,10 @@ function CurrentMember({
           </div>
           <div id="name-title-div">
             <div className="work-sans-font" id="curr-mem-name">
-              {/* <span id="white-name">{currMem && currMem.title.rendered}</span> */}
-              {/* {title} */}
+              {currMem.title && (
+                <span id="white-name"> {currMem.title.rendered}</span>
+              )}
+              {currMem.title && currMem.title.rendered}
               <div id="curr-mem-details">{/* {title} | {pronouns} */}</div>
             </div>
             <br />
