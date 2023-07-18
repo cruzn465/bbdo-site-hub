@@ -1,25 +1,25 @@
 
 
-#bg_the_col {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_col.jpg);
+#linkedin_button {
+	left:1506px;
+	top:495px;
+	width:58px;
+	height:58px;
+	background-image:url(../img/linkedin_button.png);
 }
 
-#bg_the_team {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_team.jpg);
+#twitter_button {
+	left:1584px;
+	top:497px;
+	width:66px;
+	height:54px;
+	background-image:url(../img/twitter_button.png);
 }
 
-#bg_the_work {
-	left:0px;
-	top:0px;
-	width:1920px;
-	height:1080px;
-	background-image:url(../img/bg_the_work.jpg);
+#vimeo_button {
+	left:1665px;
+	top:498px;
+	width:61px;
+	height:53px;
+	background-image:url(../img/vimeo_button.png);
 }

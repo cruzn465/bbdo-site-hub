@@ -132,8 +132,6 @@ function Collective() {
       );
     } else {
       return "";
-      // <div> TEST TEST TEST</div>
-      // <img id="loading" src={loadingGif} alt="Loading GIF"></img>
     }
   }
 
@@ -141,7 +139,11 @@ function Collective() {
   const wpMembers = allMembers.map((member) => {
     if (member.featured_media !== 0) {
       return (
-        <div key={member.id} onClick={(e) => handleMemberClick(e, member)}>
+        <div
+          key={member.id}
+          className="hover-mem"
+          onClick={(e) => handleMemberClick(e, member)}
+        >
           {/* <img
             src={findSourceUrl(member.featured_media, mediaObj)}
             className="member"
@@ -159,7 +161,7 @@ function Collective() {
   // click handler for when any member is clicked
   function handleMemberClick(e, m) {
     setCurrMem(m);
-    console.log(currMem);
+    // console.log(currMem);
   }
 
   return (
@@ -208,18 +210,23 @@ function Collective() {
       {/* <h2 className="germain" id="curr-mem-title">
         CURRENT MEMBERS
       </h2> */}
-      <div className="work-sans-font germain header-text">
+      <div className="work-sans-font germain curr-header-text curr-header-font ">
         CURRENT MEMBERS
         <span className="white-text-sub"> CURRENT MEMBERS</span>
       </div>
       {/* <div className="flex-mem">{members}</div> */}
-      <div className="flex-mem pointer">{wpMembers}</div>
+      <div className="flex-mem pointer no-display-mobile">
+        <div className="off-set-member"></div>
+        {wpMembers}
+        <div className="off-set-member"></div>
+      </div>
       {!loading && media.length > 0 ? (
         <Members mediaObj={mediaObj} allMembers={allMembers} />
       ) : (
         <img id="loading" src={loadingGif} alt="Loading GIF"></img>
       )}
       <div>
+        <hr />
         {!loading && currMem ? (
           <CurrentMember
             setCurrMem={setCurrMem}
