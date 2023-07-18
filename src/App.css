@@ -789,7 +789,7 @@ hr {
     opacity: 1 !important;
     margin-top: 25px !important;
     margin-bottom: 25px !important;
-
+  }
   .navbar-brand {
     margin-right: 10px !important;
   }
@@ -800,17 +800,13 @@ hr {
 
   .all-content {
     margin-bottom: 0px;
+    }
   }
-}
 
 @media only screen and (max-width: 350px) {
   .navbar-brand {
     margin-right: 0px;
   }
-
-  /* .hidden-on-super-small {
-  
-      } */
 }
 /* small screen sizes */
 @media only screen and (max-width: 350px) {
@@ -935,7 +931,6 @@ hr {
     padding-right: 0;
   }
 
-
   .flex-mem {
     display: flex;
     justify-content: center;
@@ -969,7 +964,7 @@ hr {
     align-items: center;
     text-transform: uppercase;
     color: white;
-
+  }
   .mobile-no-mar {
     margin-left: 0;
     margin-right: 0;
@@ -1591,21 +1586,6 @@ hr {
     }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
   .modal-video {
     min-height: 400px;
   }
