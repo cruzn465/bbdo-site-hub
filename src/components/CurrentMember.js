@@ -15,48 +15,30 @@ function CurrentMember({
   mediaObj,
   findSourceUrl,
 }) {
-  // console.log("")
   const { slug } = useParams();
-  // console.log("CURR MEM SLUG?", slug);
-  // console.log("SLUG OBJ", slugObj);
-
   if (slug) setCurrMem(slugObj[slug]);
-  // console.log("CURR MEM COMP CURR MEM", currMem);
-
-  // console.log("CURR MEM loading?", loading);
-
-  // if (slugObj) {
-  //   currMem = slugObj[slug];
-  // } else {
-  // }
 
   console.log("currMem in CM COMP", currMem);
-  // if (currMem.acf.personalwebsite) console.log(currMem.acf.personalwebsite);
-  // const { img, name, title, pronouns } = currMem;
-  // console.log("img url", findSourceUrl(currMem.featured_media, mediaObj));
-  // const { title } = currMem;
 
   return (
     <>
       <Container className="font-titles">
         <div className="big-flex-mem">
           <div>
-            {/* {currMem && ( */}
             <img
               id="curr-mem-img"
               src={findSourceUrl(currMem.featured_media, mediaObj)}
               className="member"
               alt="current member"
             />
-            {/* )} */}
           </div>
 
           <div id="name-title-div">
             <div className="work-sans-font" id="curr-mem-name">
-              {currMem && (
+              {/* {currMem && (
                 <span id="white-name"> {currMem.title.rendered}</span>
-              )}
-              {currMem && currMem.title.rendered}
+              )} */}
+              {/* {currMem && currMem.title.rendered} */}
               {/* <div id="curr-mem-details">
                 {title} | {pronouns}
               </div> */}
