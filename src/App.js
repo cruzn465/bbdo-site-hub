@@ -64,11 +64,11 @@ function App() {
         <BackgroundSwitcher />
         <div className="desktop spacer"></div>
 
-        <Container className="all-content max_width_content_big_screen">
+        <div className="all-content max_width_content_big_screen">
           <Header />
           <Routing />
           <div ref={navBg} className="nav-bg"></div>
-        </Container>
+        </div>
       </Router>
     </div>
   );

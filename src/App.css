@@ -742,9 +742,8 @@ hr {
     width: 100vw;
   }
 
-
   .header-font {
-    font-size: 6rem ;
+    font-size: 6rem;
   }
 
   .header-text {
@@ -761,8 +760,6 @@ hr {
     justify-content: center;
     font-size: 2.5rem;
   }
-
-
 
   .white-text {
     position: absolute;
@@ -795,13 +792,12 @@ hr {
   }
   .nav-bg {
     height: 55px;
-
   }
 
   .all-content {
     margin-bottom: 0px;
-    }
   }
+}
 
 @media only screen and (max-width: 350px) {
   .navbar-brand {
@@ -938,7 +934,7 @@ hr {
     margin-left: -1.5rem;
   }
   .hover-mem {
-    opacity: .5;
+    opacity: 0.5;
   }
   .hover-mem:hover {
     opacity: 1;
@@ -950,8 +946,8 @@ hr {
   }
 
   .member {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     height: 5rem;
     border-radius: 100px;
   }
@@ -972,12 +968,6 @@ hr {
 
   .nav-link {
     border-bottom: 1px solid #ffffff53;
-  }
-  .dropdown-menu {
-    width: 50%;
-  }
-  #dropdown-basic {
-    width: 50%;
   }
   .dropdown {
     margin-right: 0px;
@@ -1130,143 +1120,132 @@ hr {
   }
 }
 
+/* FILTER END */
+
+/* MEDIA QUERIES */
+/* super large screens */
+/* super large screens */
+
+@media only screen and (min-width: 1200px) {
+  .header-text {
+    font-size: 6rem !important;
+  }
+
+  .curr-header-text {
+    font-size: 3.5rem;
+  }
+
+  #team_prod {
+    top: 8em;
+  }
+
+  #team_prod {
+    top: 8em;
+  }
+}
+
 /* large screens */
 @media only screen and (min-width: 992px) {
   .tablet {
     display: none;
   }
 
+  .modal-video {
+    min-height: 400px;
+  }
+
+  .nav-bg {
+    height: 100px;
+  }
 
   .last-dropdown-item {
-  border-bottom: unset !important;
+    border-bottom: unset !important;
   }
 
-  /* FILTER END */
-
-
-
-
-
-
-
-  /* MEDIA QUERIES */
-  /* super large screens */
-  @media only screen and (min-width: 1200px) {
-    .header-text {
-      font-size: 6rem !important;
-    }
-  
-    .curr-header-text {
-      font-size: 3.5rem;
-    }
-  
-    #team_prod {
-      top: 8em;
-    }
+  #root > div > div.all-content.container {
+    /* max-width: 95vw !important; */
   }
 
-  /* large screens */
-  @media only screen and (min-width: 992px) {
-    .tablet {
-      display: none;
-    }
-  
-  
-    .modal-video {
-      min-height: 400px;
-    }
-  
-    .nav-bg {
-      height: 100px;
-    }
-  
-    #root>div>div.all-content.container {
-      /* max-width: 95vw !important; */
-    }
-  
-    .navbar-nav {
-      align-items: center !important;
-    }
-  
-    .hidden-on-desktop {
-      /* visibility: hidden; */
-      /* height: 0px; */
-      /* width: 0px; */
-    }
-  
-    .mobile {
-      display: none;
-      /* visibility: hidden; */
-    }
-  
-    .mobile-tablet {
-      display: none;
-    }
-  
-  
-    .container {
-      max-width: 1300px !important;
-    }
-  
-    .max_width_content_big_screen {
-      max-width: 1300px !important;
-    }
-  
+  .navbar-nav {
+    align-items: center !important;
   }
 
-  @media only screen and (max-width: 991px) {
-    #collective-header {
-      max-width: 80%;
-    }
-  
-    .post-titles {
-      font-size: 20px;
-    }
-  
-    #mobile-outer-container {
-      /* width: 65vw; */
-    }
-  
-    .hidden-on-mobile {
-      visibility: hidden;
-      /* height: 0px; */
-      /* width: 0px; */
-    }
-  
-    .header-links {
-      height: 20px;
-    }
-  
-    .desktop {
-      display: none;
-      /* visibility: hidden; */
-    }
-  
-    hr {
-      border: #ed1e24 1.7px solid !important;
-    }
-  
-    .navbar-toggler {
-      border: none;
-    }
-  
-    .navbar-collapse {
-      /* background-color: #090909db; */
-      max-width: 40vw;
-      background-color: #1d1c1caf;
-      border-radius: 20px;
-    }
-  
-  
-    .navbar>.container {
-      justify-content: center !important;
-      text-align: center;
-    }
-  
-    #who_we_are {
-      max-width: 80% !important;
-    }
+  .hidden-on-desktop {
+    /* visibility: hidden; */
+    /* height: 0px; */
+    /* width: 0px; */
   }
+
+  .mobile {
+    display: none;
+    /* visibility: hidden; */
+  }
+
+  .mobile-tablet {
+    display: none;
+  }
+
+  .container {
+    max-width: 1300px !important;
+  }
+
+  .max_width_content_big_screen {
+    max-width: 1300px !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #collective-header {
+    max-width: 80%;
+  }
+
+  .post-titles {
+    font-size: 20px;
+  }
+
+  #mobile-outer-container {
+    /* width: 65vw; */
+  }
+
+  .hidden-on-mobile {
+    visibility: hidden;
+    /* height: 0px; */
+    /* width: 0px; */
+  }
+
+  .header-links {
+    height: 20px;
+  }
+
+  .desktop {
+    display: none;
+    /* visibility: hidden; */
+  }
+
+  hr {
+    border: #ed1e24 1.7px solid !important;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-collapse {
+    /* background-color: #090909db; */
+    max-width: 40vw;
+    background-color: #1d1c1caf;
+    border-radius: 20px;
+  }
+
+  .navbar > .container {
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  #who_we_are {
+    max-width: 80% !important;
+  }
+}
 
 /* TABLET QUERIES START */
 
@@ -1279,7 +1258,6 @@ hr {
 }
 
 @media screen and (min-width: 412px) and (max-width: 991px) {
-
   .sub-header-text {
     font-size: 1.3rem !important;
     /* max-width: unset; */
@@ -1297,15 +1275,12 @@ hr {
   .spacer-video-tab {
     height: 100vw;
   }
-
-
 }
 
 @media screen and (min-width: 541px) and (max-width: 991px) {
   .sub-header-text {
     font-size: 1.5rem;
   }
-
 
   #tablet-video {
     /* width: 100%; */
@@ -1318,25 +1293,6 @@ hr {
   .mobile {
     display: none;
   }
-
-
-}
-
-@media screen and (max-width: 750px) {
-  .member {
-    height: 3rem;
-    margin-left: .25rem;
-    margin-right: .25rem;
-  }
-
-  .flex-mem {
-    margin-left: -.25rem;
-  }
-
-  .off-set-member {
-    margin-left: 1.5rem;
-  }
-
 }
 
 /* WEIRD COLLECTIVE BREAK INTO 3 LINES */
@@ -1346,9 +1302,8 @@ hr {
   }
 
   .flex-mem {
-    margin-left: -.25rem !important;
+    margin-left: -0.25rem !important;
   }
-
 }
 
 /* SQUARISH SCREENS */
@@ -1359,271 +1314,304 @@ hr {
   }
 }
 
-
-
 /* TABLET QUERIES END */
 
 /* SMALL SCREEN SIZES */
 
-  @media only screen and (max-width: 1130px) {
-  
-    .header-font {
-      font-size: 5rem;
-    }
-  
-    .curr-header-font {
-      font-size: 3rem;
-    }
+@media only screen and (max-width: 1130px) {
+  .header-font {
+    font-size: 5rem;
   }
 
-  @media only screen and (max-width: 991px) {
-    .header-font {
-      font-size: 4rem;
-    }
-  
-    #nav-container {
-      width: 100vw;
-    }
-  
-    .mobile-no-pad {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-    .mobile-no-mar {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  
-    .nav-link {
-      border-bottom: 1px solid #ffffff53;
-    }
-  
-    .dropdown-menu {
-      width: 50%;
-    }
-  
-    #dropdown-basic {
-      width: 50%;
-    }
-  
-    .dropdown {
-      margin-right: 0px;
-    }
-  
-    .work-row {
-      gap: 5px;
-      margin-bottom: 5px;
-    }
-  
-    .red:hover {
-      height: 140px;
-    }
-  
-    .outer-container {
-      height: 140px;
-    }
-  
-    .work-col {
-      height: 140px;
-    }
-  
-    #works {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  
-    .all-content {
-      max-width: 100vw;
-    }
-  
-    .navbar-brand {
-      margin-right: 10vw;
-    }
-  
-    #nav-container {
-      padding: 5px 5px 5px 5px;
-  
-    }
-  
-    .header {
-  
-      /* max-width: 80% !important; */
-    }
-  
-    .copy {
-      max-width: 100% !important;
-    }
-  }
-
-  @media only screen and (min-width: 726px) {
-    .mid-tablet {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 725px) {
-  
-    .mid-tablet {
-      display: none;
-    }
-  }
-
-  @media only screen and (max-width: 576px) {
-  
-    .header-text {
-      font-size: 2rem;
-    }
-  
-    .curr-header-text {
-      font-size: 3rem;
-    }
-  
-    .sub-header-text {
-      font-size: 1rem;
-    }
-  
-    #logo {
-      width: 120px;
-    }
-  
-    .navbar-collapse {
-      max-width: 60vw !important;
-    }
-  
-    #talk-to-us-button {
-      /* height: 40px; */
-      width: 90px;
-    }
-  
-    .navbar-brand {
-      margin-right: 20vw;
-    }
-  
-    .dropdown {
-      text-align: unset;
-    }
-  
-    #dropdown-basic {
-      width: 100% !important;
-    }
-  
-    .dropdown-menu {
-      width: 100% !important;
-    }
-  
-    .spacer-video {
-      height: 87vw;
-    }
-  }
-
-  @media only screen and (max-width: 540px) {
-    .tablet {
-      display: none;
-    }
-  
-    .header-font {
-      font-size: 5rem;
-    }
-  }
-
-  @media only screen and (max-width: 420px) {
-    .header-font {
-      font-size: 3rem !important;
-    }
-
-    .curr-header-font {
-      font-size: 2rem !important;
-    }
-  }
-  
-  @media screen and (max-width: 411px) {
-    .spacer-video-tab {
-      display: none;
-    }
-  }
-  @media only screen and (max-width: 350px) {
-    .modal-body {
-      padding: 0px 5px 0px 5px;
-    }
-  
-    .navbar-brand {
-      margin-right: 0px;
-    }
-  
-    .header-font {
-      font-size: 3rem !important;
-    }
-  
-    .curr-header-font {
-      font-size: 1rem !important;
-    }
-  
-    .sub-header-text {
-      font-size: .7rem !important;
-      max-width: unset;
-    }
-    .navbar-brand {
-      margin-right: 0px;
-    }
-  }
-
-  /* Galaxy fold is 280px width */
-  @media only screen and (max-width: 305px) {
-    #nav-container {
-      padding: 0px !important;
-      width: 100vw;
-    }
-    .navbar-brand {
-        margin-right: 10px !important;
-    }
-    .nav-bg {
-      height: 55px;
-    }
-
-    .all-content {
-      margin-bottom: 0px;
-    }
-  }
-
-  .modal-video {
-    min-height: 400px;
-  }
-
-  .nav-bg {
-    height: 100px;
-  }
-  #root > div > div.all-content.container {
-    /* max-width: 95vw !important; */
-  }
-  .navbar-nav {
-    align-items: center !important;
-  }
-
-  .hidden-on-desktop {
-    /* visibility: hidden; */
-    /* height: 0px; */
-    /* width: 0px; */
-  }
-  .mobile {
-    display: none;
-    /* visibility: hidden; */
-  }
-  .mobile-tablet {
-    display: none;
-  }
-
-  .container {
-    max-width: 1300px !important;
-  }
-  .max_width_content_big_screen {
-    max-width: 1300px !important;
+  .curr-header-font {
+    font-size: 3rem;
   }
 }
 
-/* super large screens */
-@media only screen and (min-width: 1200px) {
-  #team_prod {
-    top: 8em;
+@media only screen and (max-width: 991px) {
+  .header-font {
+    font-size: 4rem;
+  }
+
+  #nav-container {
+    width: 100vw;
+  }
+
+  .mobile-no-pad {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mobile-no-mar {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-link {
+    border-bottom: 1px solid #ffffff53;
+  }
+
+  .dropdown {
+    margin-right: 0px;
+  }
+
+  .work-row {
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+
+  .red:hover {
+    height: 140px;
+  }
+
+  .outer-container {
+    height: 140px;
+  }
+
+  .work-col {
+    height: 140px;
+  }
+
+  #works {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .all-content {
+    max-width: 100vw;
+  }
+
+  .navbar-brand {
+    margin-right: 10vw;
+  }
+
+  #nav-container {
+    padding: 5px 5px 5px 5px;
+  }
+
+  .header {
+    /* max-width: 80% !important; */
+  }
+
+  .copy {
+    max-width: 100% !important;
+  }
+
+  button#dropdown-basic {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  #filter-spacer {
+    width: auto;
+  }
+
+  .dropdown {
+    width: 36%;
+  }
+  .dropdown-menu.show {
+    font-size: 0.9rem;
+    margin-top: -5px;
+  }
+  .dropdown-item {
+    border-bottom: 3px solid #ffffff;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+  }
+
+  .spacer-video-tab {
+    height: 15vw;
+  }
+}
+
+@media only screen and (min-width: 726px) {
+  .mid-tablet {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .dropdown {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .member {
+    height: 3rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .flex-mem {
+    margin-left: -0.25rem;
+  }
+
+  .off-set-member {
+    margin-left: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 725px) {
+  .mid-tablet {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .header-text {
+    font-size: 2rem;
+  }
+
+  .curr-header-text {
+    font-size: 3rem;
+  }
+
+  .sub-header-text {
+    font-size: 1rem;
+  }
+
+  #logo {
+    width: 120px;
+  }
+
+  .navbar-collapse {
+    max-width: 60vw !important;
+  }
+
+  #talk-to-us-button {
+    /* height: 40px; */
+    width: 90px;
+  }
+
+  .navbar-brand {
+    margin-right: 20vw;
+  }
+
+  .dropdown {
+    text-align: unset;
+  }
+
+  #dropdown-basic {
+    width: 100% !important;
+  }
+
+  .dropdown-menu {
+    width: 100% !important;
+  }
+
+  .spacer-video {
+    height: 87vw;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .tablet {
+    display: none;
+  }
+
+  .header-font {
+    font-size: 5rem;
+  }
+  .dropdown {
+    width: 100%;
+    max-width: 215px;
+  }
+  button#dropdown-basic,
+  .dropdown-menu.show {
+    font-size: 0.8rem;
+  }
+  .work-bg.spacer-video-tab.container-fluid {
+    position: absolute;
+  }
+  .tablet.spacer-video-tab {
+    display: block;
+    height: 92vw;
+  }
+  .spacer-video-tab {
+    height: 100vw;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .header-font {
+    font-size: 3rem !important;
+  }
+
+  .curr-header-font {
+    font-size: 2rem !important;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .spacer-video-tab,
+  .tablet.spacer-video-tab {
+    display: none;
+  }
+  .work-bg.spacer-video {
+    position: relative;
+    height: 100%;
+  }
+  .spacer-video {
+    height: 0;
+  }
+  .flex.flex-end.container {
+    margin-top: -35px;
+  }
+  .fpo-video {
+    height: 350px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .modal-body {
+    padding: 0px 5px 0px 5px;
+  }
+
+  .navbar-brand {
+    margin-right: 0px;
+  }
+
+  .header-font {
+    font-size: 3rem !important;
+  }
+
+  .curr-header-font {
+    font-size: 1rem !important;
+  }
+
+  .sub-header-text {
+    font-size: 0.7rem !important;
+    max-width: unset;
+  }
+  .navbar-brand {
+    margin-right: 0px;
+  }
+  .flex.flex-end.container {
+    margin-top: -20%;
+  }
+}
+
+/* Galaxy fold is 280px width */
+@media only screen and (max-width: 305px) {
+  #nav-container {
+    padding: 0px !important;
+    width: 100vw;
+  }
+  .navbar-brand {
+    margin-right: 10px !important;
+  }
+  .nav-bg {
+    height: 55px;
+  }
+
+  .all-content {
+    margin-bottom: 0px;
+  }
+  .flex.flex-end.container {
+    margin-top: -26%;
+  }
+
+  .fpo-video {
+    height: 318px;
   }
 }
