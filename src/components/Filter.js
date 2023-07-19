@@ -35,7 +35,7 @@ function Filter({ totPost, setPosts }) {
   };
 
   return (
-    <div className="flex flex-end">
+    <div className="flex flex-end container">
       <div id="filter-spacer"></div>
 
       <Dropdown

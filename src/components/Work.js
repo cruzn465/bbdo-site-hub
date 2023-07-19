@@ -124,9 +124,9 @@ function Work() {
 
   return (
     <>
-      <Container id="works">
+      <div id="works">
         {/* THIS IS WHERE THE MOBILE WEBP WILL GO */}
-        <Container fluid className="work-bg spacer-video">
+        <div className="work-bg spacer-video">
           <div className="mobile fpo-video">
             <img
               id="mobile-outer-container"
@@ -135,7 +135,7 @@ function Work() {
               alt="Video showcasing BBDO work"
             />
           </div>
-        </Container>
+        </div>
         <div className="mobile spacer-video"></div>
 
         {/* TABLET WORK BG TOP VIDEO TRY IT OUT */}
@@ -177,7 +177,7 @@ function Work() {
             post={post}
           />
         )}
-      </Container>
+      </div>
     </>
   );
 }

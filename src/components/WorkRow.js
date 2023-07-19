@@ -247,7 +247,7 @@ function WorkRow(props) {
 
   return (
     <>
-      {postMediaCheck() && <div className="work-row">{createDivs(posts)}</div>}
+      {postMediaCheck() && <div className="work-row container">{createDivs(posts)}</div>}
     </>
   );
 }
