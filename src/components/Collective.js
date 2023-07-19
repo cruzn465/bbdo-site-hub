@@ -207,25 +207,23 @@ function Collective() {
         OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO&nbsp;AND BEYOND.
       </h2>
       <hr />
-      {/* <h2 className="germain" id="curr-mem-title">
+      <div className="curr-header-text curr-header-font work-sans-font germain header-font">
         CURRENT MEMBERS
-      </h2> */}
-      <div className="work-sans-font germain curr-header-text curr-header-font ">
-        CURRENT MEMBERS
-        <span className="white-text-sub"> CURRENT MEMBERS</span>
+        <span className="white-text"> CURRENT MEMBERS</span>
       </div>
-      {/* <div className="flex-mem">{members}</div> */}
-      <div className="flex-mem pointer no-display-mobile">
-        <div className="off-set-member"></div>
-        {wpMembers}
-        <div className="off-set-member"></div>
-      </div>
+
+      {/* THIS  */}
       {!loading && media.length > 0 ? (
-        <Members mediaObj={mediaObj} allMembers={allMembers} />
+        <div className="container flex-mem pointer no-display-mobile">
+          {/* <div className="off-set-member"></div> */}
+          {wpMembers}
+          {/* <div className="off-set-member"></div> */}
+        </div>
       ) : (
         <img id="loading" src={loadingGif} alt="Loading GIF"></img>
       )}
-      <div>
+
+      {/* <div>
         <hr />
         {!loading && currMem ? (
           <CurrentMember
@@ -239,7 +237,7 @@ function Collective() {
         ) : (
           ""
         )}
-      </div>
+      </div> */}
       {/* <Outlet /> */}
     </>
   );
