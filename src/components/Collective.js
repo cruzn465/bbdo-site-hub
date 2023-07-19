@@ -4,15 +4,11 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import Collective_super from "../img/mobile_coll_header.png";
-// import Collective_copy from "../img/collective_copy.png";
-// import memberArr from "../members.json";
-import CurrentMember from "./CurrentMember";
-// import loadingGif from "../img/Arrows bar.gif";
-import loadingGif from "../img/SLATE_V2.gif";
-
 import Members from "./Members";
 
-// modularize into Member components
+// FOLLOW THIS FORMAT AND MAKE IMPORT STATEMENTS HERE FOR THE ICONS:
+import loadingGif from "../img/SLATE_V2.gif";
+import PWebsiteButton from "../img/website_button.png";
 
 function Collective() {
   const [currMem, setCurrMem] = useState({});
@@ -24,7 +20,7 @@ function Collective() {
 
   const navigate = useNavigate();
   const { slug } = useParams();
-  // FETCHING MEMBIES
+  // FETCHING MEMBERS FROM WORDPRESS ENDPOINT
   useEffect(() => {
     const fetchMembers = async () => {
       let totalColl = [];
@@ -108,10 +104,8 @@ function Collective() {
   function findSourceUrl(feat_media_id, mediaObj) {
     // GET A PLACEHOLDER IMAGE FOR POSTS WITHOUT ANY MEDIA
     if (feat_media_id) {
-      // console.log(feat_media_id);
       let media = mediaObj[feat_media_id];
       let source_url = media.media_details.sizes.thumbnail.source_url;
-      // console.log(source_url);
       return "https://wpapibbdostudios.azurewebsites.net" + source_url;
     } else {
       return "";
@@ -125,9 +119,10 @@ function Collective() {
           src={findSourceUrl(member.featured_media, mediaObj)}
           className="member"
           alt="individual member"
-          onClick={() => {
-            navigate(`/the-collective/${member.slug}`);
-          }}
+          // CLICK EVENTS WILL BE IN PHASE 2
+          // onClick={() => {
+          //   navigate(`/the-collective/${member.slug}`);
+          // }}
         />
       );
     } else {
@@ -142,7 +137,8 @@ function Collective() {
         <div
           key={member.id}
           className="hover-mem"
-          onClick={(e) => handleMemberClick(e, member)}
+          // CLICK EVENTS WILL BE IN PHASE 2
+          // onClick={(e) => handleMemberClick(e, member)}
         >
           {/* <img
             src={findSourceUrl(member.featured_media, mediaObj)}
@@ -152,7 +148,36 @@ function Collective() {
               navigate(`/the-collective/${member.slug}`);
             }}
           /> */}
+
+          {/* CONDITIONALLY RENDER THE IMAGE IF THERE IS A FEAT. MEDIA ID */}
           {switchImgTag(member.featured_media, mediaObj, member)}
+
+          {/* ***** THIS IS WHERE THE REST OF THE MEMBER DATA WILL GO ***** */}
+          {/* ***** START ***** */}
+          {/* NAME */}
+          <div id="name-title-div">
+            <div className="work-sans-font" id="curr-mem-name">
+              {/* THIS SYNTAX MAKES SURE THAT IF THE MEMBER EXISTS, IT'LL SHOW THE NAME. FOLLOW THIS FORMAT FOR THE SKILLS */}
+              {member && <span id="white-name"> {member.title.rendered}</span>}
+              {member && member.title.rendered}
+            </div>
+            <br />
+          </div>
+          {/* SKILL1 */}
+          {/* SKILL2 */}
+
+          {/* SOCIALS: PERSONAL WEBSITE, LINKEDIN, TWITTER AND VIMEO/PROFILE */}
+          {member.acf.personalwebsite && (
+            <a href={member.acf.personalwebsite}>
+              <img
+                className="socials"
+                src={PWebsiteButton}
+                alt="personal website button"
+              />
+            </a>
+          )}
+
+          {/* ***** END ***** */}
         </div>
       );
     } else return null;
@@ -212,7 +237,7 @@ function Collective() {
         <span className="white-text"> CURRENT MEMBERS</span>
       </div>
 
-      {/* THIS  */}
+      {/* THIS IS WHERE THE MEMBERS WILL GO */}
       {!loading && media.length > 0 ? (
         <div className="container flex-mem pointer no-display-mobile">
           {/* <div className="off-set-member"></div> */}
