@@ -9,6 +9,10 @@ import Collective_super from "../img/mobile_coll_header.png";
 import CurrentMember from "./CurrentMember";
 // import loadingGif from "../img/Arrows bar.gif";
 import loadingGif from "../img/SLATE_V2.gif";
+import linkedInButton from "../img/linkedin_button.png";
+import twitterButton from "../img/twitter_button.png";
+import vimeoButton from "../img/vimeo_button.png";
+import websiteButton from "../img/website_button.png";
 
 import Members from "./Members";
 
@@ -153,6 +157,66 @@ function Collective() {
             }}
           /> */}
           {switchImgTag(member.featured_media, mediaObj, member)}
+          <div className="mem-details">
+            <div className="mem-name">
+              {member.title.rendered}
+            </div>
+            <div className="skills">
+              <div className="mem-skill1">
+                {member.acf.skill1}
+              </div>
+              <div className="mem-skill2">
+                {member.acf.skill2}
+              </div>
+            </div>
+            <div className="mem-social">
+              {member.acf.personalwebsite !== 0 ?
+                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+                  <img
+                    src={websiteButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+                )
+                : null}
+              {member.acf.linkedin !== 0 ?
+                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+                  <img
+                    src={linkedInButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+                )
+                : null}
+              {member.acf.twitter !== 0 ?
+                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+                  <img
+                    src={twitterButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+                )
+                : null}
+              {member.acf.profile !== 0 ?
+                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+                  <img
+                    src={vimeoButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+                )
+                : null}
+            </div>
+          </div>
+
         </div>
       );
     } else return null;
