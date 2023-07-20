@@ -170,6 +170,12 @@ function Collective() {
                   title="Personal Website"
                   target="_blank"
                 >
+                  {/* THIS WAS THE OLD CODE. IF YOU TRY TO CLICK ON THE ICONS WITH THIS A TAG, IT'LL TAKE YOU TO THE HOMEPAGE AS A DEFAULT INSTEAD OF THEIR PERSONAL WEBSITES */}
+                  {/* <a
+                  href="{member.acf.personalwebsite}"
+                  title="Personal Website"
+                  target="_blank"
+                > */}
                   <img
                     src={websiteButton}
                     id="web-button"
@@ -179,22 +185,18 @@ function Collective() {
                 </a>
               ) : null}
               {member.acf.linkedin !== 0 ? (
-                <a
-                  href="{member.acf.personalwebsite}"
-                  title="Personal Website"
-                  target="_blank"
-                >
+                <a href={member.acf.linkedin} title="Linkedin" target="_blank">
                   <img
                     src={linkedInButton}
                     id="web-button"
                     className="socialButton w100"
-                    alt="Website Button"
+                    alt="Linkedin Button"
                   />
                 </a>
               ) : null}
               {member.acf.twitter !== 0 ? (
                 <a
-                  href="{member.acf.personalwebsite}"
+                  href={member.acf.twitter}
                   title="Personal Website"
                   target="_blank"
                 >
@@ -202,14 +204,14 @@ function Collective() {
                     src={twitterButton}
                     id="web-button"
                     className="socialButton w100"
-                    alt="Website Button"
+                    alt="Twitter Button"
                   />
                 </a>
               ) : null}
               {member.acf.profile !== 0 ? (
                 <a
-                  href="{member.acf.personalwebsite}"
-                  title="Personal Website"
+                  href={member.acf.profile}
+                  title="profile Website"
                   target="_blank"
                 >
                   <img
