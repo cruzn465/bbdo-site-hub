@@ -9,6 +9,10 @@ import Collective_super from "../img/mobile_coll_header.png";
 import CurrentMember from "./CurrentMember";
 // import loadingGif from "../img/Arrows bar.gif";
 import loadingGif from "../img/SLATE_V2.gif";
+import linkedInButton from "../img/linkedin_button.png";
+import twitterButton from "../img/twitter_button.png";
+import vimeoButton from "../img/vimeo_button.png";
+import websiteButton from "../img/website_button.png";
 
 import Members from "./Members";
 
@@ -142,7 +146,7 @@ function Collective() {
         <div
           key={member.id}
           className="hover-mem"
-          onClick={(e) => handleMemberClick(e, member)}
+          // onClick={(e) => handleMemberClick(e, member)}
         >
           {/* <img
             src={findSourceUrl(member.featured_media, mediaObj)}
@@ -153,6 +157,73 @@ function Collective() {
             }}
           /> */}
           {switchImgTag(member.featured_media, mediaObj, member)}
+          <div className="mem-details">
+            <div className="mem-name">{member.title.rendered}</div>
+            <div className="skills">
+              <div className="mem-skill1">{member.acf.skill1}</div>
+              <div className="mem-skill2">{member.acf.skill2}</div>
+            </div>
+            <div className="mem-social">
+              {member.acf.personalwebsite !== 0 ? (
+                <a
+                  href={member.acf.personalwebsite}
+                  title="Personal Website"
+                  target="_blank"
+                >
+                  {/* THIS WAS THE OLD CODE. IF YOU TRY TO CLICK ON THE ICONS WITH THIS A TAG, IT'LL TAKE YOU TO THE HOMEPAGE AS A DEFAULT INSTEAD OF THEIR PERSONAL WEBSITES */}
+                  {/* <a
+                  href="{member.acf.personalwebsite}"
+                  title="Personal Website"
+                  target="_blank"
+                > */}
+                  <img
+                    src={websiteButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+              ) : null}
+              {member.acf.linkedin !== 0 ? (
+                <a href={member.acf.linkedin} title="Linkedin" target="_blank">
+                  <img
+                    src={linkedInButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Linkedin Button"
+                  />
+                </a>
+              ) : null}
+              {member.acf.twitter !== 0 ? (
+                <a
+                  href={member.acf.twitter}
+                  title="Personal Website"
+                  target="_blank"
+                >
+                  <img
+                    src={twitterButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Twitter Button"
+                  />
+                </a>
+              ) : null}
+              {member.acf.profile !== 0 ? (
+                <a
+                  href={member.acf.profile}
+                  title="profile Website"
+                  target="_blank"
+                >
+                  <img
+                    src={vimeoButton}
+                    id="web-button"
+                    className="socialButton w100"
+                    alt="Website Button"
+                  />
+                </a>
+              ) : null}
+            </div>
+          </div>
         </div>
       );
     } else return null;
@@ -186,21 +257,21 @@ function Collective() {
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>
       <hr />
-      <h2 className="sub-header-text work-sans-font desktop">
+      <h2 className="container sub-header-text work-sans-font desktop">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
         NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
         IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO
         AND BEYOND.
       </h2>
-      <h2 className="sub-header-text work-sans-font tablet">
+      <h2 className="container sub-header-text work-sans-font tablet">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
         NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
         IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN
         BBDO&nbsp;AND BEYOND.
       </h2>
-      <h2 className="sub-header-text work-sans-font mobile">
+      <h2 className="container sub-header-text work-sans-font mobile">
         BUILT TO OPEN DOORS FOR CREATORS, THE BBDO STUDIOS CAREER DEVELOPMENT
         INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF NETWORKING AND WORK
         OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION IS TO HELP SET UP

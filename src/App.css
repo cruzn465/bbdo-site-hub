@@ -79,7 +79,7 @@
 .sub-header-text {
   color: white;
   /* font-size: 1.5rem; */
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: auto;
 }
 
@@ -129,7 +129,7 @@
   overflow-y: scroll;
 }
 .spacer {
-  height: 120px;
+  height: 100px;
   z-index: -1;
 }
 
@@ -741,6 +741,52 @@ hr {
 
 /* FILTER END */
 
+/* Collective CSS Start*/
+
+.mem-name {
+  font-family: 'Work Sans';
+  font-weight: bold;
+  color: #fff;
+  font-size: 21px;
+  text-shadow: 0px 3.5px #ed1e24;
+}
+
+.hover-mem {
+  position: relative;
+  margin: 10px;
+}
+
+.mem-details {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -15px;
+  right: 0px;
+}
+
+.skills {
+  color: #fff;
+  font: bold 16px 'Work Sans';
+  position: relative;
+  top: -5px;
+}
+
+.mem-social a {
+  display: inline-block;
+  max-width: 30px;
+  padding: 5px;
+  margin: 0 2px;
+}
+
+.w100 {
+  width: 100%;
+}
+.hover-mem:hover .skills > div {
+  color: #8fd5f8;
+}
+
+/* Collective CSS End*/
+
 /* MEDIA QUERIES */
 /* Galaxy fold is 280px width */
 @media only screen and (max-width: 305px) {
@@ -934,18 +980,6 @@ hr {
     padding-right: 0;
   }
 
-  .flex-mem {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: -1.5rem;
-  }
-  .hover-mem {
-    opacity: 0.5;
-  }
-  .hover-mem:hover {
-    opacity: 1;
-  }
   .big-flex-mem {
     display: flex;
     justify-content: center;
@@ -1304,13 +1338,13 @@ hr {
 
 /* WEIRD COLLECTIVE BREAK INTO 3 LINES */
 @media screen and (max-width: 380px) {
-  .no-display-mobile {
+  /* .no-display-mobile {
     display: none;
   }
 
   .flex-mem {
     margin-left: -0.25rem !important;
-  }
+  } */
 }
 
 /* SQUARISH SCREENS */
@@ -1342,6 +1376,17 @@ hr {
 
   #nav-container {
     width: 100vw;
+  }
+  div#nav-container {
+    position: relative;
+  }
+
+  div#basic-navbar-nav {
+    position: absolute;
+    top: 62px;
+    left: auto;
+    right: auto;
+    width: 100%;
   }
 
   .mobile-no-pad {
@@ -1429,11 +1474,19 @@ hr {
   .spacer-video-tab {
     height: 15vw;
   }
-}
-
-@media only screen and (min-width: 726px) {
-  .mid-tablet {
-    display: none;
+  .mem-details {
+    bottom: -12px;
+  }
+  .mem-name {
+    font-size: 17px;
+  }
+  .skills {
+    font-size: 14px;
+    top: -2px;
+  }
+  .mem-social a {
+    max-width: 23px;
+    padding: 3px;
   }
 }
 
@@ -1443,19 +1496,9 @@ hr {
   }
 }
 
-@media screen and (max-width: 750px) {
-  .member {
-    height: 3rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
-  .flex-mem {
-    margin-left: -0.25rem;
-  }
-
-  .off-set-member {
-    margin-left: 1.5rem;
+@media only screen and (min-width: 726px) {
+  .mid-tablet {
+    display: none;
   }
 }
 
@@ -1513,6 +1556,9 @@ hr {
 }
 
 @media only screen and (max-width: 540px) {
+  .spacer {
+    height: 70px;
+  }
   .tablet {
     display: none;
   }
@@ -1607,6 +1653,10 @@ hr {
   .navbar-brand {
     margin-right: 10px !important;
   }
+  div#basic-navbar-nav {
+    top: 47px;
+  }
+
   .nav-bg {
     height: 55px;
   }
