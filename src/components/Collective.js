@@ -146,7 +146,7 @@ function Collective() {
         <div
           key={member.id}
           className="hover-mem"
-          onClick={(e) => handleMemberClick(e, member)}
+          // onClick={(e) => handleMemberClick(e, member)}
         >
           {/* <img
             src={findSourceUrl(member.featured_media, mediaObj)}
@@ -158,20 +158,18 @@ function Collective() {
           /> */}
           {switchImgTag(member.featured_media, mediaObj, member)}
           <div className="mem-details">
-            <div className="mem-name">
-              {member.title.rendered}
-            </div>
+            <div className="mem-name">{member.title.rendered}</div>
             <div className="skills">
-              <div className="mem-skill1">
-                {member.acf.skill1}
-              </div>
-              <div className="mem-skill2">
-                {member.acf.skill2}
-              </div>
+              <div className="mem-skill1">{member.acf.skill1}</div>
+              <div className="mem-skill2">{member.acf.skill2}</div>
             </div>
             <div className="mem-social">
-              {member.acf.personalwebsite !== 0 ?
-                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+              {member.acf.personalwebsite !== 0 ? (
+                <a
+                  href={member.acf.personalwebsite}
+                  title="Personal Website"
+                  target="_blank"
+                >
                   <img
                     src={websiteButton}
                     id="web-button"
@@ -179,10 +177,13 @@ function Collective() {
                     alt="Website Button"
                   />
                 </a>
-                )
-                : null}
-              {member.acf.linkedin !== 0 ?
-                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+              ) : null}
+              {member.acf.linkedin !== 0 ? (
+                <a
+                  href="{member.acf.personalwebsite}"
+                  title="Personal Website"
+                  target="_blank"
+                >
                   <img
                     src={linkedInButton}
                     id="web-button"
@@ -190,10 +191,13 @@ function Collective() {
                     alt="Website Button"
                   />
                 </a>
-                )
-                : null}
-              {member.acf.twitter !== 0 ?
-                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+              ) : null}
+              {member.acf.twitter !== 0 ? (
+                <a
+                  href="{member.acf.personalwebsite}"
+                  title="Personal Website"
+                  target="_blank"
+                >
                   <img
                     src={twitterButton}
                     id="web-button"
@@ -201,10 +205,13 @@ function Collective() {
                     alt="Website Button"
                   />
                 </a>
-                )
-                : null}
-              {member.acf.profile !== 0 ?
-                (<a href="{member.acf.personalwebsite}" title="Personal Website" target="_blank">
+              ) : null}
+              {member.acf.profile !== 0 ? (
+                <a
+                  href="{member.acf.personalwebsite}"
+                  title="Personal Website"
+                  target="_blank"
+                >
                   <img
                     src={vimeoButton}
                     id="web-button"
@@ -212,11 +219,9 @@ function Collective() {
                     alt="Website Button"
                   />
                 </a>
-                )
-                : null}
+              ) : null}
             </div>
           </div>
-
         </div>
       );
     } else return null;
@@ -250,21 +255,21 @@ function Collective() {
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>
       <hr />
-      <h2 className="sub-header-text work-sans-font desktop">
+      <h2 className="container sub-header-text work-sans-font desktop">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
         NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
         IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO
         AND BEYOND.
       </h2>
-      <h2 className="sub-header-text work-sans-font tablet">
+      <h2 className="container sub-header-text work-sans-font tablet">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
         NETWORKING AND WORK OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION
         IS TO HELP SET UP OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN
         BBDO&nbsp;AND BEYOND.
       </h2>
-      <h2 className="sub-header-text work-sans-font mobile">
+      <h2 className="container sub-header-text work-sans-font mobile">
         BUILT TO OPEN DOORS FOR CREATORS, THE BBDO STUDIOS CAREER DEVELOPMENT
         INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF NETWORKING AND WORK
         OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION IS TO HELP SET UP

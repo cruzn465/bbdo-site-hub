@@ -79,7 +79,7 @@
 .sub-header-text {
   color: white;
   /* font-size: 1.5rem; */
-  max-width: 90%;
+  /* max-width: 90%; */
   margin: auto;
 }
 
@@ -129,7 +129,7 @@
   overflow-y: scroll;
 }
 .spacer {
-  height: 120px;
+  height: 100px;
   z-index: -1;
 }
 
@@ -753,6 +753,7 @@ hr {
 
 .hover-mem {
   position: relative;
+  margin: 10px;
 }
 
 .mem-details {
@@ -1555,6 +1556,9 @@ hr {
 }
 
 @media only screen and (max-width: 540px) {
+  .spacer {
+    height: 70px;
+  }
   .tablet {
     display: none;
   }
