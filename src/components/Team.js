@@ -118,7 +118,7 @@ function Team() {
       </div>
       <hr />
 
-      <h2 className="sub-header-text work-sans-font desktop">
+      <h2 className="container sub-header-text work-sans-font desktop">
         WE’RE A TEAM OF AWARD-WINNING&nbsp;CREATORS AND
         UNCONVENTIONAL&nbsp;MAKERS, DELIVERING&nbsp;BEST-IN-CLASS CONTENT FOR
         GLOBAL&nbsp;AND&nbsp;LOCAL ALIKE. WITH QUALITY&nbsp;AND&nbsp;EFFICIENCY
@@ -126,7 +126,7 @@ function Team() {
         DRIVEN&nbsp;BY&nbsp;INNOVATION AND POWERED&nbsp;BY&nbsp;
         <span id="the-work-text">THE WORK</span>
       </h2>
-      <h2 className="sub-header-text work-sans-font tablet">
+      <h2 className="container sub-header-text work-sans-font tablet">
         WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,
         DELIVERING&nbsp;BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE. WITH
         QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO,
@@ -134,7 +134,7 @@ function Team() {
         POWERED&nbsp;BY&nbsp;
         <span id="the-work-text">THE&nbsp;WORK</span>
       </h2>
-      <h2 className="sub-header-text work-sans-font mobile">
+      <h2 className="container sub-header-text work-sans-font mobile">
         WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,
         DELIVERING BEST-IN-CLASS CONTENT FOR GLOBAL AND LOCAL ALIKE. WITH
         QUALITY AND EFFICIENCY AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE THE
