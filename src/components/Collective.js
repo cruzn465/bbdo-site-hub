@@ -146,6 +146,7 @@ function Collective() {
         <div
           key={member.id}
           className="hover-mem"
+
           // onClick={(e) => handleMemberClick(e, member)}
         >
           {/* <img
@@ -156,7 +157,9 @@ function Collective() {
               navigate(`/the-collective/${member.slug}`);
             }}
           /> */}
-          {switchImgTag(member.featured_media, mediaObj, member)}
+          <a href={member.acf.personalwebsite}>
+            {switchImgTag(member.featured_media, mediaObj, member)}
+          </a>
           <div className="mem-details">
             {member.title.rendered && (
               <div className="mem-name">{member.title.rendered}</div>

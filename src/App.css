@@ -782,7 +782,7 @@ hr {
   width: 100%;
 }
 .hover-mem:hover .skills > div {
-  color: #8fd5f8;
+  /* color: #8fd5f8; */
 }
 
 /* Collective CSS End*/
