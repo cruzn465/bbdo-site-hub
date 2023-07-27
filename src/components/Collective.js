@@ -158,24 +158,25 @@ function Collective() {
           /> */}
           {switchImgTag(member.featured_media, mediaObj, member)}
           <div className="mem-details">
-            <div className="mem-name">{member.title.rendered}</div>
+            {member.title.rendered && (
+              <div className="mem-name">{member.title.rendered}</div>
+            )}
             <div className="skills">
-              <div className="mem-skill1">{member.acf.skill1}</div>
-              <div className="mem-skill2">{member.acf.skill2}</div>
+              {member.acf.skill1 && (
+                <div className="mem-skill1">{member.acf.skill1}</div>
+              )}
+              {member.acf.skill2 && (
+                <div className="mem-skill2">{member.acf.skill2}</div>
+              )}
             </div>
             <div className="mem-social">
-              {member.acf.personalwebsite !== 0 ? (
+              {/* PERSONAL WEBSITE */}
+              {member.acf.personalwebsite && (
                 <a
                   href={member.acf.personalwebsite}
                   title="Personal Website"
                   target="_blank"
                 >
-                  {/* THIS WAS THE OLD CODE. IF YOU TRY TO CLICK ON THE ICONS WITH THIS A TAG, IT'LL TAKE YOU TO THE HOMEPAGE AS A DEFAULT INSTEAD OF THEIR PERSONAL WEBSITES */}
-                  {/* <a
-                  href="{member.acf.personalwebsite}"
-                  title="Personal Website"
-                  target="_blank"
-                > */}
                   <img
                     src={websiteButton}
                     id="web-button"
@@ -183,8 +184,9 @@ function Collective() {
                     alt="Website Button"
                   />
                 </a>
-              ) : null}
-              {member.acf.linkedin !== 0 ? (
+              )}
+              {/* LINKEDIN */}
+              {member.acf.linkedin && (
                 <a href={member.acf.linkedin} title="Linkedin" target="_blank">
                   <img
                     src={linkedInButton}
@@ -193,13 +195,10 @@ function Collective() {
                     alt="Linkedin Button"
                   />
                 </a>
-              ) : null}
-              {member.acf.twitter !== 0 ? (
-                <a
-                  href={member.acf.twitter}
-                  title="Personal Website"
-                  target="_blank"
-                >
+              )}
+              {/* TWITTER */}
+              {member.acf.twitter && (
+                <a href={member.acf.twitter} title="Twitter" target="_blank">
                   <img
                     src={twitterButton}
                     id="web-button"
@@ -207,21 +206,18 @@ function Collective() {
                     alt="Twitter Button"
                   />
                 </a>
-              ) : null}
-              {member.acf.profile !== 0 ? (
-                <a
-                  href={member.acf.profile}
-                  title="profile Website"
-                  target="_blank"
-                >
+              )}
+              {/* VIMEO */}
+              {member.acf.profile && (
+                <a href={member.acf.profile} title="Vimeo" target="_blank">
                   <img
                     src={vimeoButton}
                     id="web-button"
                     className="socialButton w100"
-                    alt="Website Button"
+                    alt="Vimeo Button"
                   />
                 </a>
-              ) : null}
+              )}
             </div>
           </div>
         </div>
