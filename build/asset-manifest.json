@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.98fce8fe.css",
-    "main.js": "/static/js/main.c6ce9c69.js",
+    "main.css": "/static/css/main.e9b07bc3.css",
+    "main.js": "/static/js/main.6d06d1e2.js",
     "static/js/787.8f10c6d4.chunk.js": "/static/js/787.8f10c6d4.chunk.js",
     "static/media/Bbdostudiosreel081022bbdostudiosoptimized.mp4": "/static/media/Bbdostudiosreel081022bbdostudiosoptimized.1d6f384e03e34f75e196.mp4",
     "static/media/HomePage_Header_Tablet.webp": "/static/media/HomePage_Header_Tablet.dfec5aacf8b7757876a7.webp",
@@ -18,12 +18,12 @@
     "static/media/TheWorkRepeating.jpg": "/static/media/TheWorkRepeating.b7baba7b388e271c0a13.jpg",
     "static/media/mobile_coll_header.png": "/static/media/mobile_coll_header.6ab5455c66a7c281c4a2.png",
     "index.html": "/index.html",
-    "main.98fce8fe.css.map": "/static/css/main.98fce8fe.css.map",
-    "main.c6ce9c69.js.map": "/static/js/main.c6ce9c69.js.map",
+    "main.e9b07bc3.css.map": "/static/css/main.e9b07bc3.css.map",
+    "main.6d06d1e2.js.map": "/static/js/main.6d06d1e2.js.map",
     "787.8f10c6d4.chunk.js.map": "/static/js/787.8f10c6d4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98fce8fe.css",
-    "static/js/main.c6ce9c69.js"
+    "static/css/main.e9b07bc3.css",
+    "static/js/main.6d06d1e2.js"
   ]
 }

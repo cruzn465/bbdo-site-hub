@@ -124,7 +124,7 @@ function Team() {
         GLOBAL&nbsp;AND&nbsp;LOCAL ALIKE. WITH QUALITY&nbsp;AND&nbsp;EFFICIENCY
         AT THE FOREFRONT OF EVERYTHING WE DO, WE'RE&nbsp;THE&nbsp;PEOPLE WHO ARE
         DRIVEN&nbsp;BY&nbsp;INNOVATION AND POWERED&nbsp;BY&nbsp;
-        <span id="the-work-text">THE WORK</span>
+        <span id="the-work-text">THE&nbsp;WORK</span>
       </h2>
       <h2 className="container sub-header-text work-sans-font tablet">
         WE’RE A TEAM OF AWARD-WINNING CREATORS&nbsp;AND UNCONVENTIONAL MAKERS,

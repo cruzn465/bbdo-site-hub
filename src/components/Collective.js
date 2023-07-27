@@ -1,12 +1,14 @@
 import React from "react";
 import Axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// import {  useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import Image from "react-bootstrap/Image";
 import Collective_super from "../img/mobile_coll_header.png";
 // import Collective_copy from "../img/collective_copy.png";
 // import memberArr from "../members.json";
-import CurrentMember from "./CurrentMember";
+// import CurrentMember from "./CurrentMember";
 // import loadingGif from "../img/Arrows bar.gif";
 import loadingGif from "../img/SLATE_V2.gif";
 import linkedInButton from "../img/linkedin_button.png";
@@ -14,20 +16,20 @@ import twitterButton from "../img/twitter_button.png";
 import vimeoButton from "../img/vimeo_button.png";
 import websiteButton from "../img/website_button.png";
 
-import Members from "./Members";
+// import Members from "./Members";
 
 // modularize into Member components
 
 function Collective() {
-  const [currMem, setCurrMem] = useState({});
+  // const [currMem, setCurrMem] = useState({});
   const [allMembers, setAllMembers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [media, setMedia] = useState([]);
   const [mediaObj, setMediaObj] = useState({});
-  const [slugObj, setSlugObj] = useState({});
+  // const [slugObj, setSlugObj] = useState({});
 
   const navigate = useNavigate();
-  const { slug } = useParams();
+  // const { slug } = useParams();
   // FETCHING MEMBIES
   useEffect(() => {
     const fetchMembers = async () => {
@@ -85,9 +87,9 @@ function Collective() {
 
         tempSlugObj[curCol.slug] = newColObj;
       }
-      setSlugObj(tempSlugObj);
+      // setSlugObj(tempSlugObj);
 
-      setCurrMem(tempSlugObj[slug]);
+      // setCurrMem(tempSlugObj[slug]);
       // console.log("****SLUG OBJ****", tempSlugObj);
 
       setLoading(false);
@@ -179,6 +181,7 @@ function Collective() {
                   href={member.acf.personalwebsite}
                   title="Personal Website"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <img
                     src={websiteButton}
@@ -190,7 +193,12 @@ function Collective() {
               )}
               {/* LINKEDIN */}
               {member.acf.linkedin && (
-                <a href={member.acf.linkedin} title="Linkedin" target="_blank">
+                <a
+                  href={member.acf.linkedin}
+                  title="Linkedin"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src={linkedInButton}
                     id="web-button"
@@ -201,7 +209,12 @@ function Collective() {
               )}
               {/* TWITTER */}
               {member.acf.twitter && (
-                <a href={member.acf.twitter} title="Twitter" target="_blank">
+                <a
+                  href={member.acf.twitter}
+                  title="Twitter"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src={twitterButton}
                     id="web-button"
@@ -212,7 +225,12 @@ function Collective() {
               )}
               {/* VIMEO */}
               {member.acf.profile && (
-                <a href={member.acf.profile} title="Vimeo" target="_blank">
+                <a
+                  href={member.acf.profile}
+                  title="Vimeo"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <img
                     src={vimeoButton}
                     id="web-button"
@@ -229,10 +247,10 @@ function Collective() {
   });
 
   // click handler for when any member is clicked
-  function handleMemberClick(e, m) {
-    setCurrMem(m);
-    // console.log(currMem);
-  }
+  // function handleMemberClick(e, m) {
+  // setCurrMem(m);
+  // console.log(currMem);
+  // }
 
   return (
     <>
