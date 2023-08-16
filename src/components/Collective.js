@@ -9,8 +9,8 @@ import Collective_super from "../img/mobile_coll_header.png";
 // import Collective_copy from "../img/collective_copy.png";
 // import memberArr from "../members.json";
 // import CurrentMember from "./CurrentMember";
-// import loadingGif from "../img/Arrows bar.gif";
-import loadingGif from "../img/SLATE_V2.gif";
+import mobileLoadingGif from "../img/SLATE_Desktop.gif";
+import desktopLoadingGif from "../img/SLATE_Mobile.gif";
 import linkedInButton from "../img/linkedin_button.png";
 import twitterButton from "../img/twitter_button.png";
 import vimeoButton from "../img/vimeo_button.png";
@@ -273,7 +273,9 @@ function Collective() {
         THE PRODUCTION COLLECTIVE
         <span className="white-text"> THE PRODUCTION COLLECTIVE</span>
       </div>
-      <hr />
+      <div className="container">
+        <hr />
+      </div>
       <h2 className="container sub-header-text work-sans-font desktop">
         BUILT TO OPEN DOORS FOR&nbsp;CREATORS, THE&nbsp;BBDO&nbsp;STUDIOS CAREER
         DEVELOPMENT INITIATIVE GIVES PARTICIPANTS ACCESS TO A VARIETY OF
@@ -294,7 +296,9 @@ function Collective() {
         OPPORTUNITIES WITHIN BBDO&nbsp;NY. OUR CORE MISSION IS TO HELP SET UP
         OUR MEMBERS FOR PROFESSIONAL SUCCESS BOTH WITHIN BBDO&nbsp;AND BEYOND.
       </h2>
-      <hr />
+      <div className="container">
+        <hr />
+      </div>
       <div className="curr-header-text curr-header-font work-sans-font germain header-font">
         CURRENT MEMBERS
         <span className="white-text"> CURRENT MEMBERS</span>
@@ -308,7 +312,20 @@ function Collective() {
           {/* <div className="off-set-member"></div> */}
         </div>
       ) : (
-        <img id="loading" src={loadingGif} alt="Loading GIF"></img>
+        <>
+          <img
+            className="mobile-gif"
+            id="loading"
+            src={mobileLoadingGif}
+            alt="Loading GIF"
+          ></img>
+          <img
+            className="desktop-gif"
+            id="loading"
+            src={desktopLoadingGif}
+            alt="Loading GIF"
+          ></img>
+        </>
       )}
 
       {/* <div>

@@ -7,8 +7,9 @@ import Filter from "./Filter";
 // import WorkRows from "./WorkRows";
 import WorkModal from "./WorkModal";
 // import FetchMoreButton from "./FetchMoreButton";
-// import loadingGif from "../img/Arrows bar.gif";
-import loadingGif from "../img/SLATE_V2.gif";
+
+import mobileLoadingGif from "../img/SLATE_Desktop.gif";
+import desktopLoadingGif from "../img/SLATE_Mobile.gif";
 
 import MobileVid from "../img/TheWork.webp";
 import TabletVid from "../img/TheWorkHeaderLong_Tablet.webp";
@@ -167,7 +168,20 @@ function Work() {
             />
           ))
         ) : (
-          <img id="loading" src={loadingGif} alt="Loading GIF"></img>
+          <>
+            <img
+              className="mobile-gif"
+              id="loading"
+              src={mobileLoadingGif}
+              alt="Loading GIF"
+            ></img>
+            <img
+              className="desktop-gif"
+              id="loading"
+              src={desktopLoadingGif}
+              alt="Loading GIF"
+            ></img>
+          </>
         )}
         {modalShow && (
           <WorkModal

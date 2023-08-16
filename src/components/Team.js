@@ -116,7 +116,9 @@ function Team() {
         WHO WE ARE
         <span className="white-text"> WHO WE ARE</span>
       </div>
-      <hr />
+      <div className="container">
+        <hr />
+      </div>
 
       <h2 className="container sub-header-text work-sans-font desktop">
         WE’RE A TEAM OF AWARD-WINNING&nbsp;CREATORS AND
@@ -142,7 +144,9 @@ function Team() {
         <span id="the-work-text">THE&nbsp;WORK</span>
       </h2>
 
-      <hr />
+      <div className="container">
+        <hr />
+      </div>
       <Container id="outer-container" className="desktop">
         <Container
           id="office_bg"
